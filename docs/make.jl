@@ -13,6 +13,7 @@ makedocs(modules=Module[],
              "man/juno_frontend.md"
          ],
          "DevDocs" => Any[
+             "devdocs/contributor_guide.md",
              "devdocs/dev_install.md",
              "devdocs/package_info.md",
              "devdocs/juno_ci.md"

@@ -23,6 +23,7 @@ package ecosystem.
 
 ```@contents
 Pages = [
+    "devdocs/contributor_guide.md",
     "devdocs/dev_install.md",
     "devdocs/package_info.md",
     "devdocs/juno_ci.md"
