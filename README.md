@@ -1,5 +1,6 @@
 # JunoDocs
 
+[![Developer Chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JunoLab/Juno)
 [![Travis](https://travis-ci.org/ChrisRackauckas/JunoDocs.jl.svg?branch=master)](https://travis-ci.org/ChrisRackauckas/JunoDocs.jl)
 [![Docs](https://img.shields.io/badge/docs-latest-blue.svg)](https://ChrisRackauckas.github.io/JunoDocs.jl/latest)
 
