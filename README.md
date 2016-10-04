@@ -1,5 +1,8 @@
 # JunoDocs
 
+[![Travis](https://travis-ci.org/ChrisRackauckas/JunoDocs.jl.svg?branch=master)](https://travis-ci.org/ChrisRackauckas/JunoDocs.jl)
+[![Docs](https://img.shields.io/badge/docs-latest-blue.svg)](https://ChrisRackauckas.github.io/JunoDocs.jl/latest)
+
 This is the documentation for the Juno IDE. It is created using [Documenter.jl](https://github.com/JuliaDocs/Documenter.jl)
 
 ## Contributing to the Documentation
