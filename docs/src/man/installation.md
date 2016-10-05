@@ -41,3 +41,15 @@ Type `uber-juno` into the search box and hit enter. Click the install button on 
 Atom will then set up Juno for you, installing the required Atom and Julia packages. Once the setup is done you're good to go!
 
 ## Additional Windows Step: Adding the Julia Path
+
+If you installed Julia on Windows using the binaries provided by [JuliaLang.org](http://julialang.org/),
+then you will need to add Julia's path to your Atom settings. The settings can be
+found in Packages > Julia > Settings. Where it says "Julia Path" is where the Julia
+path must be included. The standard Julia installation will place Julia in the following
+location:
+
+```shell
+C:\Users\[USERNAME]\AppData\Local\Julia-0.5.0\bin\julia
+```
+
+where [USERNAME] is your Windows username.
