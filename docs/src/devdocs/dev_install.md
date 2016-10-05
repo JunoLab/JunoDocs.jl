@@ -47,7 +47,7 @@ may need to
 Pkg.checkout("Plots")
 ```
 
-and/or checkout master on a backend:
+and/or checkout master on a backend, for example:
 
 ```julia
 Pkg.checkout("PlotlyJS")
