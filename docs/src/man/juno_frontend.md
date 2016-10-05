@@ -8,7 +8,7 @@ Print `info` to the console in a nicer way:
 info("foo")
 ```
 
-![info](static/info.gif)
+![info](assets/info.gif)
 
 ## Progress Meters
 
@@ -18,7 +18,7 @@ Show a progress meter for a computation:
 @progress for ...
 ```
 
-![progress](static/progress.gif)
+![progress](assets/progress.gif)
 
 ## Console Interactions
 
@@ -28,7 +28,7 @@ Allow the user to select from a list of options:
 selector(xs) -> x
 ```
 
-![selector](static/selector.gif)
+![selector](assets/selector.gif)
 
 Get input in the console:
 
