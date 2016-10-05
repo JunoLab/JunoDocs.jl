@@ -233,6 +233,14 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "man/faq.html#I-am-having-a-problem-running-Juno-with-an-older-version-of-Julia,-why?-1",
+    "page": "FAQ",
+    "title": "I am having a problem running Juno with an older version of Julia, why?",
+    "category": "section",
+    "text": "Juno is under rapid development, so it's expected that previous versions may not be compatible with the Atom packages overtime. Julia will automatically use older versions on the Julia-side packages, but Atom will always give you the most up-to-date packages it knows about, which causes this issue. The easy way to solve this is to always use the current Julia release. Otherwise, resort to the Developer Install for the Atom packages and use git to checkout an older version. This requires some git know-how, so it's only recommended if the older version of Julia is truly necessary."
+},
+
+{
     "location": "man/faq.html#How-do-I-use-Juno-with-the-Julia-Nightly-version?-1",
     "page": "FAQ",
     "title": "How do I use Juno with the Julia Nightly version?",
