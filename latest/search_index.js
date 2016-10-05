@@ -153,6 +153,46 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "man/basic_usage.html#Adding-Your-Own-Shortcuts-1",
+    "page": "Basic Usage",
+    "title": "Adding Your Own Shortcuts",
+    "category": "section",
+    "text": ""
+},
+
+{
+    "location": "man/basic_usage.html#Using-the-Plot-Pane-1",
+    "page": "Basic Usage",
+    "title": "Using the Plot Pane",
+    "category": "section",
+    "text": ""
+},
+
+{
+    "location": "man/basic_usage.html#Using-the-Workspace-Pane-1",
+    "page": "Basic Usage",
+    "title": "Using the Workspace Pane",
+    "category": "section",
+    "text": ""
+},
+
+{
+    "location": "man/basic_usage.html#Using-the-Debugger-1",
+    "page": "Basic Usage",
+    "title": "Using the Debugger",
+    "category": "section",
+    "text": ""
+},
+
+{
+    "location": "man/basic_usage.html#Settings-Descriptions-1",
+    "page": "Basic Usage",
+    "title": "Settings Descriptions",
+    "category": "section",
+    "text": ""
+},
+
+{
     "location": "man/faq.html#",
     "page": "FAQ",
     "title": "FAQ",
@@ -166,6 +206,38 @@ var documenterSearchIndex = {"docs": [
     "title": "FAQ",
     "category": "section",
     "text": ""
+},
+
+{
+    "location": "man/faq.html#I-am-having-issues,-where-do-I-leave-a-bug-report?-1",
+    "page": "FAQ",
+    "title": "I am having issues, where do I leave a bug report?",
+    "category": "section",
+    "text": "Please leave bug reports either at the discussion board or at the Juno.jl Github repository."
+},
+
+{
+    "location": "man/faq.html#Some-Juno-package-is-using-the-wrong-precompile-cache,-what-do-I-do?-1",
+    "page": "FAQ",
+    "title": "Some Juno package is using the wrong precompile cache, what do I do?",
+    "category": "section",
+    "text": "This problem manifests itself in errors like:WARNING: Method definition\nWARNING: Module Juno with uuid 738353145462472 is missing from the cache.\nERROR: LoadError: Declaring precompile(false) is not allowed in files that are being precompiled.\nERROR: LoadError: Failed to precompile Atom to C:\\Users...One way this can occur is from updating Julia versions. However, this has a very easy fix. Go into the Julia REPL (not the Juno console in Atom, but the actual Julia terminal window) and type in the command:using AtomThat will force Julia to re-compile all of the cache files and should fix the problem."
+},
+
+{
+    "location": "man/faq.html#What-are-these-warnings-in-the-console?-1",
+    "page": "FAQ",
+    "title": "What are these warnings in the console?",
+    "category": "section",
+    "text": "If you are experiencing warnings like:WARNING: julia-client: can't render lazyorWARNING: Atom.jl: unrecognised message clearLazy.there's no reason to be alarmed: these warnings are harmless. They mostly occur because Juno is developing very fast, and so the package versions you have may be \"out of sync\". The most common fix is to Pkg.update() and so make sure you update your Atom packages (a blue box shows up in the in the bottom right corner when an update is available).(Image: UpdateBoxScreenshot)If none of these work, again there's no need to worry since these warnings are not breaking. Note that if you are on the Julia nightly version, you should expect that these warnings may occur, it's just part of being on the bleeding edge."
+},
+
+{
+    "location": "man/faq.html#How-do-I-use-Juno-with-the-Julia-Nightly-version?-1",
+    "page": "FAQ",
+    "title": "How do I use Juno with the Julia Nightly version?",
+    "category": "section",
+    "text": "If you want to use Juno with the nightly version use caution: this package is under rapid development so do so at your own risk. That being said, the Julia nightly should work using the Developer Install. Note that this will require you to be on master for the Julia and Atom packages, so things will be changing likely before documentation changes."
 },
 
 {
