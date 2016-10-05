@@ -185,6 +185,30 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "man/juno_frontend.html#Enhanced-Display-1",
+    "page": "The Juno.jl Front-End",
+    "title": "Enhanced Display",
+    "category": "section",
+    "text": "Print info to the console in a nicer way:info(\"foo\")(Image: info)"
+},
+
+{
+    "location": "man/juno_frontend.html#Progress-Meters-1",
+    "page": "The Juno.jl Front-End",
+    "title": "Progress Meters",
+    "category": "section",
+    "text": "Show a progress meter for a computation:@progress for ...(Image: progress)"
+},
+
+{
+    "location": "man/juno_frontend.html#Console-Interactions-1",
+    "page": "The Juno.jl Front-End",
+    "title": "Console Interactions",
+    "category": "section",
+    "text": "Allow the user to select from a list of options:selector(xs) -> x(Image: selector)Get input in the console:input()(Image: input)"
+},
+
+{
     "location": "devdocs/contributor_guide.html#",
     "page": "Contributor Guide",
     "title": "Contributor Guide",
