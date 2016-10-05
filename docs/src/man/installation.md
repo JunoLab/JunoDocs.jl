@@ -1,6 +1,12 @@
 # Installation Instructions
 
-Getting Juno takes a couple of simple steps and just a few minutes. Follow this and you'll be running Julia code in no time!
+Getting Juno takes a couple of simple steps. One needs to:
+
+1. Install Julia
+2. Install Atom
+3. Install the Juno plugin for Atom (uber-juno)
+
+Follow this and you'll be running Julia code in no time!
 
 ## Getting Julia
 
@@ -22,9 +28,11 @@ Then:
 1. Unzip the downloaded folder and place it in your home directory.
 2. Make sure to have dependencies curl and cmake installed.
 
-## Getting Atom & Juno
+## Getting Atom
 
 Download, install and open [Atom](https://atom.io). If you have it already, make sure it's up to date (version 1.7+).
+
+## Installing the Juno Plugin
 
 In Atom, go to Settings (<kbd>Ctrl ,</kbd>, or <kbd>Cmd ,</kbd> on OS X) and go to the "Install" panel.
 
@@ -32,12 +40,4 @@ Type `uber-juno` into the search box and hit enter. Click the install button on 
 
 Atom will then set up Juno for you, installing the required Atom and Julia packages. Once the setup is done you're good to go!
 
----
-
-## Notes & Troubleshooting
-
-This setup works by installing the collection of modules and plugins that together make up Juno. For more information see [here](https://github.com/JunoLab/atom-julia-client/issues/186#issuecomment-225140959).
-
-If you have any issues with this setup, please do report it here or at [Juno Discuss](http://discuss.junolab.org). We'll do our best to help you get going.
-
-[Let us know](http://discuss.junolab.org) if you have any other issues or questions.
+## Additional Windows Step: Adding the Julia Path
