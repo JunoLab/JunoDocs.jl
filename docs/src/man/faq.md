@@ -52,6 +52,16 @@ If none of these work, again there's no need to worry since these warnings are n
 breaking. Note that if you are on the Julia nightly version, you should expect that these
 warnings may occur, it's just part of being on the bleeding edge.
 
+### I am having a problem running Juno with an older version of Julia, why?
+
+Juno is under rapid development, so it's expected that previous versions may not
+be compatible with the Atom packages overtime. Julia will automatically use older
+versions on the Julia-side packages, but Atom will always give you the most up-to-date
+packages it knows about, which causes this issue. The easy way to solve this is
+to always use the current Julia release. Otherwise, resort to the [Developer Install]()
+for the Atom packages and use git to checkout an older version. This requires some
+git know-how, so it's only recommended if the older version of Julia is truly necessary.
+
 ### How do I use Juno with the Julia Nightly version?
 
 If you want to use Juno with the nightly version use caution: this package is under
