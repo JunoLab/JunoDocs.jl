@@ -2,7 +2,8 @@
 
 ## Enhanced Display
 
-Print `info` to the console in a nicer way:
+Juno.jl includes features which allow package developers to created enhanced displays
+in Juno. For example, we can print `info` to the console in a nicer way:
 
 ```julia
 info("foo")
@@ -10,9 +11,21 @@ info("foo")
 
 ![info](assets/info.gif)
 
+The following functions provide this interface:
+
+```@docs
+Media.media
+Media.@media
+Media.setdisplay
+Media.getdisplay
+Juno.info
+```
+
 ## Progress Meters
 
-Show a progress meter for a computation:
+Juno.jl allows package developers to use the progressbar which is provided in the
+Atom window. For example, you can easily show a progress meter for a `for loop`
+via the command:
 
 ```julia
 @progress for ...
@@ -20,9 +33,16 @@ Show a progress meter for a computation:
 
 ![progress](assets/progress.gif)
 
+The following functions provide this interface:
+
+```@docs
+Juno.@progress
+```
+
 ## Console Interactions
 
-Allow the user to select from a list of options:
+Juno.jl lets package developers interact with users via the Juno console. For example,
+you can allow the user to select from a list of options:
 
 ```julia
 selector(xs) -> x
@@ -30,10 +50,18 @@ selector(xs) -> x
 
 ![selector](assets/selector.gif)
 
-Get input in the console:
+or get input in the console:
 
 ```julia
 input()
 ```
 
 ![input](static/input.gif)
+
+The following functions provide this interface:
+
+```@docs
+Juno.isactive
+Juno.input
+Juno.selector
+```
