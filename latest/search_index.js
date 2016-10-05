@@ -265,11 +265,59 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "man/juno_frontend.html#Media.media",
+    "page": "The Juno.jl Front-End",
+    "title": "Media.media",
+    "category": "Function",
+    "text": "media(T) gives the media type of the type T. The default is Textual.\n\nmedia(Gadfly.Plot) == Media.Plot\n\n\n\n"
+},
+
+{
+    "location": "man/juno_frontend.html#Media.@media",
+    "page": "The Juno.jl Front-End",
+    "title": "Media.@media",
+    "category": "Macro",
+    "text": "Similar to abstract:\n\n@media Foo\n\ndefines Foo, as well as FooT, the type representing Foo and its descendants (which is useful for dispatch).\n\n@media Bar <: Foo\nBar::FooT\n\n\n\n"
+},
+
+{
+    "location": "man/juno_frontend.html#Media.setdisplay",
+    "page": "The Juno.jl Front-End",
+    "title": "Media.setdisplay",
+    "category": "Function",
+    "text": "setdisplay([input], T, output)\n\nDisplay T objects using output when produced by input.\n\nT is an object type or media type, e.g. Gadfly.Plot or Media.Graphical.\n\ndisplay(Editor(), Image, Console())\n\n\n\n"
+},
+
+{
+    "location": "man/juno_frontend.html#Media.getdisplay",
+    "page": "The Juno.jl Front-End",
+    "title": "Media.getdisplay",
+    "category": "Function",
+    "text": "getdisplay(T)\n\nFind out what output device T will display on.\n\n\n\n"
+},
+
+{
+    "location": "man/juno_frontend.html#Juno.info",
+    "page": "The Juno.jl Front-End",
+    "title": "Juno.info",
+    "category": "Function",
+    "text": "info(msg)\n\nShow the given message in Juno's console using blue styling, or fall back to Base.info.\n\nIn a package, you can use import Juno: info to replace the default version with this one.\n\n\n\n"
+},
+
+{
     "location": "man/juno_frontend.html#Enhanced-Display-1",
     "page": "The Juno.jl Front-End",
     "title": "Enhanced Display",
     "category": "section",
-    "text": "Print info to the console in a nicer way:info(\"foo\")(Image: info)"
+    "text": "Juno.jl includes features which allow package developers to created enhanced displays in Juno. For example, we can print info to the console in a nicer way:info(\"foo\")(Image: info)The following functions provide this interface:Media.media\nMedia.@media\nMedia.setdisplay\nMedia.getdisplay\nJuno.info"
+},
+
+{
+    "location": "man/juno_frontend.html#Juno.@progress",
+    "page": "The Juno.jl Front-End",
+    "title": "Juno.@progress",
+    "category": "Macro",
+    "text": "@progress for i = ...\n\nShow a progress metre for the given loop if possible.\n\n\n\n"
 },
 
 {
@@ -277,7 +325,31 @@ var documenterSearchIndex = {"docs": [
     "page": "The Juno.jl Front-End",
     "title": "Progress Meters",
     "category": "section",
-    "text": "Show a progress meter for a computation:@progress for ...(Image: progress)"
+    "text": "Juno.jl allows package developers to use the progressbar which is provided in the Atom window. For example, you can easily show a progress meter for a for loop via the command:@progress for ...(Image: progress)The following functions provide this interface:Juno.@progress"
+},
+
+{
+    "location": "man/juno_frontend.html#Juno.isactive",
+    "page": "The Juno.jl Front-End",
+    "title": "Juno.isactive",
+    "category": "Function",
+    "text": "isactive()\n\nWill return true when the current Julia process is connected to a running Juno frontend.\n\n\n\n"
+},
+
+{
+    "location": "man/juno_frontend.html#Juno.input",
+    "page": "The Juno.jl Front-End",
+    "title": "Juno.input",
+    "category": "Function",
+    "text": "input() -> \"...\"\n\nPrompt the user to input some text, and return it.\n\n\n\n"
+},
+
+{
+    "location": "man/juno_frontend.html#Juno.selector",
+    "page": "The Juno.jl Front-End",
+    "title": "Juno.selector",
+    "category": "Function",
+    "text": "selector([xs...]) -> x\n\nAllow the user to select one of the xs.\n\nxs should be an iterator of strings. Currently there is no fallback in other environments.\n\n\n\n"
 },
 
 {
@@ -285,7 +357,7 @@ var documenterSearchIndex = {"docs": [
     "page": "The Juno.jl Front-End",
     "title": "Console Interactions",
     "category": "section",
-    "text": "Allow the user to select from a list of options:selector(xs) -> x(Image: selector)Get input in the console:input()(Image: input)"
+    "text": "Juno.jl lets package developers interact with users via the Juno console. For example, you can allow the user to select from a list of options:selector(xs) -> x(Image: selector)or get input in the console:input()(Image: input)The following functions provide this interface:Juno.isactive\nJuno.input\nJuno.selector"
 },
 
 {
