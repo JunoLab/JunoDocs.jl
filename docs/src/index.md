@@ -27,6 +27,7 @@ Pages = [
     "devdocs/dev_install.md",
     "devdocs/package_info.md",
     "devdocs/juno_ci.md"
+    "devdocs/communication.md"
 ]
 Depth = 2
 ```
