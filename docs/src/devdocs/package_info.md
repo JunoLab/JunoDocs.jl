@@ -2,7 +2,7 @@
 
 Julia support in Atom consists of a number of packages for both Julia and Atom:
 
-## Atom Packages
+### Atom Packages
 
 * [atom-bombe](https://github.com/JunoLab/atom-bombe) - Encrypts plain text files
 * [atom-eval](https://github.com/JunoLab/atom-eval) - Super secret stuff.
@@ -18,7 +18,7 @@ Julia support in Atom consists of a number of packages for both Julia and Atom:
 * [uber-juno](https://github.com/JunoLab/uber-juno) - An Atom metapackage which installs
   the Juno IDE.
 
-## Julia Packages
+### Julia Packages
 
 * [Atom.jl](http://github.com/JunoLab/Atom.jl) - This is the language server backend for Juno, the Julia IDE.
 * [Blink.jl](https://github.com/JunoLab/Blink.jl) - An API for communicating with web pages from Julia.

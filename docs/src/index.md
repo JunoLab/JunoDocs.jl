@@ -6,19 +6,19 @@ text editor provided by Github. Juno extends Atom by adding Julia-specific enhan
 such as syntax highlighting, integration with Julia's debugger (Gallium),
 a console for running code, and much more.
 
-## Installation
+### Installation
 
 To install Juno, please see [the installation page](). These installation instructions
 should work for Windows, Mac OSX, and Linux on the current Julia release (v0.5).
 If you wish to use Juno with the Julia nightly version, you may need to [use the
 developer installation]().
 
-## Reporting Issues / Bugs
+### Reporting Issues / Bugs
 
 If you have any issues with this setup, please do report it here or at
 [Juno Discuss](http://discuss.junolab.org). We'll do our best to help you get going.
 
-## User Manual
+### User Manual
 
 The following pages are the user manual. These describe how to install and use
 Juno, along with answer questions most new users encounter.
@@ -33,7 +33,7 @@ Pages = [
 Depth = 2
 ```
 
-## Developer Documentation
+### Developer Documentation
 
 This part of the documentation is for Juno developers. It details how to get
 the bleeding edge Juno installation, how the CI works, and describes the Juno
