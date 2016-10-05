@@ -1,8 +1,8 @@
 # Basic Usage
 
-## The Command Panel
+### The Command Panel
 
-## Common Keyboard Shortcuts
+### Common Keyboard Shortcuts
 
 Atom will need to be reloaded, either by closing and reopening it or by
 running the `Window: Reload` command. At this point, you should find that
@@ -15,3 +15,13 @@ Get started by going into a buffer set to Julia syntax, typing `2+2`, and pressi
 After the client boots you should see the result pop up next to the text. You can
 also work in the Atom REPL by pressing <kbd>C-J C-O</kbd> – just type in the
 input box and <kbd>Shift-Enter</kbd> to evaluate.
+
+#### Adding Your Own Shortcuts
+
+### Using the Plot Pane
+
+### Using the Workspace Pane
+
+### Using the Debugger
+
+### Settings Descriptions

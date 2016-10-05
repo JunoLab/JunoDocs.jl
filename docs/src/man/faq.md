@@ -1,1 +1,61 @@
 # FAQ
+
+### I am having issues, where do I leave a bug report?
+
+Please leave bug reports either [at the discussion board](http://discuss.junolab.org/)
+or [at the Juno.jl Github repository](https://github.com/JunoLab/Juno.jl/issues).
+
+### Some Juno package is using the wrong precompile cache, what do I do?
+
+This problem manifests itself in errors like:
+
+```julia
+WARNING: Method definition
+WARNING: Module Juno with uuid 738353145462472 is missing from the cache.
+ERROR: LoadError: Declaring precompile(false) is not allowed in files that are being precompiled.
+ERROR: LoadError: Failed to precompile Atom to C:\Users...
+```
+
+One way this can occur is from updating Julia versions. However, this has a very
+easy fix. Go into the Julia REPL (not the Juno console in Atom, but the actual
+Julia terminal window) and type in the command:
+
+```julia
+using Atom
+```
+
+That will force Julia to re-compile all of the cache files and should fix the problem.
+
+### What are these warnings in the console?
+
+If you are experiencing warnings like:
+
+```julia
+WARNING: julia-client: can't render lazy
+```
+
+or
+
+```julia
+WARNING: Atom.jl: unrecognised message clearLazy.
+```
+
+there's no reason to be alarmed: these warnings are harmless. They mostly occur
+because Juno is developing very fast, and so the package versions you have may
+be "out of sync". The most common fix is to `Pkg.update()` and so make sure you
+update your Atom packages (a blue box shows up in the in the bottom right corner
+when an update is available).
+
+![UpdateBoxScreenshot]()
+
+If none of these work, again there's no need to worry since these warnings are not
+breaking. Note that if you are on the Julia nightly version, you should expect that these
+warnings may occur, it's just part of being on the bleeding edge.
+
+### How do I use Juno with the Julia Nightly version?
+
+If you want to use Juno with the nightly version use caution: this package is under
+rapid development so do so at your own risk. That being said, the Julia nightly
+should work using the [Developer Install](). Note that this will require you to
+be on master for the Julia and Atom packages, so things will be changing likely
+before documentation changes.

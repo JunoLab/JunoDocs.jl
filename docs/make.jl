@@ -1,6 +1,6 @@
-using Documenter
+using Documenter, Juno
 
-makedocs(modules=Module[],
+makedocs(modules=Module[Juno],
          doctest=false, clean=true,
          format =Documenter.Formats.HTML,
          sitename="Juno Documentation",
