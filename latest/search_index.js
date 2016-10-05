@@ -317,7 +317,31 @@ var documenterSearchIndex = {"docs": [
     "page": "Developer Installation Instructions",
     "title": "Developer Installation Instructions",
     "category": "section",
-    "text": "The Julia packages can be installed by either cloning the repository or though the standard installation (Pkg.add(PkgName)) followed by checking out the master branch (Pkg.checkout(\"PkgName\").To install the latest atom packages, run the commands:apm install https://github.com/JunoLab/atom-ink\napm install https://github.com/JunoLab/atom-julia-clientIt's a good idea to keep these up to date by running Pkg.update() in Julia and syncing the package repos every now and then, which will be in ~/.atom/packages/julia-client and ~/.atom/packages/ink. Note that this installation method for the Atom packages will allow them to be update each commit via the Atom package manager."
+    "text": "These are the developer install instructions. To develop Juno, you need to be on the latest Atom and Julia packages. This install is also relevant to users on Julia's nightlies since this will install fixes which have not be released. However, use caution: this install is not guaranteed to be stable, and getting it to work may require intimate knowledge of Julia as the documentation will likely be behind."
+},
+
+{
+    "location": "devdocs/dev_install.html#Getting-Master-on-the-Atom-Packages-1",
+    "page": "Developer Installation Instructions",
+    "title": "Getting Master on the Atom Packages",
+    "category": "section",
+    "text": "To install the latest atom packages, run the commands:apm install https://github.com/JunoLab/atom-ink\napm install https://github.com/JunoLab/atom-julia-clientIt's a good idea to keep these up to date by running Pkg.update() in Julia and syncing the package repos every now and then, which will be in ~/.atom/packages/julia-client and ~/.atom/packages/ink. Note that this installation method for the Atom packages will allow them to be update each commit via the Atom package manager."
+},
+
+{
+    "location": "devdocs/dev_install.html#Bleeding-Edge-Installs-for-the-Julia-Packages-1",
+    "page": "Developer Installation Instructions",
+    "title": "Bleeding Edge Installs for the Julia Packages",
+    "category": "section",
+    "text": "The Julia packages can be installed by either cloning the repository or though the standard installation (Pkg.add(PkgName)) followed by checking out the master branch (Pkg.checkout(\"PkgName\"). The following code will check out the relevant packages:Pkg.checkout(\"Atom\")\nPkg.checkout(\"Blink\")\nPkg.checkout(\"CodeTools\")\nPkg.checkout(\"DevTools\")\nPkg.checkout(\"Hiccup\")\nPkg.checkout(\"Juno\")\nPkg.checkout(\"LNR\")\nPkg.checkout(\"Media\")"
+},
+
+{
+    "location": "devdocs/dev_install.html#Bleeding-Edge-Features-(Plotting,-Debugging,-etc.)-1",
+    "page": "Developer Installation Instructions",
+    "title": "Bleeding Edge Features (Plotting, Debugging, etc.)",
+    "category": "section",
+    "text": "In order to use the bleeding edge features, you may need to checkout master on the respective repositories. For example, for the latest plotting features, you may need toPkg.checkout(\"Plots\")and/or checkout master on a backend:Pkg.checkout(\"PlotlyJS\")For the latest debugger features, you may need to checkout the full debugger stack. This is done with the following code:Pkg.clone(\"https://github.com/Keno/COFF.jl\")\nPkg.checkout(\"Reactive\")\nPkg.checkout(\"ObjFileBase\")\nPkg.checkout(\"StructIO\")\nPkg.checkout(\"AbstractTrees\")\nPkg.checkout(\"DWARF\")\nPkg.checkout(\"ELF\")\nPkg.checkout(\"MachO\")\nPkg.checkout(\"COFF\")\nPkg.checkout(\"TerminalUI\")\nPkg.checkout(\"ASTInterpreter\")\nPkg.checkout(\"VT100\")\nPkg.checkout(\"JuliaParser\")\nPkg.checkout(\"Gallium\")"
 },
 
 {
