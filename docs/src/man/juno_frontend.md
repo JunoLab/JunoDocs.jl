@@ -9,7 +9,7 @@ in Juno. For example, we can print `info` to the console in a nicer way:
 info("foo")
 ```
 
-![info](assets/info.gif)
+![info](../assets/info.gif)
 
 The following functions provide this interface:
 
@@ -31,7 +31,7 @@ via the command:
 @progress for ...
 ```
 
-![progress](assets/progress.gif)
+![progress](../assets/progress.gif)
 
 The following functions provide this interface:
 
@@ -48,7 +48,7 @@ you can allow the user to select from a list of options:
 selector(xs) -> x
 ```
 
-![selector](assets/selector.gif)
+![selector](../assets/selector.gif)
 
 or get input in the console:
 
@@ -56,7 +56,7 @@ or get input in the console:
 input()
 ```
 
-![input](static/input.gif)
+![input](../static/input.gif)
 
 The following functions provide this interface:
 

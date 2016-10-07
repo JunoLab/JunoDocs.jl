@@ -34,7 +34,7 @@ Download, install and open [Atom](https://atom.io). If you have it already, make
 
 ### Installing the Juno Plugin
 
-In Atom, go to Settings (<kbd>Ctrl</kbd>+<kbd>,</kbd>, or <kbd>Cmd</kbd>+<kbd>,</kbd> on OS X) and go to the "Install" panel.
+In Atom, go to Settings (`Ctrl+,`, or `Cmd+,` on OS X) and go to the "Install" panel.
 
 Type `uber-juno` into the search box and hit enter. Click the install button on the package of the same name.
 
