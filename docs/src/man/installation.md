@@ -38,7 +38,14 @@ In Atom, go to Settings (`Ctrl+,`, or `Cmd+,` on OS X) and go to the "Install" p
 
 Type `uber-juno` into the search box and hit enter. Click the install button on the package of the same name.
 
-Atom will then set up Juno for you, installing the required Atom and Julia packages. Once the setup is done you're good to go!
+Atom will then set up Juno for you, installing the required Atom and Julia packages.
+
+### Installing the Atom-Julia Interaction
+
+The Atom-Julia interaction is automatically installed by using a command in the
+console. To do this, go to Packages > Julia > Open Console to open the console,
+and type in any Julia command like `2+2`. This will start the automatic installation
+feature. When complete, Julia and Atom will be linked.
 
 ### Additional Windows Step: Adding the Julia Path
 
