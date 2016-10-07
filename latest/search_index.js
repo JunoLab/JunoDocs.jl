@@ -109,7 +109,15 @@ var documenterSearchIndex = {"docs": [
     "page": "Installation Instructions",
     "title": "Installing the Juno Plugin",
     "category": "section",
-    "text": "In Atom, go to Settings (Ctrl+,, or Cmd+, on OS X) and go to the \"Install\" panel.Type uber-juno into the search box and hit enter. Click the install button on the package of the same name.Atom will then set up Juno for you, installing the required Atom and Julia packages. Once the setup is done you're good to go!"
+    "text": "In Atom, go to Settings (Ctrl+,, or Cmd+, on OS X) and go to the \"Install\" panel.Type uber-juno into the search box and hit enter. Click the install button on the package of the same name.Atom will then set up Juno for you, installing the required Atom and Julia packages."
+},
+
+{
+    "location": "man/installation.html#Installing-the-Atom-Julia-Interaction-1",
+    "page": "Installation Instructions",
+    "title": "Installing the Atom-Julia Interaction",
+    "category": "section",
+    "text": "The Atom-Julia interaction is automatically installed by using a command in the console. To do this, go to Packages > Julia > Open Console to open the console, and type in any Julia command like 2+2. This will start the automatic installation feature. When complete, Julia and Atom will be linked."
 },
 
 {
@@ -133,7 +141,23 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Usage",
     "title": "Basic Usage",
     "category": "section",
-    "text": ""
+    "text": "These instructions assume that you have already installed Juno. If you have not installed Juno, please see the installation instructions."
+},
+
+{
+    "location": "man/basic_usage.html#Opening-the-Console-Window-1",
+    "page": "Basic Usage",
+    "title": "Opening the Console Window",
+    "category": "section",
+    "text": "To open the console, use the command Ctrl+j then Ctrl+o, or go to Packages > Julia > Open Console. This will open a window with the title console. To use the console, simply type in a command and hit Enter. This will run the command in Julia (the first time a command is run, the connection between Julia and Atom will be installed, taking a bit more time).Using the console is similar to using the REPL. For example, to enter multi-line input, use Ctrl+Enter. Tab completion will be available with a window for selecting the desired completion (which can be scrolled through using the arrow keys). Juno also features enhanced displaying of output types. For example, types like Array show an arrow on the side. By clicking on the header for this output you will expand the array in the console. Note that floating point numbers also truncate their displays as well: to see more digits, click on the number."
+},
+
+{
+    "location": "man/basic_usage.html#Inline-Evaluation-1",
+    "page": "Basic Usage",
+    "title": "Inline Evaluation",
+    "category": "section",
+    "text": "You can evaluate your Julia code inline by navigating your curser to the appropriate code and hitting Ctrl+Enter. This will run the code block that the curser is contained in. For example, if you go to the top of a for loop, it will evaluate the whole for loop, or if it's inside of a function, it will evaluate the function (i.e. create the function). The specifically choose which code to evaluate, highlight the appropriate parts and use Ctrl+Enter. To evaluate the whole script, use Ctrl+Shift+Enter."
 },
 
 {
@@ -141,7 +165,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Usage",
     "title": "The Command Panel",
     "category": "section",
-    "text": ""
+    "text": "To open the command panel, use Ctrl+Shift+p or go to Packages > Command Pallete > Toggle. In the command pallete you can search for common commands. For example, type in \"julia\" and you will see the commands which relate to Julia (and the keyboard shortcuts for the commands)."
 },
 
 {
@@ -149,7 +173,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Usage",
     "title": "Common Keyboard Shortcuts",
     "category": "section",
-    "text": "Atom will need to be reloaded, either by closing and reopening it or by running the Window: Reload command. At this point, you should find that there are a bunch of new Julia commands available in Atom – type \"Julia\" into the command palette to see what's available. If the julia command isn't on your path already, set the Julia path in the julia-client settings panel.Get started by going into a buffer set to Julia syntax, typing 2+2, and pressing <kbd>C-Enter</kbd> (where <kbd>C</kbd> stands for <kbd>Ctrl</kbd>, or <kdb>Cmd</kbd> on OS X). After the client boots you should see the result pop up next to the text. You can also work in the Atom REPL by pressing <kbd>C-J C-O</kbd> – just type in the input box and <kbd>Shift-Enter</kbd> to evaluate."
+    "text": "Atom will need to be reloaded, either by closing and reopening it or by running the Window: Reload command. At this point, you should find that there are a bunch of new Julia commands available in Atom – type \"Julia\" into the command palette to see what's available. If the julia command isn't on your path already, set the Julia path in the julia-client settings panel."
 },
 
 {
