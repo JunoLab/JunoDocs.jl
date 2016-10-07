@@ -109,7 +109,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Installation Instructions",
     "title": "Installing the Juno Plugin",
     "category": "section",
-    "text": "In Atom, go to Settings (<kbd>Ctrl</kbd>+<kbd>,</kbd>, or <kbd>Cmd</kbd>+<kbd>,</kbd> on OS X) and go to the \"Install\" panel.Type uber-juno into the search box and hit enter. Click the install button on the package of the same name.Atom will then set up Juno for you, installing the required Atom and Julia packages. Once the setup is done you're good to go!"
+    "text": "In Atom, go to Settings (Ctrl+,, or Cmd+, on OS X) and go to the \"Install\" panel.Type uber-juno into the search box and hit enter. Click the install button on the package of the same name.Atom will then set up Juno for you, installing the required Atom and Julia packages. Once the setup is done you're good to go!"
 },
 
 {
