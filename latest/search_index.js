@@ -189,7 +189,23 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Usage",
     "title": "Using the Plot Pane",
     "category": "section",
-    "text": ""
+    "text": "Use of the plot pane will be automatic by plotting packages which support the interface. The following describes the package interactions in more depth."
+},
+
+{
+    "location": "man/basic_usage.html#The-Plots.jl-Ecosystem-1",
+    "page": "Basic Usage",
+    "title": "The Plots.jl Ecosystem",
+    "category": "section",
+    "text": "Plots.jl supports usage of the plot pane with compatible backends. The backends which are compatible are:PlotlyJS\nPyPlot\nGRThe plot command will plot to the plot pane by default. To open up a non-plot pane window, use the gui() command. For example,using Plots\npyplot() # Choose a backend\nplot(rand(4,4)) # This will plot to the plot pane\ngui() # This will open up a separate interactive GUI window"
+},
+
+{
+    "location": "man/basic_usage.html#Gadfly-1",
+    "page": "Basic Usage",
+    "title": "Gadfly",
+    "category": "section",
+    "text": "Gadfly also will use the plot pane."
 },
 
 {
@@ -197,7 +213,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Usage",
     "title": "Using the Workspace Pane",
     "category": "section",
-    "text": ""
+    "text": "A workspace pane is available for showing the variables declared in the workspace. To open the pane, go to Packages > Julia > Open Workspace."
 },
 
 {
@@ -213,7 +229,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Usage",
     "title": "Settings Descriptions",
     "category": "section",
-    "text": ""
+    "text": "Julia Path: The location of the Julia binary. This is the command that Atom uses to call Julia. It defaults to the command julia which requires that Julia has been added to the path. If Julia is not in the path, this must be the path to the Julia installation.\nBoot Mode: This is the type of process list that atom-julia-client is using. The default is Basic which only has one process running at a time. Cycler instead has a process queue per window, meaning that if you quit the REPL (Ctrl+j+ Ctrl+o) then there exists an already running process which will seamlessly replace it. Server has a shared process queue between all windows, resulting in less process (2+n vs 2n where n is the number of windows) with more interactions (thus less safe).\nDeprecation Warnings: Checkbox for whether to show the Julia deprecation warnings in the console.\nOptimization Level: Sets the -O optimization level for the Julia LLVM compiler. The default is 3 corresponding to -O3 which is the default for the Julia REPL. Higher levels take longer to compile but produce faster code.\nJulia Options Precompiled:\nEnable Powershell Wrapper (Windows): Use a Powershell wrapper to spawn Julia. This is required in order to allow interrupts.\nNotifications: Enables the popup notifications from evaluations\nError Notifications: Enables the error notification windows to be displayed as well as in the console.\nEnable Menu: Enables the Julia menu in the menu bar. This option requires a restart of Atom for the change to take effect.\nEnable Tool Bar: Shows the Julia icons in the tool bar. This option requires a restart of Atom for the change to take effect.\nMaximum Console Size: Limits the Console history's size. The default value is 10,000. A larger history requires more memory and may slow down Atom, but will allow for more of the display to be saved.\nTerminal. The command which is used to open a terminal.\nErrors to Console: Denotes whether the error messages will be printed to the console.\nLaunch on Startup: Denotes whether the Julia process will be started when the Atom window is opened."
 },
 
 {
