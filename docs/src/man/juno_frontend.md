@@ -56,7 +56,7 @@ or get input in the console:
 input()
 ```
 
-![input](../static/input.gif)
+![input](../assets/input.gif)
 
 The following functions provide this interface:
 
