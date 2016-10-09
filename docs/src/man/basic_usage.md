@@ -9,7 +9,8 @@ To open the console, use the command `Ctrl+j` then `Ctrl+o`, or go to Packages >
 Julia > Open Console. This will open a window with the title console. To use the
 console, simply type in a command and hit `Enter`. This will run the command in
 Julia (the first time a command is run, the connection between Julia and Atom
-will be installed, taking a bit more time).
+will be installed, taking a bit more time). To clear the console, use the command
+`Ctrl+j` followed by `Ctrl+c`.
 
 Using the console is similar to using the REPL. For example, to enter multi-line
 input, use `Ctrl+Enter`. Tab completion will be available with a window for selecting
