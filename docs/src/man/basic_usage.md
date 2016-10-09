@@ -39,11 +39,17 @@ for the commands).
 
 ### Common Keyboard Shortcuts
 
-Atom will need to be reloaded, either by closing and reopening it or by
-running the `Window: Reload` command. At this point, you should find that
-there are a bunch of new Julia commands available in Atom – type "Julia"
-into the command palette to see what's available. If the `julia` command
-isn't on your path already, set the Julia path in the julia-client settings panel.
+For MacOS, replace `Ctrl` by `Cmd`.
+
+- Open the command panel: `Ctrl+Shift+p`
+- Evaluate at the curser: `Ctrl+Enter`
+- Evaluate a whole script: `Ctrl+Shift+Enter`
+- Open the console: `Ctrl+j` `Ctrl+o`
+- Clear the console: `Ctrl+j` `Ctrl+c`
+- Kill the Julia process: `Ctrl+j` `Ctrl+k`
+- Open a REPL: `Ctrl+j` `Ctrl+r`
+- Start Julia: `Ctrl+j` `Ctrl+s`
+- Open the Plot Pane: `Ctrl+j` `Ctrl+p`
 
 #### Adding Your Own Shortcuts
 
