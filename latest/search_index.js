@@ -173,7 +173,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Usage",
     "title": "Common Keyboard Shortcuts",
     "category": "section",
-    "text": "Atom will need to be reloaded, either by closing and reopening it or by running the Window: Reload command. At this point, you should find that there are a bunch of new Julia commands available in Atom – type \"Julia\" into the command palette to see what's available. If the julia command isn't on your path already, set the Julia path in the julia-client settings panel."
+    "text": "For MacOS, replace Ctrl by Cmd.Open the command panel: Ctrl+Shift+p\nEvaluate at the curser: Ctrl+Enter\nEvaluate a whole script: Ctrl+Shift+Enter\nOpen the console: Ctrl+j Ctrl+o\nClear the console: Ctrl+j Ctrl+c\nKill the Julia process: Ctrl+j Ctrl+k\nOpen a REPL: Ctrl+j Ctrl+r\nStart Julia: Ctrl+j Ctrl+s\nOpen the Plot Pane: Ctrl+j Ctrl+p"
 },
 
 {
