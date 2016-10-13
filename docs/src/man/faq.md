@@ -46,7 +46,7 @@ be "out of sync". The most common fix is to `Pkg.update()` and to make sure your
 your Atom packages are up to date (a blue box shows up in the in the bottom right corner
 when an update is available).
 
-![UpdateBoxScreenshot]()
+![UpdateBoxScreenshot](../assets/updatepic.png)
 
 If none of these work, again there's no need to worry since these warnings are not
 breaking. Note that if you are on the Julia nightly version, you should expect that these
