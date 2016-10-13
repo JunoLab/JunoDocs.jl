@@ -42,8 +42,8 @@ WARNING: Atom.jl: unrecognised message clearLazy.
 
 there's no reason to be alarmed: these warnings are harmless. They mostly occur
 because Juno is developing very fast, and so the package versions you have may
-be "out of sync". The most common fix is to `Pkg.update()` and so make sure you
-update your Atom packages (a blue box shows up in the in the bottom right corner
+be "out of sync". The most common fix is to `Pkg.update()` and to make sure your
+your Atom packages are up to date (a blue box shows up in the in the bottom right corner
 when an update is available).
 
 ![UpdateBoxScreenshot]()
