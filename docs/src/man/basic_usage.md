@@ -22,8 +22,8 @@ displays as well: to see more digits, click on the number.
 
 ### Inline Evaluation
 
-You can evaluate your Julia code inline by navigating your curser to the appropriate
-code and hitting `Ctrl+Enter`. This will run the code block that the curser is
+You can evaluate your Julia code inline by navigating your cursor to the appropriate
+code and hitting `Ctrl+Enter`. This will run the code block that the cursor is
 contained in. For example, if you go to the top of a `for` loop, it will evaluate
 the whole for loop, or if it's inside of a function, it will evaluate the function
 (i.e. create the function). The specifically choose which code to evaluate, highlight
@@ -42,7 +42,7 @@ for the commands).
 For MacOS, replace `Ctrl` by `Cmd`.
 
 - Open the command panel: `Ctrl+Shift+p`
-- Evaluate at the curser: `Ctrl+Enter`
+- Evaluate at the cursor: `Ctrl+Enter`
 - Evaluate a whole script: `Ctrl+Shift+Enter`
 - Open the console: `Ctrl+j` `Ctrl+o`
 - Clear the console: `Ctrl+j` `Ctrl+c`
