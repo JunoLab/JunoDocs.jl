@@ -37,7 +37,22 @@ The following functions provide this interface:
 
 ```@docs
 Juno.@progress
+Juno.progress
+Juno.ProgressBar
+Juno.name
+Juno.msg
+Juno.right_text
+Juno.done
 ```
+
+It is recommended to either use the `@progress` macro or the
+```julia
+progress(name = "Foo") do p
+
+end
+```
+notation to ensure that the progress bars are properly unregistered in the
+frontend.
 
 ## Console Interactions
 
