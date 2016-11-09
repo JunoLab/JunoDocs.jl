@@ -157,7 +157,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Usage",
     "title": "Inline Evaluation",
     "category": "section",
-    "text": "You can evaluate your Julia code inline by navigating your curser to the appropriate code and hitting Ctrl+Enter. This will run the code block that the curser is contained in. For example, if you go to the top of a for loop, it will evaluate the whole for loop, or if it's inside of a function, it will evaluate the function (i.e. create the function). The specifically choose which code to evaluate, highlight the appropriate parts and use Ctrl+Enter. To evaluate the whole script, use Ctrl+Shift+Enter."
+    "text": "You can evaluate your Julia code inline by navigating your cursor to the appropriate code and hitting Ctrl+Enter. This will run the code block that the cursor is contained in. For example, if you go to the top of a for loop, it will evaluate the whole for loop, or if it's inside of a function, it will evaluate the function (i.e. create the function). The specifically choose which code to evaluate, highlight the appropriate parts and use Ctrl+Enter. To evaluate the whole script, use Ctrl+Shift+Enter."
 },
 
 {
@@ -173,7 +173,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Usage",
     "title": "Common Keyboard Shortcuts",
     "category": "section",
-    "text": "For MacOS, replace Ctrl by Cmd.Open the command panel: Ctrl+Shift+p\nEvaluate at the curser: Ctrl+Enter\nEvaluate a whole script: Ctrl+Shift+Enter\nOpen the console: Ctrl+j Ctrl+o\nClear the console: Ctrl+j Ctrl+c\nKill the Julia process: Ctrl+j Ctrl+k\nOpen a REPL: Ctrl+j Ctrl+r\nStart Julia: Ctrl+j Ctrl+s\nOpen the Plot Pane: Ctrl+j Ctrl+p"
+    "text": "For MacOS, replace Ctrl by Cmd.Open the command panel: Ctrl+Shift+p\nEvaluate at the cursor: Ctrl+Enter\nEvaluate a whole script: Ctrl+Shift+Enter\nOpen the console: Ctrl+j Ctrl+o\nClear the console: Ctrl+j Ctrl+c\nKill the Julia process: Ctrl+j Ctrl+k\nOpen a REPL: Ctrl+j Ctrl+r\nStart Julia: Ctrl+j Ctrl+s\nOpen the Plot Pane: Ctrl+j Ctrl+p"
 },
 
 {
@@ -269,7 +269,7 @@ var documenterSearchIndex = {"docs": [
     "page": "FAQ",
     "title": "What are these warnings in the console?",
     "category": "section",
-    "text": "If you are experiencing warnings like:WARNING: julia-client: can't render lazyorWARNING: Atom.jl: unrecognised message clearLazy.there's no reason to be alarmed: these warnings are harmless. They mostly occur because Juno is developing very fast, and so the package versions you have may be \"out of sync\". The most common fix is to Pkg.update() and so make sure you update your Atom packages (a blue box shows up in the in the bottom right corner when an update is available).(Image: UpdateBoxScreenshot)If none of these work, again there's no need to worry since these warnings are not breaking. Note that if you are on the Julia nightly version, you should expect that these warnings may occur, it's just part of being on the bleeding edge."
+    "text": "If you are experiencing warnings like:WARNING: julia-client: can't render lazyorWARNING: Atom.jl: unrecognised message clearLazy.there's no reason to be alarmed: these warnings are harmless. They mostly occur because Juno is developing very fast, and so the package versions you have may be \"out of sync\". The most common fix is to Pkg.update() and to make sure your your Atom packages are up to date (a blue box shows up in the in the bottom right corner when an update is available).(Image: UpdateBoxScreenshot)If none of these work, again there's no need to worry since these warnings are not breaking. Note that if you are on the Julia nightly version, you should expect that these warnings may occur, it's just part of being on the bleeding edge."
 },
 
 {
@@ -357,7 +357,55 @@ var documenterSearchIndex = {"docs": [
     "page": "The Juno.jl Front-End",
     "title": "Juno.@progress",
     "category": "Macro",
-    "text": "@progress for i = ...\n\nShow a progress metre for the given loop if possible.\n\n\n\n"
+    "text": "@progress [name] for i = ...\n\nShow a progress metre for the given loop if possible.\n\n\n\n"
+},
+
+{
+    "location": "man/juno_frontend.html#Juno.progress",
+    "page": "The Juno.jl Front-End",
+    "title": "Juno.progress",
+    "category": "Function",
+    "text": "progress(p::ProgressBar, prog::Number)\n\nUpdate p's progress to prog.\n\n\n\nprogress(p::ProgressBar)\n\nSet p to an indeterminate progress bar.\n\n\n\nprogress(f::Function; name = \"\", msg = \"\")\n\nEvaluates f with ProgressBar(name = name, msg = msg) as the argument and calls done on it afterwards. This is guaranteed to clean up the progress bar, even if f errors.\n\n\n\n"
+},
+
+{
+    "location": "man/juno_frontend.html#Juno.ProgressBar",
+    "page": "The Juno.jl Front-End",
+    "title": "Juno.ProgressBar",
+    "category": "Type",
+    "text": "ProgressBar(;name = \"\", msg = \"\")\n\nCreate a new progress bar and register it with Juno, if possible.\n\nTake care to unregister the progress bar by calling done on it, or use the progress(f::Function) syntax, which will handle that automatically.\n\n\n\n"
+},
+
+{
+    "location": "man/juno_frontend.html#Juno.name",
+    "page": "The Juno.jl Front-End",
+    "title": "Juno.name",
+    "category": "Function",
+    "text": "name(p::ProgressBar, m)\n\nUpdate ps name.\n\n\n\n"
+},
+
+{
+    "location": "man/juno_frontend.html#Juno.msg",
+    "page": "The Juno.jl Front-End",
+    "title": "Juno.msg",
+    "category": "Function",
+    "text": "msg(p::ProgressBar, m)\n\nUpdate the message that will be displayed in the frontend when hovering over the corrseponding progress bar.\n\n\n\n"
+},
+
+{
+    "location": "man/juno_frontend.html#Juno.right_text",
+    "page": "The Juno.jl Front-End",
+    "title": "Juno.right_text",
+    "category": "Function",
+    "text": "right_text(p::ProgressBar, m)\n\nUpdate the string that will be displayed to the right of the progress bar.\n\nDefaults to the linearly extrpolated remaining time based upon the time difference between registering a progress bar and the latest update.\n\n\n\n"
+},
+
+{
+    "location": "man/juno_frontend.html#Base.done",
+    "page": "The Juno.jl Front-End",
+    "title": "Base.done",
+    "category": "Function",
+    "text": "done(p::ProgressBar)\n\nRemove p from the frontend.\n\n\n\n"
 },
 
 {
@@ -365,7 +413,7 @@ var documenterSearchIndex = {"docs": [
     "page": "The Juno.jl Front-End",
     "title": "Progress Meters",
     "category": "section",
-    "text": "Juno.jl allows package developers to use the progressbar which is provided in the Atom window. For example, you can easily show a progress meter for a for loop via the command:@progress for ...(Image: progress)The following functions provide this interface:Juno.@progress"
+    "text": "Juno.jl allows package developers to use the progressbar which is provided in the Atom window. For example, you can easily show a progress meter for a for loop via the command:@progress for ...(Image: progress)The following functions provide this interface:Juno.@progress\nJuno.progress\nJuno.ProgressBar\nJuno.name\nJuno.msg\nJuno.right_text\nJuno.doneIt is recommended to either use the @progress macro or theprogress(name = \"Foo\") do p\n\nendnotation to ensure that the progress bars are properly unregistered in the frontend."
 },
 
 {
