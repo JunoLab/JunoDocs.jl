@@ -121,11 +121,27 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "man/installation.html#Additional-Windows-Step:-Adding-the-Julia-Path-1",
+    "location": "man/installation.html#Common-Problems-1",
     "page": "Installation Instructions",
-    "title": "Additional Windows Step: Adding the Julia Path",
+    "title": "Common Problems",
     "category": "section",
-    "text": "If you installed Julia on Windows using the binaries provided by JuliaLang.org, then you will need to add Julia's path to your Atom settings. The settings can be found in Packages > Julia > Settings. Where it says \"Julia Path\" is where the Julia path must be included. The standard Julia installation will place Julia in the following location:C:\\Users\\[USERNAME]\\AppData\\Local\\Julia-0.5.0\\bin\\juliawhere [USERNAME] is your Windows username."
+    "text": "If you experience problems after installing Juno, have a look at the FAQ. In case you can't solve your problem with the instructions here or in the FAQ, then please post at the discussion board and we're  happy to help."
+},
+
+{
+    "location": "man/installation.html#Juno-could-not-be-started.-1",
+    "page": "Installation Instructions",
+    "title": "Juno could not be started.",
+    "category": "section",
+    "text": "Go to Packages > Julia > Settings and change \"Julia Path\" to point to the Julia binary."
+},
+
+{
+    "location": "man/installation.html#MbedTLS-not-properly-installed.-1",
+    "page": "Installation Instructions",
+    "title": "MbedTLS not properly installed.",
+    "category": "section",
+    "text": "If you getERROR: LoadError: MbedTLS not properly installed. Please run Pkg.build(\"MbedTLS\")in the Julia console, first try Pkg.build(\"MbedTLS\") in the Julia REPL. If that errors and you are on Linux, try installing cmake and then calling the above command again."
 },
 
 {
@@ -141,7 +157,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Usage",
     "title": "Basic Usage",
     "category": "section",
-    "text": "These instructions assume that you have already installed Juno. If you have not installed Juno, please see the installation instructions."
+    "text": "These instructions assume that you have already installed Juno. If you have not installed Juno, please see the Installation Instructions."
 },
 
 {
@@ -149,7 +165,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Usage",
     "title": "Opening the Console Window",
     "category": "section",
-    "text": "To open the console, use the command Ctrl+j then Ctrl+o, or go to Packages > Julia > Open Console. This will open a window with the title console. To use the console, simply type in a command and hit Enter. This will run the command in Julia (the first time a command is run, the connection between Julia and Atom will be installed, taking a bit more time). To clear the console, use the command Ctrl+j followed by Ctrl+c.Using the console is similar to using the REPL. For example, to enter multi-line input, use Ctrl+Enter. Tab completion will be available with a window for selecting the desired completion (which can be scrolled through using the arrow keys). Juno also features enhanced displaying of output types. For example, types like Array show an arrow on the side. By clicking on the header for this output you will expand the array in the console. Note that floating point numbers also truncate their displays as well: to see more digits, click on the number."
+    "text": "To open the console, use the command Ctrl+j then Ctrl+o, or go to Packages > Julia > Open Console. This will open a window with the title console. To use the console, simply type in a command and hit Enter. This will run the command in Julia (the first time a command is run, the connection between Julia and Atom will be installed, taking a bit more time). To clear the console, use the command Ctrl+j followed by Ctrl+c.Using the console is similar to using the REPL. For example, to enter multi-line input, use Ctrl+Enter. Tab completion will be available with a window for selecting the desired completion (which can be scrolled through using the arrow keys). Juno also features enhanced displaying of output types. For example, types like Array show an arrow on the side. By clicking on the header for this output you will expand the array in the console. Note that floating point numbers truncate their displays as well: to see more digits, click on the number."
 },
 
 {
@@ -157,7 +173,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Usage",
     "title": "Inline Evaluation",
     "category": "section",
-    "text": "You can evaluate your Julia code inline by navigating your cursor to the appropriate code and hitting Ctrl+Enter. This will run the code block that the cursor is contained in. For example, if you go to the top of a for loop, it will evaluate the whole for loop, or if it's inside of a function, it will evaluate the function (i.e. create the function). The specifically choose which code to evaluate, highlight the appropriate parts and use Ctrl+Enter. To evaluate the whole script, use Ctrl+Shift+Enter."
+    "text": "You can evaluate your Julia code inline by navigating your cursor to the appropriate code and hitting Ctrl+Enter. This will run the code block that the cursor is contained in. For example, if you go to the top of a for loop, it will evaluate the whole for loop, or if it's inside of a function, it will evaluate the function (i.e. create the function). To specifically choose which code to evaluate, highlight the appropriate parts and use Ctrl+Enter. To evaluate the whole script, use Ctrl+Shift+Enter."
 },
 
 {
@@ -173,7 +189,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Usage",
     "title": "Common Keyboard Shortcuts",
     "category": "section",
-    "text": "For MacOS, replace Ctrl by Cmd.Open the command panel: Ctrl+Shift+p\nEvaluate at the cursor: Ctrl+Enter\nEvaluate a whole script: Ctrl+Shift+Enter\nOpen the console: Ctrl+j Ctrl+o\nClear the console: Ctrl+j Ctrl+c\nKill the Julia process: Ctrl+j Ctrl+k\nOpen a REPL: Ctrl+j Ctrl+r\nStart Julia: Ctrl+j Ctrl+s\nOpen the Plot Pane: Ctrl+j Ctrl+p"
+    "text": "For MacOS, replace Ctrl by Cmd.Ctrl+Shift+p - Open the command panel\nCtrl+Enter - Evaluate at the cursor\nCtrl+Shift+Enter - Evaluate the current file\nCtrl+j Ctrl+o - Open the console\nCtrl+j Ctrl+c - Clear the console\nCtrl+j Ctrl+s - Start Julia\nCtrl+j Ctrl+k - Kill the Julia process\nCtrl+j Ctrl+r - Open a REPL\nCtrl+j Ctrl+p - Open the Plot Pane\nCtrl+j Ctrl-d - Get the documentation for the symbol under the cursor\nCtrl+j Ctrl-g - Go to the definition of the symbol under the cursor"
 },
 
 {
@@ -225,11 +241,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "man/basic_usage.html#Settings-Descriptions-1",
+    "location": "man/basic_usage.html#Settings-1",
     "page": "Basic Usage",
-    "title": "Settings Descriptions",
+    "title": "Settings",
     "category": "section",
-    "text": "Julia Path: The location of the Julia binary. This is the command that Atom uses to call Julia. It defaults to the command julia which requires that Julia has been added to the path. If Julia is not in the path, this must be the path to the Julia installation.\nBoot Mode: This is the type of process list that atom-julia-client is using. The default is Basic which only has one process running at a time. Cycler instead has a process queue per window, meaning that if you quit the REPL (Ctrl+j+ Ctrl+o) then there exists an already running process which will seamlessly replace it. Server has a shared process queue between all windows, resulting in less process (2+n vs 2n where n is the number of windows) with more interactions (thus less safe).\nDeprecation Warnings: Checkbox for whether to show the Julia deprecation warnings in the console.\nOptimization Level: Sets the -O optimization level for the Julia LLVM compiler. The default is 3 corresponding to -O3 which is the default for the Julia REPL. Higher levels take longer to compile but produce faster code.\nJulia Options Precompiled:\nEnable Powershell Wrapper (Windows): Use a Powershell wrapper to spawn Julia. This is required in order to allow interrupts.\nNotifications: Enables the popup notifications from evaluations\nError Notifications: Enables the error notification windows to be displayed as well as in the console.\nEnable Menu: Enables the Julia menu in the menu bar. This option requires a restart of Atom for the change to take effect.\nEnable Tool Bar: Shows the Julia icons in the tool bar. This option requires a restart of Atom for the change to take effect.\nMaximum Console Size: Limits the Console history's size. The default value is 10,000. A larger history requires more memory and may slow down Atom, but will allow for more of the display to be saved.\nTerminal. The command which is used to open a terminal.\nErrors to Console: Denotes whether the error messages will be printed to the console.\nLaunch on Startup: Denotes whether the Julia process will be started when the Atom window is opened."
+    "text": "Julia Path: The location of the Julia binary. This is the command that Atom uses to call Julia. It defaults to the command julia which requires that Julia has been added to the path. If Julia is not in the path, this must be the path to the Julia binary.\nBoot Mode: This is the type of process list that atom-julia-client is using.\nThe\ndefault is Basic, which only has one process running at a time.\nCycler instead has a process queue per window, meaning that if you quit the\nREPL (Ctrl+j+ Ctrl+o) then there exists an already running process which will seamlessly replace it.\nServer has a shared process queue between all windows, resulting\nin less processes (2+n vs 2n where n is the number of windows), but is still experimental.\nDeprecation Warnings: Checkbox for whether to show the Julia deprecation warnings in the console.\nOptimization Level: Sets the -O optimization level for the Julia LLVM compiler. The default is 3 corresponding to -O3 which is the default for the Julia REPL.  Higher levels take longer to compile but produce faster code.\nEnable Powershell Wrapper (Windows only): Use a Powershell wrapper to spawn Julia. This is required in order to allow interrupts.\nNotifications: Enables popup notifications when the evaluation finishes.\nError Notifications: When evaluating a script, this will show a popup when errors are encountered instead of only printing the error to the console.\nEnable Menu: Enables the Julia menu in the menu bar. This option requires a restart of Atom for the change to take effect.\nEnable Tool Bar: Shows the Julia icons in the tool bar. This option requires a restart of Atom for the change to take effect.\nMaximum Console Size: Limits the Console history's size (default: 10,000). A larger value will display more entries in the console at the cost of slowing down Atom.\nTerminal: The command which is used to open a new REPL."
 },
 
 {
