@@ -4,7 +4,7 @@ Juno consists of a number of packages for both Julia and Atom:
 
 ### Atom Packages
 * [uber-juno](https://github.com/JunoLab/uber-juno) – An Atom metapackage which installs the Juno IDE.
-* [julia-client](http://github.com/JunoLab/atom-julia-client) – these packages tie everything together. julia-client boots Julia from inside Atom, then communicates with the Atom.jl package to provide e.g. autocompletion and evaluation within the editor.
+* [julia-client](http://github.com/JunoLab/atom-julia-client) – This package ties everything together. julia-client boots Julia from inside Atom, then communicates with the Atom.jl package to provide e.g. autocompletion and evaluation within the editor.
 * [language-julia](https://github.com/JuliaLang/atom-language-julia) – Provides basic language support for Atom, e.g. syntax highlighting.
 * [ink](https://github.com/JunoLab/atom-ink) – Provides generic UI components for building IDEs in Atom (e.g. the console lives here).
 * [latex-completions](https://github.com/JunoLab/atom-latex-completions) – Provides unicode completions for certain $\LaTeX$ commands.
