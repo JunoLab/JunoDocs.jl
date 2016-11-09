@@ -44,19 +44,25 @@ Atom will then set up Juno for you, installing the required Atom and Julia packa
 
 The Atom-Julia interaction is automatically installed by using a command in the
 console. To do this, go to Packages > Julia > Open Console to open the console,
-and type in any Julia command like `2+2`. This will start the automatic installation
-feature. When complete, Julia and Atom will be linked.
+and type in any Julia command like `2+2`. This will start the automatic
+installation feature. When complete, Julia and Atom will be linked.
 
-### Additional Windows Step: Adding the Julia Path
+### Common Problems
 
-If you installed Julia on Windows using the binaries provided by [JuliaLang.org](http://julialang.org/),
-then you will need to add Julia's path to your Atom settings. The settings can be
-found in Packages > Julia > Settings. Where it says "Julia Path" is where the Julia
-path must be included. The standard Julia installation will place Julia in the following
-location:
+If you experience problems after installing Juno, have a look at the [FAQ](@ref).
+In case you can't solve your problem with the instructions here or in the FAQ,
+then please post [at the discussion board](http://discuss.junolab.org/) and we're
+ happy to help.
 
-```shell
-C:\Users\[USERNAME]\AppData\Local\Julia-0.5.0\bin\julia
+#### Juno could not be started.
+Go to Packages > Julia > Settings and change "Julia Path" to point to the Julia
+binary.
+
+#### MbedTLS not properly installed.
+If you get
 ```
-
-where [USERNAME] is your Windows username.
+ERROR: LoadError: MbedTLS not properly installed. Please run Pkg.build("MbedTLS")
+```
+in the Julia console, first try `Pkg.build("MbedTLS")` in the Julia REPL. If
+that errors and you are on Linux, try installing `cmake` and then calling the
+above command again.

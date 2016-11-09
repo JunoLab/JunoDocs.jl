@@ -1,7 +1,8 @@
+
 # Basic Usage
 
 These instructions assume that you have already installed Juno. If you have not
-installed Juno, please see [the installation instructions]().
+installed Juno, please see the [Installation Instructions](@ref).
 
 ### Opening the Console Window
 
@@ -17,7 +18,7 @@ input, use `Ctrl+Enter`. Tab completion will be available with a window for sele
 the desired completion (which can be scrolled through using the arrow keys). Juno
 also features enhanced displaying of output types. For example, types like `Array`
 show an arrow on the side. By clicking on the header for this output you will
-expand the array in the console. Note that floating point numbers also truncate their
+expand the array in the console. Note that floating point numbers truncate their
 displays as well: to see more digits, click on the number.
 
 ### Inline Evaluation
@@ -26,7 +27,7 @@ You can evaluate your Julia code inline by navigating your cursor to the appropr
 code and hitting `Ctrl+Enter`. This will run the code block that the cursor is
 contained in. For example, if you go to the top of a `for` loop, it will evaluate
 the whole for loop, or if it's inside of a function, it will evaluate the function
-(i.e. create the function). The specifically choose which code to evaluate, highlight
+(i.e. create the function). To specifically choose which code to evaluate, highlight
 the appropriate parts and use `Ctrl+Enter`. To evaluate the whole script, use
 `Ctrl+Shift+Enter`.
 
@@ -41,15 +42,17 @@ for the commands).
 
 For MacOS, replace `Ctrl` by `Cmd`.
 
-- Open the command panel: `Ctrl+Shift+p`
-- Evaluate at the cursor: `Ctrl+Enter`
-- Evaluate a whole script: `Ctrl+Shift+Enter`
-- Open the console: `Ctrl+j` `Ctrl+o`
-- Clear the console: `Ctrl+j` `Ctrl+c`
-- Kill the Julia process: `Ctrl+j` `Ctrl+k`
-- Open a REPL: `Ctrl+j` `Ctrl+r`
-- Start Julia: `Ctrl+j` `Ctrl+s`
-- Open the Plot Pane: `Ctrl+j` `Ctrl+p`
+- `Ctrl+Shift+p` - Open the command panel
+- `Ctrl+Enter` - Evaluate at the cursor
+- `Ctrl+Shift+Enter` - Evaluate the current file
+- `Ctrl+j Ctrl+o` - Open the console
+- `Ctrl+j Ctrl+c` - Clear the console
+- `Ctrl+j Ctrl+s` - Start Julia
+- `Ctrl+j Ctrl+k` - Kill the Julia process
+- `Ctrl+j Ctrl+r` - Open a REPL
+- `Ctrl+j Ctrl+p` - Open the Plot Pane
+- `Ctrl+j Ctrl-d` - Get the documentation for the symbol under the cursor
+- `Ctrl+j Ctrl-g` - Go to the definition of the symbol under the cursor
 
 #### Adding Your Own Shortcuts
 
@@ -88,36 +91,36 @@ To open the pane, go to Packages > Julia > Open Workspace.
 
 ### Using the Debugger
 
-### Settings Descriptions
+### Settings
 
-- Julia Path: The location of the Julia binary. This is the command that Atom uses
+- **Julia Path**: The location of the Julia binary. This is the command that Atom uses
   to call Julia. It defaults to the command `julia` which requires that Julia
   has been added to the path. If Julia is not in the path, this must be the path
-  to the Julia installation.
-- Boot Mode: This is the type of process list that atom-julia-client is using. The
-  default is `Basic` which only has one process running at a time. `Cycler` instead
-  has a process queue per window, meaning that if you quit the REPL (`Ctrl+j`+ `Ctrl+o`) then there exists an already running process which will seamlessly
-  replace it. `Server` has a shared process queue between all windows, resulting
-  in less process (2+n vs 2n where n is the number of windows) with more interactions (thus less safe).
-- Deprecation Warnings: Checkbox for whether to show the Julia deprecation warnings
+  to the Julia binary.
+- **Boot Mode**: This is the type of process list that atom-julia-client is using.
+  -  The
+  default is `Basic`, which only has one process running at a time.
+  - `Cycler` instead has a process queue per window, meaning that if you quit the
+  REPL (`Ctrl+j`+ `Ctrl+o`) then there exists an already running process which will
+  seamlessly replace it.
+  - `Server` has a shared process queue between all windows, resulting
+  in less processes (`2+n` vs `2n` where `n` is the number of windows), but is
+  still experimental.
+- **Deprecation Warnings**: Checkbox for whether to show the Julia deprecation warnings
   in the console.
-- Optimization Level: Sets the `-O` optimization level for the Julia LLVM compiler.
-  The default is 3 corresponding to `-O3` which is the default for the Julia REPL. Higher levels take longer to compile but produce faster code.
-- Julia Options Precompiled:
-- Enable Powershell Wrapper (Windows): Use a Powershell wrapper to spawn Julia.
+- **Optimization Level**: Sets the `-O` optimization level for the Julia LLVM compiler.
+  The default is `3` corresponding to `-O3` which is the default for the Julia REPL.
+   Higher levels take longer to compile but produce faster code.
+- **Enable Powershell Wrapper** (Windows only): Use a Powershell wrapper to spawn Julia.
   This is required in order to allow interrupts.
-- Notifications: Enables the popup notifications from evaluations
-- Error Notifications: Enables the error notification windows to be displayed as
-  well as in the console.
-- Enable Menu: Enables the Julia menu in the menu bar. This option requires a
+- **Notifications**: Enables popup notifications when the evaluation finishes.
+- **Error Notifications**: When evaluating a script, this will show a popup when
+  errors are encountered instead of only printing the error to the console.
+- **Enable Menu**: Enables the Julia menu in the menu bar. This option requires a
   restart of Atom for the change to take effect.
-- Enable Tool Bar: Shows the Julia icons in the tool bar. This option requires a
+- **Enable Tool Bar**: Shows the Julia icons in the tool bar. This option requires a
   restart of Atom for the change to take effect.
-- Maximum Console Size: Limits the Console history's size. The default value is
-  10,000. A larger history requires more memory and may slow down Atom, but will
-  allow for more of the display to be saved.
-- Terminal. The command which is used to open a terminal.
-- Errors to Console: Denotes whether the error messages will be printed to the
-  console.
-- Launch on Startup: Denotes whether the Julia process will be started when the
-  Atom window is opened.
+- **Maximum Console Size**: Limits the Console history's size (default: 10,000).
+  A larger value will display more entries in the console at the cost of slowing
+  down Atom.
+- **Terminal**: The command which is used to open a new REPL.
