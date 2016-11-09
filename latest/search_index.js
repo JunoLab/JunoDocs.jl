@@ -565,7 +565,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Juno Package Information",
     "title": "Atom Packages",
     "category": "section",
-    "text": "uber-juno – An Atom metapackage which installs the Juno IDE.\njulia-client – these packages tie everything together. julia-client boots Julia from inside Atom, then communicates with the Atom.jl package to provide e.g. autocompletion and evaluation within the editor.\nlanguage-julia – Provides basic language support for Atom, e.g. syntax highlighting.\nink – Provides generic UI components for building IDEs in Atom (e.g. the console lives here).\nlatex-completions – Provides unicode completions for certain LaTeX commands.\nindent-detective – Tries to work out the indentation settings of your current file, sublime-style."
+    "text": "uber-juno – An Atom metapackage which installs the Juno IDE.\njulia-client – This package ties everything together. julia-client boots Julia from inside Atom, then communicates with the Atom.jl package to provide e.g. autocompletion and evaluation within the editor.\nlanguage-julia – Provides basic language support for Atom, e.g. syntax highlighting.\nink – Provides generic UI components for building IDEs in Atom (e.g. the console lives here).\nlatex-completions – Provides unicode completions for certain LaTeX commands.\nindent-detective – Tries to work out the indentation settings of your current file, sublime-style."
 },
 
 {
