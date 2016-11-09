@@ -557,7 +557,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Juno Package Information",
     "title": "Juno Package Information",
     "category": "section",
-    "text": "Julia support in Atom consists of a number of packages for both Julia and Atom:"
+    "text": "Juno consists of a number of packages for both Julia and Atom:"
 },
 
 {
@@ -565,7 +565,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Juno Package Information",
     "title": "Atom Packages",
     "category": "section",
-    "text": "atom-bombe - Encrypts plain text files\natom-eval - Super secret stuff.\natom-indent-detective - Tries to work out the indentation settings of your current file, sublime-style\nlanguage-julia – Provides basic language support for Atom, e.g. syntax highlighting.\nink – Provides generic UI components for building IDEs in Atom (e.g. the console lives here).\njulia-client – these packages tie everything together. julia-client boots Julia from inside Atom, then communicates with the Atom.jl package to provide e.g. autocompletion and evaluation within the editor.\nuber-juno - An Atom metapackage which installs the Juno IDE."
+    "text": "uber-juno – An Atom metapackage which installs the Juno IDE.\njulia-client – these packages tie everything together. julia-client boots Julia from inside Atom, then communicates with the Atom.jl package to provide e.g. autocompletion and evaluation within the editor.\nlanguage-julia – Provides basic language support for Atom, e.g. syntax highlighting.\nink – Provides generic UI components for building IDEs in Atom (e.g. the console lives here).\nlatex-completions – Provides unicode completions for certain LaTeX commands.\nindent-detective – Tries to work out the indentation settings of your current file, sublime-style."
 },
 
 {
@@ -573,7 +573,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Juno Package Information",
     "title": "Julia Packages",
     "category": "section",
-    "text": "Atom.jl - This is the language server backend for Juno, the Julia IDE.\nBlink.jl - An API for communicating with web pages from Julia.\nCodeTools.jl – Provides backend editor support for Julia, e.g. autocompletion and evaluation.\nDevTools.jl - Graphical displays for Julia types.\nHiccup.jl - A library designed to make HTML from Julia.\nJuno.jl - The frontend API. Provides components for package developers and users to interact with Juno.\nLNR.jl - Parser for handwritten text where  line and column information is significant.\nMedia.jl - The display system which enables the user handle multiple input/output devices and decides what media types get displayed where."
+    "text": "Juno.jl – The frontend API. Provides components for package developers and users to interact with Juno.\nAtom.jl – This is the language server backend for Juno, the Julia IDE.\nBlink.jl – An API for communicating with web pages from Julia.\nCodeTools.jl – Provides backend editor support for Julia, e.g. autocompletion and evaluation.\nHiccup.jl – A library designed to make HTML from Julia.\nLNR.jl – Parser for handwritten text where line and column information is significant.\nMedia.jl – The display system which enables the user handle multiple input/output devices and decides what media types get displayed where."
 },
 
 {
