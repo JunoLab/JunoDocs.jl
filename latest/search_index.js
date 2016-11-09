@@ -13,7 +13,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Home",
     "title": "The Juno IDE Documentation",
     "category": "section",
-    "text": "Juno is an Integrated Development Environment (IDE) for the Julia language. It provides powerful tools to help you develop code. Juno is built on Atom, a text editor a text editor provided by Github. Juno consists of both Julia and Atom packages in order add Julia-specific enhancements, such as syntax highlighting, a plot pane, integration with Julia's debugger (Gallium), a console for running code, and much more."
+    "text": "Juno is an Integrated Development Environment (IDE) for the Julia language. It provides powerful tools to help you develop code. Juno is built on Atom, a text editor provided by Github. Juno consists of both Julia and Atom packages in order to add Julia-specific enhancements, such as syntax highlighting, a plot pane, integration with Julia's debugger (Gallium), a console for running code, and much more."
 },
 
 {
@@ -21,7 +21,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Home",
     "title": "Installation",
     "category": "section",
-    "text": "To install Juno, please see the installation page. These installation instructions should work for Windows, Mac OSX, and Linux on the current Julia release (v0.5). If you wish to use Juno with the Julia nightly version, you may need to use the developer installation."
+    "text": "To install Juno, please see the Installation Instructions. These installation instructions should work for Windows, Mac OSX, and Linux on the current Julia release (v0.5). If you wish to use Juno with the Julia nightly version, you may need to use the Developer Installation Instructions."
 },
 
 {
@@ -29,7 +29,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Home",
     "title": "Reporting Issues / Bugs",
     "category": "section",
-    "text": "If you have any issues with this setup, please do report it here or at Juno Discuss. We'll do our best to help you get going."
+    "text": "If you have any issues with this setup, please do report them at discuss.junolab.org. We'll do our best to help you get going."
 },
 
 {
