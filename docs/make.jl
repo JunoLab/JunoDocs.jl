@@ -22,7 +22,7 @@ makedocs(modules=Module[Juno],
 
 
 deploydocs(
-   repo = "github.com/ChrisRackauckas/JunoDocs.jl.git",
+   repo = "github.com/JunoLab/JunoDocs.jl.git",
    target = "build",
    deps = nothing,
    make = nothing)
