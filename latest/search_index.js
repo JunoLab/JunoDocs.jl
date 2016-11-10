@@ -233,9 +233,17 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "man/basic_usage.html#Using-the-Debugger-1",
+    "location": "man/basic_usage.html#Enhanced-Rendering-1",
     "page": "Basic Usage",
-    "title": "Using the Debugger",
+    "title": "Enhanced Rendering",
+    "category": "section",
+    "text": "Juno's enhanced rendering ssytem makes it easy to view complex types and large arrays by being able to fold the values. This is naturally done in the Juno console, but is not shown for standard prints. In order to print using this special rendering, use the render function from Media.jl. This function is automatically imported to Main upon starting the Julia process, and thus can be accessed via Main.Media.render. For example, one can debug by adding print statements like:Main.Media.render(a)and a will use the special Juno console rendering."
+},
+
+{
+    "location": "man/basic_usage.html#Using-the-Debugger-Gallium.jl-1",
+    "page": "Basic Usage",
+    "title": "Using the Debugger Gallium.jl",
     "category": "section",
     "text": ""
 },
