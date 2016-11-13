@@ -197,7 +197,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Usage",
     "title": "Adding Your Own Shortcuts",
     "category": "section",
-    "text": ""
+    "text": "You can add custom commands and keybindings to julia, should you so wish. To do that, add something like the following to your init.coffeeatom.packages.onDidActivatePackage (p) ->\n  if p.name is 'julia-client'\n    juno = p.mainModule\n\n    atom.commands.add '.item-views > atom-text-editor', 'julia-client:clear-console-and-run-file', ->\n      juno.runtime.evaluation.evalAll()\n      juno.runtime.console.reset()\nand'.platform-win32 .item-views > atom-text-editor[data-grammar=\"source julia\"]':\n  'ctrl-shift-alt-enter': 'julia-client:clear-console-and-run-file'to your keymap.cson. You can get to both files via Settings > Open Config Folder.Note that you will need to muck around with julia-client's internals, so your code might break on new releases. You'll also need to figure out which functions you can use for what – julia-client's commands will probably be helpful for that."
 },
 
 {
