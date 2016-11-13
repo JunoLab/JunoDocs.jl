@@ -56,6 +56,26 @@ For MacOS, replace `Ctrl` by `Cmd`.
 
 #### Adding Your Own Shortcuts
 
+You can add custom commands and keybindings to julia, should you so wish. To do that, add something like the following to your `init.coffee`
+```coffee
+atom.packages.onDidActivatePackage (p) ->
+  if p.name is 'julia-client'
+    juno = p.mainModule
+
+    atom.commands.add '.item-views > atom-text-editor', 'julia-client:clear-console-and-run-file', ->
+      juno.runtime.evaluation.evalAll()
+      juno.runtime.console.reset()
+
+```
+and
+```cson
+'.platform-win32 .item-views > atom-text-editor[data-grammar="source julia"]':
+  'ctrl-shift-alt-enter': 'julia-client:clear-console-and-run-file'
+```
+to your `keymap.cson`.
+
+Note that you will need to muck around with julia-client's internals, so your code might break on new releases. You'll also need to figure out which functions you can use for what -- julia-client's [commands](https://github.com/JunoLab/atom-julia-client/blob/master/lib/package/commands.coffee) will probably be helpful for that.
+
 ### Using the Plot Pane
 
 Use of the plot pane will be automatic by plotting packages which support the
