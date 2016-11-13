@@ -99,8 +99,8 @@ if you imported Juno, then the `render` function will be available. `render`
 will also be available at the REPL.
 
 For interactive usage inside of a module which does not import Main (i.e. during
-package development), note that this function is automatically imported to `Main` 
-upon starting the Julia process, and thus can be accessed via `Main.Juno.render`. 
+package development), note that this function is automatically imported to `Main`
+upon starting the Julia process, and thus can be accessed via `Main.Juno.render`.
 For example, one can debug by adding print statements like:
 
 ```julia
@@ -114,34 +114,17 @@ not require/use Juno.jl.
 
 ### Settings
 
-- **Julia Path**: The location of the Julia binary. This is the command that Atom uses
-  to call Julia. It defaults to the command `julia` which requires that Julia
-  has been added to the path. If Julia is not in the path, this must be the path
-  to the Julia binary.
+- **Julia Path**: The location of the Julia binary. This is the command that Atom uses to call Julia. It defaults to the command `julia` which requires that Julia has been added to the path. If Julia is not in the path, this must be the path to the Julia binary.
 - **Boot Mode**: This is the type of process list that atom-julia-client is using.
-  -  The
-  default is `Basic`, which only has one process running at a time.
-  - `Cycler` instead has a process queue per window, meaning that if you quit the
-  REPL (`Ctrl+j`+ `Ctrl+o`) then there exists an already running process which will
-  seamlessly replace it.
-  - `Server` has a shared process queue between all windows, resulting
-  in less processes (`2+n` vs `2n` where `n` is the number of windows), but is
-  still experimental.
-- **Deprecation Warnings**: Checkbox for whether to show the Julia deprecation warnings
-  in the console.
-- **Optimization Level**: Sets the `-O` optimization level for the Julia LLVM compiler.
-  The default is `3` corresponding to `-O3` which is the default for the Julia REPL.
-   Higher levels take longer to compile but produce faster code.
-- **Enable Powershell Wrapper** (Windows only): Use a Powershell wrapper to spawn Julia.
-  This is required in order to allow interrupts.
+  -  The default is `Basic`, which only has one process running at a time.
+  - `Cycler` instead has a process queue per window, meaning that if you quit the REPL (`Ctrl+j`+ `Ctrl+o`) then there exists an already running process which will seamlessly replace it.
+  - `Server` has a shared process queue between all windows, resulting in less processes (`2+n` vs `2n` where `n` is the number of windows), but is still experimental.
+- **Deprecation Warnings**: Checkbox for whether to show the Julia deprecation warnings in the console.
+- **Optimization Level**: Sets the `-O` optimization level for the Julia LLVM compiler. The default is `3` corresponding to `-O3` which is the default for the Julia REPL. Higher levels take longer to compile but produce faster code.
+- **Enable Powershell Wrapper** (Windows only): Use a Powershell wrapper to spawn Julia. This is required in order to allow interrupts.
 - **Notifications**: Enables popup notifications when the evaluation finishes.
-- **Error Notifications**: When evaluating a script, this will show a popup when
-  errors are encountered instead of only printing the error to the console.
-- **Enable Menu**: Enables the Julia menu in the menu bar. This option requires a
-  restart of Atom for the change to take effect.
-- **Enable Tool Bar**: Shows the Julia icons in the tool bar. This option requires a
-  restart of Atom for the change to take effect.
-- **Maximum Console Size**: Limits the Console history's size (default: 10,000).
-  A larger value will display more entries in the console at the cost of slowing
-  down Atom.
+- **Error Notifications**: When evaluating a script, this will show a popup when errors are encountered instead of only printing the error to the console.
+- **Enable Menu**: Enables the Julia menu in the menu bar. This option requires a restart of Atom for the change to take effect.
+- **Enable Tool Bar**: Shows the Julia icons in the tool bar. This option requires a restart of Atom for the change to take effect.
+- **Maximum Console Size**: Limits the Console history's size (default: 10,000). A larger value will display more entries in the console at the cost of slowing down Atom.
 - **Terminal**: The command which is used to open a new REPL.
