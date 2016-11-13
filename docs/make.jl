@@ -24,5 +24,7 @@ makedocs(modules=Module[Juno],
 deploydocs(
    repo = "github.com/JunoLab/JunoDocs.jl.git",
    target = "build",
+   osname = "linux",
+   julia = "0.5",
    deps = nothing,
    make = nothing)
