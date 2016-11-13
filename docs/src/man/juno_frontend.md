@@ -72,7 +72,7 @@ Juno.Clipboard
 Juno.PlotPane
 ```
 
-There are `render` methods for all the HTML primitives defined in [Hiccup.jl](https://github.com/JunoLab/Hiccup.jl) as well as for certain higher-level elements from Juno.jl
+There are `render` methods for all the HTML primitives defined in [Hiccup.jl](https://github.com/JunoLab/Hiccup.jl) as well as for certain higher-level elements from Juno.jl or even Base
 ```@docs
 Juno.Tree
 Juno.LazyTree
@@ -80,6 +80,7 @@ Juno.SubTree
 Juno.Link
 Juno.Table
 Juno.Row
+Base.Text
 ```
 
 
