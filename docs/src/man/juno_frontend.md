@@ -1,9 +1,20 @@
 # The Juno.jl Front-End
+Juno provides some functionality using Atom's UI, which will usually have a
+fallback for use in other environments.
+
+The `isactive()` function will provide an interface for figuring out whether the
+current session is running within Juno:
+
+```@docs
+Juno.isactive
+```
 
 ## Enhanced Display
 
 Juno.jl includes features which allow package developers to created enhanced displays
-in Juno. For example, we can print `info` to the console in a nicer way:
+in Juno.
+
+For example, we can print `info` to the console in a nicer way:
 
 ```julia
 info("foo")
@@ -11,14 +22,70 @@ info("foo")
 
 ![info](../assets/info.gif)
 
-The following functions provide this interface:
+```@docs
+Juno.info
+```
+
+or provide structured display for arbitrary objects (similar to `Base.dump`)
+
+![structure](../assets/structure.png)
 
 ```@docs
-Media.media
-Media.@media
-Media.setdisplay
-Media.getdisplay
-Juno.info
+Juno.structure
+```
+
+### Display system
+
+For a types that have no custom rendering defined (see below), Juno's display system will fall back to
+- `show`, if there's a `show` method more specific than the catch-all fallback method `show(io, ::Any)` or
+- lazy structured display similar to `Juno.structure` otherwise.
+
+To change how Juno displays a type
+```julia
+type CustomType
+  field_a
+  field_b
+end
+```
+it's necessary to add a new `Juno.render` method for that type:
+```julia
+function Juno.render(i::Juno.Inline, x::CustomType)
+  Juno.render(i, Juno.Tree(Text(x.field_a), [Text(field_b)]))
+end
+```
+or, using the more convenient `Juno.@render` macro, which calls `Juno.render` on it's first argument (`Juno.Inline` in this case) and whatever it's body evaluates into:
+```julia
+Juno.@render Juno.Inline x::CustomType begin
+  Juno.Tree(Text(x.field_a), [Text(x.field_b)])
+end
+```
+```@docs
+Juno.render
+Juno.@render
+```
+![custom rendering](../assets/custom_rendering.png)
+
+`Juno.Inline` is one of the predefined rendering contexts defined in Juno:
+```@docs
+Juno.Inline
+Juno.Clipboard
+Juno.PlotPane
+```
+
+There are `render` methods for all the HTML primitives defined in [Hiccup.jl](https://github.com/JunoLab/Hiccup.jl) as well as for certain higher-level elements from Juno.jl
+```@docs
+Juno.Tree
+Juno.LazyTree
+Juno.SubTree
+Juno.Link
+Juno.Table
+Juno.Row
+```
+
+
+Should you wish to render something in the `PlotPane`, you can get it's dimensions via
+```@docs
+Juno.plotsize
 ```
 
 ## Progress Meters
@@ -54,29 +121,21 @@ end
 notation to ensure that the progress bars are properly unregistered in the
 frontend.
 
-## Console Interactions
+## Interaction
 
-Juno.jl lets package developers interact with users via the Juno console. For example,
+Juno.jl lets package developers interact with users via the Atom frontend. For example,
 you can allow the user to select from a list of options:
 
-```julia
-selector(xs) -> x
+```@docs
+Juno.selector
 ```
 
 ![selector](../assets/selector.gif)
 
 or get input in the console:
 
-```julia
-input()
+```@docs
+Juno.input
 ```
 
 ![input](../assets/input.gif)
-
-The following functions provide this interface:
-
-```@docs
-Juno.isactive
-Juno.input
-Juno.selector
-```
