@@ -72,7 +72,7 @@ and
 '.platform-win32 .item-views > atom-text-editor[data-grammar="source julia"]':
   'ctrl-shift-alt-enter': 'julia-client:clear-console-and-run-file'
 ```
-to your `keymap.cson`.
+to your `keymap.cson`. You can get to both files via Settings > Open Config Folder.
 
 Note that you will need to muck around with julia-client's internals, so your code might break on new releases. You'll also need to figure out which functions you can use for what -- julia-client's [commands](https://github.com/JunoLab/atom-julia-client/blob/master/lib/package/commands.coffee) will probably be helpful for that.
 
