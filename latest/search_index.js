@@ -321,43 +321,19 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "man/juno_frontend.html#Juno.isactive",
+    "page": "The Juno.jl Front-End",
+    "title": "Juno.isactive",
+    "category": "Function",
+    "text": "isactive()\n\nWill return true when the current Julia process is connected to a running Juno frontend.\n\n\n\n"
+},
+
+{
     "location": "man/juno_frontend.html#The-Juno.jl-Front-End-1",
     "page": "The Juno.jl Front-End",
     "title": "The Juno.jl Front-End",
     "category": "section",
-    "text": ""
-},
-
-{
-    "location": "man/juno_frontend.html#Media.media",
-    "page": "The Juno.jl Front-End",
-    "title": "Media.media",
-    "category": "Function",
-    "text": "media(T) gives the media type of the type T. The default is Textual.\n\nmedia(Gadfly.Plot) == Media.Plot\n\n\n\n"
-},
-
-{
-    "location": "man/juno_frontend.html#Media.@media",
-    "page": "The Juno.jl Front-End",
-    "title": "Media.@media",
-    "category": "Macro",
-    "text": "Similar to abstract:\n\n@media Foo\n\ndefines Foo, as well as FooT, the type representing Foo and its descendants (which is useful for dispatch).\n\n@media Bar <: Foo\nBar::FooT\n\n\n\n"
-},
-
-{
-    "location": "man/juno_frontend.html#Media.setdisplay",
-    "page": "The Juno.jl Front-End",
-    "title": "Media.setdisplay",
-    "category": "Function",
-    "text": "setdisplay([input], T, output)\n\nDisplay T objects using output when produced by input.\n\nT is an object type or media type, e.g. Gadfly.Plot or Media.Graphical.\n\ndisplay(Editor(), Image, Console())\n\n\n\n"
-},
-
-{
-    "location": "man/juno_frontend.html#Media.getdisplay",
-    "page": "The Juno.jl Front-End",
-    "title": "Media.getdisplay",
-    "category": "Function",
-    "text": "getdisplay(T)\n\nFind out what output device T will display on.\n\n\n\n"
+    "text": "Juno provides some functionality using Atom's UI, which will usually have a fallback for use in other environments.The isactive() function will provide an interface for figuring out whether the current session is running within Juno:Juno.isactive"
 },
 
 {
@@ -369,11 +345,35 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "man/juno_frontend.html#Juno.structure",
+    "page": "The Juno.jl Front-End",
+    "title": "Juno.structure",
+    "category": "Function",
+    "text": "structure(x)\n\nDisplay x's underlying representation, rather than using its normal display method. For example, structure(:(2x+1)) displays the Expr object with its head and args fields instead of printing the expression.\n\n\n\n"
+},
+
+{
     "location": "man/juno_frontend.html#Enhanced-Display-1",
     "page": "The Juno.jl Front-End",
     "title": "Enhanced Display",
     "category": "section",
-    "text": "Juno.jl includes features which allow package developers to created enhanced displays in Juno. For example, we can print info to the console in a nicer way:info(\"foo\")(Image: info)The following functions provide this interface:Media.media\nMedia.@media\nMedia.setdisplay\nMedia.getdisplay\nJuno.info"
+    "text": "Juno.jl includes features which allow package developers to created enhanced displays in Juno.For example, we can print info to the console in a nicer way:info(\"foo\")(Image: info)Juno.infoor provide structured display for arbitrary objects (similar to Base.dump)(Image: structure)Juno.structure"
+},
+
+{
+    "location": "man/juno_frontend.html#Juno.plotsize",
+    "page": "The Juno.jl Front-End",
+    "title": "Juno.plotsize",
+    "category": "Function",
+    "text": "plotsize()\n\nGet the size of Juno's plot pane in px. Does not yet have a fallback for other environments.\n\n\n\n"
+},
+
+{
+    "location": "man/juno_frontend.html#Display-system-1",
+    "page": "The Juno.jl Front-End",
+    "title": "Display system",
+    "category": "section",
+    "text": "For a types that have no custom rendering defined (see below), Juno's display system will fall back toshow, if there's a show method more specific than the catch-all fallback method show(io, ::Any) or\nlazy structured display similar to Juno.structure otherwise.To change how Juno displays a typetype CustomType\n  field_a\n  field_b\nendit's necessary to add a new Juno.render method for that type:function Juno.render(i::Juno.Inline, x::CustomType)\n  Juno.render(i, Juno.Tree(Text(x.field_a), [Text(field_b)]))\nendor, using the more convenient Juno.@render macro, which calls Juno.render on it's first argument (Juno.Inline in this case) and whatever it's body evaluates into:Juno.@render Juno.Inline x::CustomType begin\n  Juno.Tree(Text(x.field_a), [Text(x.field_b)])\nendJuno.render\nJuno.@render(Image: custom rendering)Juno.Inline is one of the predefined rendering contexts defined in Juno:Juno.Inline\nJuno.Clipboard\nJuno.PlotPaneThere are render methods for all the HTML primitives defined in Hiccup.jl as well as for certain higher-level elements from Juno.jlJuno.Tree\nJuno.LazyTree\nJuno.SubTree\nJuno.Link\nJuno.Table\nJuno.RowShould you wish to render something in the PlotPane, you can get it's dimensions viaJuno.plotsize"
 },
 
 {
@@ -389,7 +389,7 @@ var documenterSearchIndex = {"docs": [
     "page": "The Juno.jl Front-End",
     "title": "Juno.progress",
     "category": "Function",
-    "text": "progress(p::ProgressBar, prog::Number)\n\nUpdate p's progress to prog.\n\n\n\nprogress(p::ProgressBar)\n\nSet p to an indeterminate progress bar.\n\n\n\nprogress(f::Function; name = \"\", msg = \"\")\n\nEvaluates f with ProgressBar(name = name, msg = msg) as the argument and calls done on it afterwards. This is guaranteed to clean up the progress bar, even if f errors.\n\n\n\n"
+    "text": "progress(p::ProgressBar, prog::Number)\n\nUpdate p's progress to prog.\n\n\n\nprogress(p::ProgressBar)\n\nSet p to an indeterminate progress bar.\n\n\n\nprogress(f::Function; name = \"\", msg = \"\")\n\nEvaluates f with p = ProgressBar(name = name, msg = msg) as the argument and calls done(p) afterwards. This is guaranteed to clean up the progress bar, even if f errors.\n\n\n\n"
 },
 
 {
@@ -441,11 +441,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "man/juno_frontend.html#Juno.isactive",
+    "location": "man/juno_frontend.html#Juno.selector",
     "page": "The Juno.jl Front-End",
-    "title": "Juno.isactive",
+    "title": "Juno.selector",
     "category": "Function",
-    "text": "isactive()\n\nWill return true when the current Julia process is connected to a running Juno frontend.\n\n\n\n"
+    "text": "selector([xs...]) -> x\n\nAllow the user to select one of the xs.\n\nxs should be an iterator of strings. Currently there is no fallback in other environments.\n\n\n\n"
 },
 
 {
@@ -457,19 +457,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "man/juno_frontend.html#Juno.selector",
+    "location": "man/juno_frontend.html#Interaction-1",
     "page": "The Juno.jl Front-End",
-    "title": "Juno.selector",
-    "category": "Function",
-    "text": "selector([xs...]) -> x\n\nAllow the user to select one of the xs.\n\nxs should be an iterator of strings. Currently there is no fallback in other environments.\n\n\n\n"
-},
-
-{
-    "location": "man/juno_frontend.html#Console-Interactions-1",
-    "page": "The Juno.jl Front-End",
-    "title": "Console Interactions",
+    "title": "Interaction",
     "category": "section",
-    "text": "Juno.jl lets package developers interact with users via the Juno console. For example, you can allow the user to select from a list of options:selector(xs) -> x(Image: selector)or get input in the console:input()(Image: input)The following functions provide this interface:Juno.isactive\nJuno.input\nJuno.selector"
+    "text": "Juno.jl lets package developers interact with users via the Atom frontend. For example, you can allow the user to select from a list of options:Juno.selector(Image: selector)or get input in the console:Juno.input(Image: input)"
 },
 
 {
