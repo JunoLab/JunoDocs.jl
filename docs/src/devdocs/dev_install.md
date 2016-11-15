@@ -1,7 +1,5 @@
 # HowTo for installing bleeding-edge (a.k.a. Nightly/Master) Juno
 
-A Guide for (other) idiots
-
 This guide is for you if:
 
  * you wish to understand how Juno works under the hood
@@ -11,31 +9,11 @@ This guide is for you if:
    -  get bug fixes ahead of time (i.e. not wait for the next public release)
    - ***you wish to contribute!***
 
-*(NOTE: please keep improving this guide, it will probably take a couple more newcomers to polish it up).*
+(Note: Original document tested on OSX on 4 Nov 2016, use common sense!)
 
 In the beginning was **Atom** (highly customisable editor) and **Julia**. Developers started to assemble a collection of tools that lets us use Atom as a Julia IDE. And this collection has become known as **Juno**.  If you are standard user, the `uber-juno` package takes care of installing all of these components behind-the-scenes. But if you want to actually dig in and tweak some of them, you are going to need to assemble the parts individually. That's what this guide covers.
 
-NOTE: (I am on OSX, date is 4 Nov 2016, use common sense to update version numbers etc.)
-
-* If you want to make sure of fresh start, you might want to start by removing any existing Julia or Atom (Note: you shouldn't need to do this, you can have multiple Julia versions side-by-side):
-
-```shell
-rm -rf ~/.julia
-rm -rf /Applications/Julia-0.5.app
-
-# https://discuss.atom.io/t/how-to-completely-uninstall-atom-for-mac/9084/34
-rm     /usr/local/bin/atom 
-rm     /usr/local/bin/apm
-rm -rf /Applications/Atom.app
-rm     ~/Library/Preferences/com.github.atom.plist
-rm -rf ~/Library/Application\ Support/com.github.atom.ShipIt
-rm -rf ~/Library/Application\ Support/Atom
-rm -rf ~/Library/Saved\ Application\ State/com.github.atom.savedState
-rm -rf ~/Library/Caches/com.github.atom
-rm -rf ~/Library/Caches/Atom
-```
-
-* Install the current ***stable*** Julia (command line version) [**NOT bleeding-edge**] from http://julialang.org/downloads/  
+* Install the current ***stable*** or **bleeding-edge** Julia (command line version) from http://julialang.org/downloads/  
   Drag .app into Applications folder  
   Run
 
@@ -45,7 +23,7 @@ rm -rf ~/Library/Caches/Atom
 
 Ok, you should have Atom and a `Julia>` Julia-prompt side-by-side.
 
-`Julia> Pkg.status()` from Julia prompt should say no packages installed!  `Packages` menu drop down in Atom shouldn't have "Julia" yet.
+`Julia> Pkg.status()` should say no packages installed!  `Packages` menu drop down in Atom shouldn't have "Julia" yet.
 
 * Use Atom's `apm` package manager to install `atom-julia-client` (Julia IDE for Atom) which makes use of `ink` (toolkit for building IDEs in Atom):
 
@@ -97,7 +75,7 @@ README.md	ink		julia-client	language-julia
 
 Now restarting Atom, doing `Packages -> Julia -> Open Console -> 1+1` it still fails with "Julia could not be started!"
 
-* `Atom -> Prefs -> Packages -> 'julia client' -> Settings -> Julia Path -> /Applications/Julia-0.5.app/Contents/Resources/julia/bin/julia`
+* `Atom -> Prefs -> Packages -> 'julia client' -> Settings -> Julia Path -> /Applications/Julia-0.5.app/Contents/Resources/julia/bin/julia`  *(...or wherever Julia installed itself)*
 
 * NOW type `1+1` and it will precompile Julia!  (if you skipped the `Pkg.add("Atom")` step above it will first add the `Atom.jl` package and a bunch of dependent packages).
 
@@ -105,7 +83,7 @@ Now restarting Atom, doing `Packages -> Julia -> Open Console -> 1+1` it still f
 
 So at this point you should have a standard 'Juno' i.e. Julia-in-Atom installation. You can run Julia code in the console (just like the Julia prompt you get from Julia.app), also you can create and run files and even debug with breakpoints etc.
 
-Wait! Something is missing -- there is no syntax highlighting, and the buttons along the left margin have disappeared.
+Wait! Something is missing -- there is no syntax highlighting, and the buttons along the left margin aren't there yet!
 
 There must be some stuff that `uber-juno` installed that we haven't!  https://github.com/JunoLab/uber-juno/blob/master/lib/packages.coffee gives:
 
@@ -129,13 +107,15 @@ Great!  It worked!
 
 Now let's get that toolbar! https://github.com/JunoLab/atom-julia-client/blob/master/lib/package/toolbar.coffee
 
-hmm actually I can't be bothered to get cutting-edge versions of these, I'm just going to do the standard install from Atom.
+If you want cutting-edge versions of these you will have to repeat the above process: locate the GitHub repo & use `apm`.  Instead let's just do the standard install from Atom:
 
 * `Atom -> Preferences -> install -> 'tool-bar'`   *(If it fails try a couple more times -- often for me the first attempt fails).*
   `Atom -> Julia -> Settings -> Enable Toolbar`
 
 * `Atom -> Preferences -> install -> 'latex-completions'`  
   Check by typing `x\til` into Atom editor and it should offer `...de` auto-completion.  Hit `TAB` and you should get `x̃`
+
+Of course if you find you need bleeding-edge on either of these, you can just uninstall from Atom and use `apm`.
 
 ---
 
@@ -175,11 +155,15 @@ Notice we have brought Atom up to bleeding edge. Now if the package maintainers 
 
 (Note: You could do `foreach( Pkg.checkout, ["Blink", "CodeTools", "Hiccup", "etc"] )`).
 
-(Note: If you want to revert/unsync a particular package, do `Pkg.free("foo")`.  At time of writing `Hiccup` was causing err.. hiccups so I needed to revert it).
+**Quick note on using the Julia package manager, i.e. `Pkg.bla`**
 
-(Note: `Pkg.update()` will update all checked out packages as well!  So that's for syncing Julia packages.  The corresponding command for syncing *Atom* packages is `apm upgrade`.)
+If you want to revert/unsync a particular package, do `Pkg.free("foo")`.  At time of writing `Hiccup` was causing err.. hiccups so it needed to be reverted.
 
-* If you want to be really comprehensive, ...
+`Pkg.update()` will update/sync all checked-out Julia packages!  The corresponding command for syncing *Atom* packages is `apm upgrade`.)
+
+Complete `Pkg` doc at http://docs.julialang.org/en/release-0.5/manual/packages/
+
+* If you want bleeding-edge for Julia's ***debugger*** as well, you need:
 
 ```julia
 Pkg.checkout("Reactive")
@@ -194,8 +178,14 @@ Pkg.checkout("ASTInterpreter")
 Pkg.checkout("VT100")
 Pkg.checkout("JuliaParser")
 Pkg.checkout("Gallium")
-Pkg.clone("https://github.com/Keno/COFF.jl")
+Pkg.clone("https://github.com/Keno/COFF.jl")  # <-- UNREGISTERED package! (*)
 Pkg.checkout("COFF")
 ```
 
-Note that COFF isn't a standard package, so we have to get it first.  (If OTOH there was a *standard* package that we don't currently have, we would instead have to `Pkg.add` it first.
+(*) *Registered* packages can be installed with `Pkg.add`, UNREGISTERED packages require `Pkg.clone` + a complete URL.
+
+That list comes straight from the bottom of https://github.com/Keno/Gallium.jl#installation
+
+Why didn't we have to `Pkg.add` each of those first? Because when we did `Pkg.add("Atom")` it did `Pkg.add` on all of Atom's dependencies (i.e. everything in https://github.com/JunoLab/Atom.jl/blob/master/REQUIRE) one of which is `Gallium`. And this `Pkg.add("Gallium")` then did `Pkg.add` on all of *Gallium*'s dependencies: https://github.com/Keno/Gallium.jl/blob/master/REQUIRE. 
+
+You can see most of those list-items in Gallium's `REQUIRE` file, and presumably the others are to be found somewhere in the dependency tree.
