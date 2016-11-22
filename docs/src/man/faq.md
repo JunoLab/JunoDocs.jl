@@ -69,3 +69,16 @@ rapid development so do so at your own risk. That being said, the Julia nightly
 should work using the [Developer Install](). Note that this will require you to
 be on master for the Julia and Atom packages, so things will be changing likely
 before documentation changes.
+
+## Advanced topics
+
+### Connecting to an external julia session on a remote machine
+
+Use case : local installation of Juno with a remote julia session
+
+1. Launch Atom/Juno on your local machine
+2. In Atom/Juno : Julia-client : connect to external process (Juno will then tell you which port to use locally --> we'll call it **PORT#2**)
+3. Open a local terminal and connect to your remote server : "**ssh -R PORT#1:localhost:PORT#2 your.server.com**"
+4. Launch julia in the terminal on the remote machine
+5. Type in julia session : "**using Juno; Juno.connect(PORT#1)**"
+
