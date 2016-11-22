@@ -47,4 +47,4 @@ for Windows/Mac, SourceTree) are very helpful for learning the ropes.
 The documentation is provided by the JunoLab/JunoDocs.jl repository. It's built
 using Documenter.jl. To modify the documentation, simply modify the Markdown
 files in the docs/src folder. For more information on using Documenter.jl,
-please see the [Documenter.jl Documnetation](https://juliadocs.github.io/Documenter.jl/latest/).
+please see the [Documenter.jl Documentation](https://juliadocs.github.io/Documenter.jl/latest/).
