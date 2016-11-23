@@ -74,15 +74,15 @@ before documentation changes.
 
 ### Connecting to an external julia session on a remote machine
 
-Use case : local installation of Juno with a remote julia session
+Use case: local installation of Juno with a remote julia session
 
 1. Launch Atom/Juno on your local machine
-2. In Atom/Juno: `Julia-client : connect to external process` (Juno will then tell you which port to use locally --> we'll call it `Port#2`)
+2. In Atom/Juno: `Julia Client: Connect External Process` (Juno will then tell you which port to use locally --> we'll call it `Port#2`)
 3. Port forwarding
 
   *Linux/Unix*: Open a local terminal and connect to your remote server : `ssh -R PORT#1:localhost:PORT#2 your.server.com`
   
-  *Windows*: netsh should work. See here for an [example.](http://stackoverflow.com/questions/11525703/port-forwarding-in-windows)
+  *Windows*: Port forwarding via `netsh` should work. See [here](http://stackoverflow.com/questions/11525703/port-forwarding-in-windows) for an example.
   
 4. Launch julia in the terminal on the remote machine
 5. Type in julia session: `using Juno; Juno.connect(PORT#1)`
