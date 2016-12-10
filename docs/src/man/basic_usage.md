@@ -1,42 +1,25 @@
 
 # Basic Usage
 
-These instructions assume that you have already installed Juno. If you have not
-installed Juno, please see the [Installation Instructions](@ref).
-
-### Opening the Console Window
-
-To open the console, use the command `Ctrl+j` then `Ctrl+o`, or go to Packages >
-Julia > Open Console. This will open a window with the title console. To use the
-console, simply type in a command and hit `Enter`. This will run the command in
-Julia (the first time a command is run, the connection between Julia and Atom
-will be installed, taking a bit more time). To clear the console, use the command
-`Ctrl+j` followed by `Ctrl+c`.
-
-Using the console is similar to using the REPL. For example, to enter multi-line
-input, use `Ctrl+Enter`. Tab completion will be available with a window for selecting
-the desired completion (which can be scrolled through using the arrow keys). Juno
-also features enhanced displaying of output types. For example, types like `Array`
-show an arrow on the side. By clicking on the header for this output you will
-expand the array in the console. Note that floating point numbers truncate their
-displays as well: to see more digits, click on the number.
-
-### Inline Evaluation
-
-You can evaluate your Julia code inline by navigating your cursor to the appropriate
-code and hitting `Ctrl+Enter`. This will run the code block that the cursor is
-contained in. For example, if you go to the top of a `for` loop, it will evaluate
-the whole for loop, or if it's inside of a function, it will evaluate the function
-(i.e. create the function). To specifically choose which code to evaluate, highlight
-the appropriate parts and use `Ctrl+Enter`. To evaluate the whole script, use
-`Ctrl+Shift+Enter`.
+These instructions assume that you have already installed Juno. If you have not yet installed Juno, please see the [Installation Instructions](@ref).
 
 ### The Command Panel
 
-To open the command panel, use `Ctrl+Shift+p` or go to Packages > Command Pallete > Toggle.
-In the command pallete you can search for common commands. For example, type in
-"julia" and you will see the commands which relate to Julia (and the keyboard shortcuts
-for the commands).
+To open the command panel, use `Ctrl+Shift+p` or go to Packages > Command Pallete > Toggle. In the command pallete you can search for common commands. For example, type in "julia" and you will see the commands which relate to Julia (and the keyboard shortcuts for the commands).
+
+### Opening the Console Window
+
+To open the console, use the command `Ctrl+j` then `Ctrl+o`, or go to Packages > Julia > Open Console. This will open a window with the title console. To use the console, simply type in a command and hit `Enter`. This will run the command in Julia (the first time a command is run, the connection between Julia and Atom will be installed, taking a bit more time). To clear the console, use the command `Ctrl+j` followed by `Ctrl+c`.
+
+Using the console is similar to using the REPL. For example, to enter multi-line input, use `Ctrl+Enter`. Tab completion will be available with a window for selecting the desired completion (which can be scrolled through using the arrow keys). Juno also features enhanced displaying of output types. For example, types like `Array` show an arrow on the side. By clicking on the header for this output you will expand the array in the console. Note that floating point numbers truncate their displays as well: to see more digits, click on the number.
+
+### Inline Evaluation
+
+You can evaluate your Julia code inline by navigating your cursor to the appropriate code and hitting `Ctrl+Enter`. This will run the code block that the cursor is contained in. For example, if you go to the top of a `for` loop, it will evaluate the whole for loop, or if it's inside of a function, it will evaluate the function (i.e. create the function). To specifically choose which code to evaluate, highlight the appropriate parts and use `Ctrl+Enter`. To evaluate the whole script, use `Ctrl+Shift+Enter`.
+
+### Cell Evaluation
+
+Juno also supports cell-based evaluation. A cell boundary is defined by a line starting with `##`, `#---`, or `# %%`. You can easily navigate cells via `Alt-Up` and `Alt-Down`, evaluate them with  `Alt-Enter`, or evaluate a cell and move to the next one via `Alt-Shift-Enter`.
 
 ### Common Keyboard Shortcuts
 
@@ -56,7 +39,7 @@ For MacOS, replace `Ctrl` by `Cmd`.
 
 #### Adding Your Own Shortcuts
 
-You can add custom commands and keybindings to julia, should you so wish. To do that, add something like the following to your `init.coffee`
+You can add custom commands and keybindings to julia, should you so wish. To create new commands, add something like the following to your `init.coffee`
 ```coffee
 atom.packages.onDidActivatePackage (p) ->
   if p.name is 'julia-client'
@@ -72,9 +55,9 @@ and
 '.platform-win32 .item-views > atom-text-editor[data-grammar="source julia"]':
   'ctrl-shift-alt-enter': 'julia-client:clear-console-and-run-file'
 ```
-to your `keymap.cson`. You can get to both files via Settings > Open Config Folder.
+to your `keymap.cson` (you can get to both files via Settings > Open Config Folder). It's also possible to add new keybindings for existing commands, such as `f5` for `julia-client:run-file`.
 
-Note that you will need to muck around with julia-client's internals, so your code might break on new releases. You'll also need to figure out which functions you can use for what -- julia-client's [commands](https://github.com/JunoLab/atom-julia-client/blob/master/lib/package/commands.coffee) will probably be helpful for that.
+Note that you will need to muck around with julia-client's internals for defining custom commands, so your code might break on new releases. You'll also need to figure out which functions you can use for what -- julia-client's [commands](https://github.com/JunoLab/atom-julia-client/blob/master/lib/package/commands.coffee) will probably be helpful for that.
 
 ### Using the Plot Pane
 
