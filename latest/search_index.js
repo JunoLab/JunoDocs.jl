@@ -157,7 +157,15 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Usage",
     "title": "Basic Usage",
     "category": "section",
-    "text": "These instructions assume that you have already installed Juno. If you have not installed Juno, please see the Installation Instructions."
+    "text": "These instructions assume that you have already installed Juno. If you have not yet installed Juno, please see the Installation Instructions."
+},
+
+{
+    "location": "man/basic_usage.html#The-Command-Panel-1",
+    "page": "Basic Usage",
+    "title": "The Command Panel",
+    "category": "section",
+    "text": "To open the command panel, use Ctrl+Shift+p or go to Packages > Command Pallete > Toggle. In the command pallete you can search for common commands. For example, type in \"julia\" and you will see the commands which relate to Julia (and the keyboard shortcuts for the commands)."
 },
 
 {
@@ -177,11 +185,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "man/basic_usage.html#The-Command-Panel-1",
+    "location": "man/basic_usage.html#Cell-Evaluation-1",
     "page": "Basic Usage",
-    "title": "The Command Panel",
+    "title": "Cell Evaluation",
     "category": "section",
-    "text": "To open the command panel, use Ctrl+Shift+p or go to Packages > Command Pallete > Toggle. In the command pallete you can search for common commands. For example, type in \"julia\" and you will see the commands which relate to Julia (and the keyboard shortcuts for the commands)."
+    "text": "Juno also supports cell-based evaluation. A cell boundary is defined by a line starting with ##, #---, or # %%. You can easily navigate cells via Alt-Up and Alt-Down, evaluate them with  Alt-Enter, or evaluate a cell and move to the next one via Alt-Shift-Enter."
 },
 
 {
@@ -197,7 +205,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Usage",
     "title": "Adding Your Own Shortcuts",
     "category": "section",
-    "text": "You can add custom commands and keybindings to julia, should you so wish. To do that, add something like the following to your init.coffeeatom.packages.onDidActivatePackage (p) ->\n  if p.name is 'julia-client'\n    juno = p.mainModule\n\n    atom.commands.add '.item-views > atom-text-editor', 'julia-client:clear-console-and-run-file', ->\n      juno.runtime.evaluation.evalAll()\n      juno.runtime.console.reset()\nand'.platform-win32 .item-views > atom-text-editor[data-grammar=\"source julia\"]':\n  'ctrl-shift-alt-enter': 'julia-client:clear-console-and-run-file'to your keymap.cson. You can get to both files via Settings > Open Config Folder.Note that you will need to muck around with julia-client's internals, so your code might break on new releases. You'll also need to figure out which functions you can use for what – julia-client's commands will probably be helpful for that."
+    "text": "You can add custom commands and keybindings to julia, should you so wish. To create new commands, add something like the following to your init.coffeeatom.packages.onDidActivatePackage (p) ->\n  if p.name is 'julia-client'\n    juno = p.mainModule\n\n    atom.commands.add '.item-views > atom-text-editor', 'julia-client:clear-console-and-run-file', ->\n      juno.runtime.evaluation.evalAll()\n      juno.runtime.console.reset()\nand'.platform-win32 .item-views > atom-text-editor[data-grammar=\"source julia\"]':\n  'ctrl-shift-alt-enter': 'julia-client:clear-console-and-run-file'to your keymap.cson (you can get to both files via Settings > Open Config Folder). It's also possible to add new keybindings for existing commands, such as f5 for julia-client:run-file.Note that you will need to muck around with julia-client's internals for defining custom commands, so your code might break on new releases. You'll also need to figure out which functions you can use for what – julia-client's commands will probably be helpful for that."
 },
 
 {
@@ -310,6 +318,22 @@ var documenterSearchIndex = {"docs": [
     "title": "How do I use Juno with the Julia Nightly version?",
     "category": "section",
     "text": "If you want to use Juno with the nightly version use caution: this package is under rapid development so do so at your own risk. That being said, the Julia nightly should work using the Developer Install. Note that this will require you to be on master for the Julia and Atom packages, so things will be changing likely before documentation changes."
+},
+
+{
+    "location": "man/faq.html#Advanced-topics-1",
+    "page": "FAQ",
+    "title": "Advanced topics",
+    "category": "section",
+    "text": ""
+},
+
+{
+    "location": "man/faq.html#Connecting-to-an-external-julia-session-on-a-remote-machine-1",
+    "page": "FAQ",
+    "title": "Connecting to an external julia session on a remote machine",
+    "category": "section",
+    "text": "Use case: local installation of Juno with a remote julia sessionLaunch Atom/Juno on your local machine\nIn Atom/Juno: Julia Client: Connect External Process (Juno will then tell you which port to use locally –> we'll call it Port#2)\nPort forwardingLinux/Unix: Open a local terminal and connect to your remote server : ssh -R PORT#1:localhost:PORT#2 your.server.comWindows: Port forwarding via netsh should work. See here for an example.Launch julia in the terminal on the remote machine\nType in julia session: using Juno; Juno.connect(PORT#1)"
 },
 
 {
@@ -501,7 +525,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Contributor Guide",
     "title": "Contributing to the Documentation",
     "category": "section",
-    "text": "The documentation is provided by the JunoLab/JunoDocs.jl repository. It's built using Documenter.jl. To modify the documentation, simply modify the Markdown files in the docs/src folder. For more information on using Documenter.jl, please see the Documenter.jl Documnetation."
+    "text": "The documentation is provided by the JunoLab/JunoDocs.jl repository. It's built using Documenter.jl. To modify the documentation, simply modify the Markdown files in the docs/src folder. For more information on using Documenter.jl, please see the Documenter.jl Documentation."
 },
 
 {
@@ -517,31 +541,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Developer Installation Instructions",
     "title": "Developer Installation Instructions",
     "category": "section",
-    "text": "These are the developer install instructions. To develop Juno, you need to be on the latest Atom and Julia packages. This install is also relevant to users on Julia's nightlies since this will install fixes which have not be released. However, use caution: this install is not guaranteed to be stable, and getting it to work may require intimate knowledge of Julia as the documentation will likely be behind."
-},
-
-{
-    "location": "devdocs/dev_install.html#Getting-Master-on-the-Atom-Packages-1",
-    "page": "Developer Installation Instructions",
-    "title": "Getting Master on the Atom Packages",
-    "category": "section",
-    "text": "To install the latest atom packages, run the commands:apm install https://github.com/JunoLab/atom-ink\napm install https://github.com/JunoLab/atom-julia-clientIt's a good idea to keep these up to date by running Pkg.update() in Julia and syncing the package repos every now and then, which will be in ~/.atom/packages/julia-client and ~/.atom/packages/ink. Note that this installation method for the Atom packages will allow them to be update each commit via the Atom package manager."
-},
-
-{
-    "location": "devdocs/dev_install.html#Bleeding-Edge-Installs-for-the-Julia-Packages-1",
-    "page": "Developer Installation Instructions",
-    "title": "Bleeding Edge Installs for the Julia Packages",
-    "category": "section",
-    "text": "The Julia packages can be installed by either cloning the repository or though the standard installation (Pkg.add(PkgName)) followed by checking out the master branch (Pkg.checkout(\"PkgName\"). The following code will check out the relevant packages:Pkg.checkout(\"Atom\")\nPkg.checkout(\"Blink\")\nPkg.checkout(\"CodeTools\")\nPkg.checkout(\"DevTools\")\nPkg.checkout(\"Hiccup\")\nPkg.checkout(\"Juno\")\nPkg.checkout(\"LNR\")\nPkg.checkout(\"Media\")"
-},
-
-{
-    "location": "devdocs/dev_install.html#Bleeding-Edge-Features-(Plotting,-Debugging,-etc.)-1",
-    "page": "Developer Installation Instructions",
-    "title": "Bleeding Edge Features (Plotting, Debugging, etc.)",
-    "category": "section",
-    "text": "In order to use the bleeding edge features, you may need to checkout master on the respective repositories. For example, for the latest plotting features, you may need toPkg.checkout(\"Plots\")and/or checkout master on a backend, for example:Pkg.checkout(\"PlotlyJS\")For the latest debugger features, you may need to checkout the full debugger stack. This is done with the following code:Pkg.clone(\"https://github.com/Keno/COFF.jl\")\nPkg.checkout(\"Reactive\")\nPkg.checkout(\"ObjFileBase\")\nPkg.checkout(\"StructIO\")\nPkg.checkout(\"AbstractTrees\")\nPkg.checkout(\"DWARF\")\nPkg.checkout(\"ELF\")\nPkg.checkout(\"MachO\")\nPkg.checkout(\"COFF\")\nPkg.checkout(\"TerminalUI\")\nPkg.checkout(\"ASTInterpreter\")\nPkg.checkout(\"VT100\")\nPkg.checkout(\"JuliaParser\")\nPkg.checkout(\"Gallium\")"
+    "text": "This guide is for you if:you wish to understand how Juno works under the hood\nyou like taking things apart, tinkering, and putting them back together\nyou want to be on the bleeding edge build, why?\nif you report bugs the devs will like you more\nget bug fixes ahead of time (i.e. not wait for the next public release)\n***you wish to contribute!***(Note: Original document tested on OSX on 4 Nov 2016, use common sense!)In the beginning was Atom (highly customisable editor) and Julia. Developers started to assemble a collection of tools that lets us use Atom as a Julia IDE. And this collection has become known as Juno.  If you are standard user, the uber-juno package takes care of installing all of these components behind-the-scenes. But if you want to actually dig in and tweak some of them, you are going to need to assemble the parts individually. That's what this guide covers.Install the current ***stable*** or bleeding-edge Julia (command line version) from http://julialang.org/downloads/   Drag .app into Applications folder   Run\nInstall Atom from https://atom.io/   Drag .app into Applications folder   RunOk, you should have Atom and a Julia> Julia-prompt side-by-side.Julia> Pkg.status() should say no packages installed!  Packages menu drop down in Atom shouldn't have \"Julia\" yet.Use Atom's apm package manager to install atom-julia-client (Julia IDE for Atom) which makes use of ink (toolkit for building IDEs in Atom):apm install https://github.com/JunoLab/atom-ink           # ~/.atom/packages/ink\napm install https://github.com/JunoLab/atom-julia-client  # ~/.atom/packages/julia-clientYou can observe this creates a local mirror of each GitHub repo.   (Note: You can sync all local repos with Pkg.update()If you now relaunch Atom you will see the Packages menu drop down now has a \"Julia\" entry.   Packages -> Julia -> Open Console   Try 1+1 and it will fail \"Julia could not be started!\"(Note that Julia> Pkg.status() still reports nothing).(NOTE: you can actually skip this step because when you do 1+1 a couple of steps further down it will automatically perform this command!)Julia> Pkg.add(\"Atom\")Now Julia> Pkg.status() will list a ton of stuff:Julia> Pkg.status()\n1 required packages:\n - Atom                          0.5.4\n43 additional packages:\n - ASTInterpreter                0.0.4\n - AbstractTrees                 0.0.4\n - ArgParse                      0.4.0\n - BinDeps                       0.4.5\n - Blink                         0.4.3\n - COFF                          0.0.2\n - ...NOTE:ls ~/.julia/lib/v0.5/  \nAtom.ji		CodeTools.ji   Hiccup.ji	HttpParser.ji	Juno.ji		MacroTools.ji	Mustache.ji	SHA.ji\nBinDeps.ji	Codecs.ji	   Homebrew.ji	HttpServer.ji	LNR.ji		MbedTLS.ji	Mux.ji		URIParser.ji\nBlink.ji	Compat.ji	   HttpCommon.ji	JSON.ji		Lazy.ji		Media.ji	Reexport.ji	WebSockets.ji\n\nls ~/.atom/packages\nREADME.md	ink		julia-client	language-juliaNow restarting Atom, doing Packages -> Julia -> Open Console -> 1+1 it still fails with \"Julia could not be started!\"Atom -> Prefs -> Packages -> 'julia client' -> Settings -> Julia Path -> /Applications/Julia-0.5.app/Contents/Resources/julia/bin/julia  (...or wherever Julia installed itself)\nNOW type 1+1 and it will precompile Julia!  (if you skipped the Pkg.add(\"Atom\") step above it will first add the Atom.jl package and a bunch of dependent packages).(Note: https://github.com/JunoLab/atom-julia-client/blob/master/script/boot.jl <– this is what actually happens when you type 1+1 if you're interested).So at this point you should have a standard 'Juno' i.e. Julia-in-Atom installation. You can run Julia code in the console (just like the Julia prompt you get from Julia.app), also you can create and run files and even debug with breakpoints etc.Wait! Something is missing – there is no syntax highlighting, and the buttons along the left margin aren't there yet!There must be some stuff that uber-juno installed that we haven't!  https://github.com/JunoLab/uber-juno/blob/master/lib/packages.coffee gives:requirements = [\n  'tool-bar'\n  'latex-completions'\n  'language-julia'\n  'ink'\n  'julia-client'\n]So we could go into Atom -> Preferences -> install -> 'language-julia' and similarly for the other 2 we don't have.NOTE: we could probably alternatively use apm to do it from the command line like we did above.  Googling finds: https://github.com/JuliaEditorSupport/atom-language-julia which says to do apm install language-julia.  Ah, but that is going to install the stock release version that Atom has in its repositories, so if we want instead the master version, we should probably be doing something like:apm install https://github.com/JuliaEditorSupport/atom-language-juliaGreat!  It worked!Now let's get that toolbar! https://github.com/JunoLab/atom-julia-client/blob/master/lib/package/toolbar.coffeeIf you want cutting-edge versions of these you will have to repeat the above process: locate the GitHub repo & use apm.  Instead let's just do the standard install from Atom:Atom -> Preferences -> install -> 'tool-bar'   (If it fails try a couple more times – often for me the first attempt fails). Atom -> Julia -> Settings -> Enable Toolbar\nAtom -> Preferences -> install -> 'latex-completions'   Check by typing x\\til into Atom editor and it should offer ...de auto-completion.  Hit TAB and you should get x̃Of course if you find you need bleeding-edge on either of these, you can just uninstall from Atom and use apm.Now let's work on bringing the key packages up to bleeding edge!Sync Atom package!julia> Pkg.checkout(\"Atom\")\nINFO: Checking out Atom master...\nINFO: Pulling Atom latest master...\nINFO: No packages to install, update or remove\n\njulia> Pkg.status()\n1 required packages:\n - Atom                          0.5.4+             master\n43 additional packages:\n - ASTInterpreter                0.0.4\n - AbstractTrees                 0.0.4\n - ArgParse                      0.4.0\n - BinDeps                       0.4.5\n - Blink                         0.4.3\n - COFF                          0.0.2\n - ...Notice we have brought Atom up to bleeding edge. Now if the package maintainers push a new version, we can sync with it by doing Pkg.update()Sync up a few more packages.  The folks on https://gitter.im/JunoLab/Juno recommend:\nBlink\nCodeTools\nHiccup\nJuno\nLNR\nMedia  (Note: You could do foreach( Pkg.checkout, [\"Blink\", \"CodeTools\", \"Hiccup\", \"etc\"] )).Quick note on using the Julia package manager, i.e. Pkg.blaIf you want to revert/unsync a particular package, do Pkg.free(\"foo\").  At time of writing Hiccup was causing err.. hiccups so it needed to be reverted.Pkg.update() will update/sync all checked-out Julia packages!  The corresponding command for syncing Atom packages is apm upgrade.)Complete Pkg doc at http://docs.julialang.org/en/release-0.5/manual/packages/If you want bleeding-edge for Julia's ***debugger*** as well, you need:Pkg.checkout(\"Reactive\")\nPkg.checkout(\"ObjFileBase\")\nPkg.checkout(\"StructIO\")\nPkg.checkout(\"AbstractTrees\")\nPkg.checkout(\"DWARF\")\nPkg.checkout(\"ELF\")\nPkg.checkout(\"MachO\")\nPkg.checkout(\"TerminalUI\")\nPkg.checkout(\"ASTInterpreter\")\nPkg.checkout(\"VT100\")\nPkg.checkout(\"JuliaParser\")\nPkg.checkout(\"Gallium\")\nPkg.clone(\"https://github.com/Keno/COFF.jl\")  # <-- UNREGISTERED package! (*)\nPkg.checkout(\"COFF\")() *Registered packages can be installed with Pkg.add, UNREGISTERED packages require Pkg.clone + a complete URL.That list comes straight from the bottom of https://github.com/Keno/Gallium.jl#installationWhy didn't we have to Pkg.add each of those first? Because when we did Pkg.add(\"Atom\") it did Pkg.add on all of Atom's dependencies (i.e. everything in https://github.com/JunoLab/Atom.jl/blob/master/REQUIRE) one of which is Gallium. And this Pkg.add(\"Gallium\") then did Pkg.add on all of Gallium's dependencies: https://github.com/Keno/Gallium.jl/blob/master/REQUIRE. You can see most of those list-items in Gallium's REQUIRE file, and presumably the others are to be found somewhere in the dependency tree."
 },
 
 {
