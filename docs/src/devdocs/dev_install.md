@@ -1,4 +1,4 @@
-# HowTo for installing bleeding-edge (a.k.a. Nightly/Master) Juno
+# Developer Installation Instructions
 
 This guide is for you if:
 
