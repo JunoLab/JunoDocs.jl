@@ -1,3 +1,3 @@
 ---
-redirect_from: "/latest"
+redirect_to: "/latest"
 ---
