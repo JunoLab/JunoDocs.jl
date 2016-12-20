@@ -1,3 +1,4 @@
 ---
-redirect_to: "http://docs.junolab.org/latest/"
+redirect_to: 
+  - http://docs.junolab.org/latest/
 ---
