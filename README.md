@@ -10,5 +10,6 @@ It is created using [Documenter.jl](https://github.com/JuliaDocs/Documenter.jl)
 ## Contributing to the Documentation
 
 In order to contribute to the documentation, simply modify the files in the `/docs/src`
-folder and open a PR against `master`. When committed, Travis will run Documenter.jl 
-which will automatically update the documentation website, meaning that no build steps are required.
+folder and open a PR against the `master` branch. When committed, Travis will run Documenter.jl which will
+[automatically update the documentation website](https://juliadocs.github.io/Documenter.jl/stable/man/hosting.html)
+by pushing to the `gh-pages` branch, meaning that no build steps are required.
