@@ -11,3 +11,5 @@ This is the documentation for the Juno IDE. It is created using [Documenter.jl](
 In order to contribute to the documentation, simply modify the files in the `/docs/src`
 folder and open a PR against `master`. When committed, Travis will run Documenter.jl 
 which will automatically update the documentation website, meaning that no build steps are required.
+
+[Documentation](http://docs.junolab.org)
