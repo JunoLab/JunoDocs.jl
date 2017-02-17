@@ -20,7 +20,7 @@ makedocs(modules=Module[Juno],
              "devdocs/communication.md"
          ],
          "Extensions" => Any[
-          "extensions/linter-julia.md"
+             "extensions/linter-julia.md"
          ]])
 
 
