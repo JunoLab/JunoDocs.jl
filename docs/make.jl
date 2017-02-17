@@ -18,6 +18,9 @@ makedocs(modules=Module[Juno],
              "devdocs/package_info.md",
              "devdocs/juno_ci.md",
              "devdocs/communication.md"
+         ],
+         "Extensions" => Any[
+          "extensions/linter-julia.md"
          ]])
 
 
