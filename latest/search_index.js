@@ -333,7 +333,7 @@ var documenterSearchIndex = {"docs": [
     "page": "FAQ",
     "title": "Connecting to an external julia session on a remote machine",
     "category": "section",
-    "text": "Use case: local installation of Juno with a remote julia sessionLaunch Atom/Juno on your local machine\nIn Atom/Juno: Julia Client: Connect External Process (Juno will then tell you which port to use locally –> we'll call it Port#2)\nPort forwardingLinux/Unix: Open a local terminal and connect to your remote server : ssh -R PORT#1:localhost:PORT#2 your.server.comWindows: Port forwarding via netsh should work. See here for an example.Launch julia in the terminal on the remote machine\nType in julia session: using Juno; Juno.connect(PORT#1)"
+    "text": "Use case: local installation of Juno with a remote julia sessionLaunch Atom/Juno on your local machine\nIn Atom/Juno, bring up the command palette with cmd-shift-p (macOS) or ctrl-shift-p )Linux/Windows) and search for Julia Client: Connect External Process (Juno will then tell you which port to use locally –> we'll call it Port#2)\nPort forwardingLinux/Unix: Open a local terminal and connect to your remote server : ssh -R PORT#1:localhost:PORT#2 your.server.comWindows: Port forwarding via netsh should work. See here for an example.Launch julia in the terminal on the remote machine\nType in julia session: using Juno; Juno.connect(PORT#1)"
 },
 
 {
