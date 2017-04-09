@@ -26,7 +26,7 @@ Then:
 #### On Linux
 
 1. Unzip the downloaded folder and place it in your home directory.
-2. Make sure to have dependencies curl and cmake installed.
+2. Make sure to have dependencies curl, mbedtls-devel and cmake installed.
 
 ### Getting Atom
 
@@ -66,3 +66,8 @@ ERROR: LoadError: MbedTLS not properly installed. Please run Pkg.build("MbedTLS"
 in the Julia console, first try `Pkg.build("MbedTLS")` in the Julia REPL. If
 that errors and you are on Linux, try installing `cmake` and then calling the
 above command again.
+
+Make sure you have mbedtls-devel package installed, on Fedora you can run:
+
+dnf install mbedtls-devel
+
