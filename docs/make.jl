@@ -11,7 +11,7 @@ makedocs(modules=Module[Juno],
              "man/basic_usage.md",
              "man/faq.md",
              "man/juno_frontend.md",
-             "man/settings"
+             "man/settings.md"
          ],
          "Developer Documentation" => Any[
              "devdocs/contributor_guide.md",
