@@ -140,3 +140,7 @@ Juno.input
 ```
 
 ![input](../assets/input.gif)
+
+```@docs
+Juno.notify
+```
