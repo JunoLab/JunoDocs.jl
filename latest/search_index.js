@@ -477,7 +477,7 @@ var documenterSearchIndex = {"docs": [
     "page": "The Juno.jl Front-End",
     "title": "Interaction",
     "category": "section",
-    "text": "Juno.jl lets package developers interact with users via the Atom frontend. For example, you can allow the user to select from a list of options:Juno.selector(Image: selector)or get input in the console:Juno.input(Image: input)As of version 0.5.11 of Atom.jl, Base.readline() will also correctly request user input from the console instead of stalling indefinitely."
+    "text": "Juno.jl lets package developers interact with users via the Atom frontend. For example, you can allow the user to select from a list of options:Juno.selector(Image: selector)or get input in the console:Juno.input(Image: input)Juno.notifyAs of version 0.5.11 of Atom.jl, Base.readline() will also correctly request user input from the console instead of stalling indefinitely."
 },
 
 {
