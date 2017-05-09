@@ -141,4 +141,8 @@ Juno.input
 
 ![input](../assets/input.gif)
 
+```@docs
+Juno.notify
+```
+
 As of version 0.5.11 of Atom.jl, `Base.readline()` will also correctly request user input from the console instead of stalling indefinitely.
