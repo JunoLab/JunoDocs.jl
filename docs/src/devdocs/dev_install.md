@@ -1,13 +1,13 @@
-# HowTo for installing bleeding-edge (a.k.a. Nightly/Master) Juno
+# Developer Installation Instructions
 
 This guide is for you if:
 
- * you wish to understand how Juno works under the hood
- * you like taking things apart, tinkering, and putting them back together
- * you want to be on the bleeding edge build, why?
-   -  if you report bugs the devs will like you more
-   -  get bug fixes ahead of time (i.e. not wait for the next public release)
-   - ***you wish to contribute!***
+ * You wish to understand how Juno works under the hood
+ * You like taking things apart, tinkering, and putting them back together
+ * You want to be on the bleeding edge build, why?
+   -  If you report bugs the devs will like you more
+   -  Get bug fixes ahead of time (i.e. not wait for the next public release)
+   - ***You wish to contribute!***
 
 (Note: Original document tested on OSX on 4 Nov 2016, use common sense!)
 

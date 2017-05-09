@@ -2,7 +2,7 @@ using Documenter, Juno
 
 makedocs(modules=Module[Juno],
          doctest=false, clean=true,
-         format =Documenter.Formats.HTML,
+         format =:html,
          sitename="Juno Documentation",
          pages = Any[
          "Home" => "index.md",
@@ -10,7 +10,8 @@ makedocs(modules=Module[Juno],
              "man/installation.md",
              "man/basic_usage.md",
              "man/faq.md",
-             "man/juno_frontend.md"
+             "man/juno_frontend.md",
+             "man/settings.md"
          ],
          "Developer Documentation" => Any[
              "devdocs/contributor_guide.md",
