@@ -329,6 +329,14 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "man/faq.html#Executing-code-on-Juno-startup-1",
+    "page": "FAQ",
+    "title": "Executing code on Juno startup",
+    "category": "section",
+    "text": "Much like Julia has its .juliarc.jl file for executing code on startup, Juno will execute code contained in ~/.junorc.jl after booting the client."
+},
+
+{
     "location": "man/juno_frontend.html#",
     "page": "The Juno.jl Front-End",
     "title": "The Juno.jl Front-End",
