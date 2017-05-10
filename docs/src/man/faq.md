@@ -81,9 +81,11 @@ Use case: local installation of Juno with a remote julia session
 3. Port forwarding
 
   *Linux/Unix*: Open a local terminal and connect to your remote server : `ssh -R PORT#1:localhost:PORT#2 your.server.com`
-  
+
   *Windows*: Port forwarding via `netsh` should work. See [here](http://stackoverflow.com/questions/11525703/port-forwarding-in-windows) for an example.
-  
+
 4. Launch julia in the terminal on the remote machine
 5. Type in julia session: `using Juno; Juno.connect(PORT#1)`
 
+### Executing code on Juno startup
+Much like Julia has its `.juliarc.jl` file for executing code on startup, Juno will execute code contained in `~/.junorc.jl` after booting the client.
