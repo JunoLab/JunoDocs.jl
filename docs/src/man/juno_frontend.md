@@ -34,61 +34,6 @@ or provide structured display for arbitrary objects (similar to `Base.dump`)
 Juno.structure
 ```
 
-### Display system
-
-For a types that have no custom rendering defined (see below), Juno's display system will fall back to
-- `show`, if there's a `show` method more specific than the catch-all fallback method `show(io, ::Any)` or
-- lazy structured display similar to `Juno.structure` otherwise.
-
-To change how Juno displays a type
-```julia
-type CustomType
-  field_a
-  field_b
-end
-```
-it's necessary to add a new `Juno.render` method for that type:
-```julia
-function Juno.render(i::Juno.Inline, x::CustomType)
-  Juno.render(i, Juno.Tree(Text(x.field_a), [Text(field_b)]))
-end
-```
-or, using the more convenient `Juno.@render` macro, which calls `Juno.render` on it's first argument (`Juno.Inline` in this case) and whatever it's body evaluates into:
-```julia
-Juno.@render Juno.Inline x::CustomType begin
-  Juno.Tree(Text(x.field_a), [Text(x.field_b)])
-end
-```
-```@docs
-Juno.render
-Juno.@render
-```
-![custom rendering](../assets/custom_rendering.png)
-
-`Juno.Inline` is one of the predefined rendering contexts defined in Juno:
-```@docs
-Juno.Inline
-Juno.Clipboard
-Juno.PlotPane
-```
-
-There are `render` methods for all the HTML primitives defined in [Hiccup.jl](https://github.com/JunoLab/Hiccup.jl) as well as for certain higher-level elements from Juno.jl or even Base
-```@docs
-Juno.Tree
-Juno.LazyTree
-Juno.SubTree
-Juno.Link
-Juno.Table
-Juno.Row
-Base.Text
-```
-
-
-Should you wish to render something in the `PlotPane`, you can get it's dimensions via
-```@docs
-Juno.plotsize
-```
-
 ## Progress Meters
 
 Juno.jl allows package developers to use the progressbar which is provided in the
