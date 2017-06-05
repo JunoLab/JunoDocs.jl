@@ -71,9 +71,9 @@ the REPL. For example, by adding the function:
 ```julia
 import Base.show
 function Base.show(io::IO, s::System)
-  println("$(s.d)-dimensional system")
-  println("state: $(s.state)")
-  println("velocity: $(s.vel)")
+  println(io, "$(length(s.state))-dimensional system")
+  println(io, "state: $(s.state)")
+  println(io, "velocity $(s.vel)")
 end
 ```
 you can support custom printing at the REPL as well, without ruining the Juno printing.
