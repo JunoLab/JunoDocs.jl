@@ -95,7 +95,7 @@ end
 you can support custom printing at the REPL as well, without ruining the Juno printing.
 
 ### Conditionally defining Juno-specific render methods
-It is possible to use (Requires.jl)[https://github.com/MikeInnes/Requires.jl] to circumvent having a hard dependency on Juno.jl for rendering:
+It is possible to use [Requires.jl](https://github.com/MikeInnes/Requires.jl) to circumvent having a hard dependency on Juno.jl for rendering:
 ```julia
 @require Juno begin
   using Juno
