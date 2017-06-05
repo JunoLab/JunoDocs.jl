@@ -107,4 +107,3 @@ It is possible to use [Requires.jl](https://github.com/MikeInnes/Requires.jl) to
   end
 end
 ```
-**Warning**: This may or may not break everything and anything, see [here](https://discourse.julialang.org/t/optional-dependencies-requires-jl/3294) for some discussion.
