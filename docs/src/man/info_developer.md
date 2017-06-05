@@ -93,3 +93,18 @@ function Base.show(io::IO, s::System)
 end
 ```
 you can support custom printing at the REPL as well, without ruining the Juno printing.
+
+### Conditionally defining Juno-specific render methods
+It is possible to use (Requires.jl)[https://github.com/MikeInnes/Requires.jl] to circumvent having a hard dependency on Juno.jl for rendering:
+```julia
+@require Juno begin
+  using Juno
+  function Juno.render(i::Juno.Inline, s::System)
+    t = Juno.render(i, Juno.defaultrepr(s))
+    t[:head] = Juno.render(i, Text("$(length(s.state))-dimensional system"))
+    t[:children] = t[:children][2:3]
+    return t
+  end
+end
+```
+**Warning**: This may or may not break everything and anything, see [here](https://discourse.julialang.org/t/optional-dependencies-requires-jl/3294) for some discussion.
