@@ -385,22 +385,6 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "man/juno_frontend.html#Juno.plotsize",
-    "page": "The Juno.jl Front-End",
-    "title": "Juno.plotsize",
-    "category": "Function",
-    "text": "plotsize()\n\nGet the size of Juno's plot pane in px. Does not yet have a fallback for other environments.\n\n\n\n"
-},
-
-{
-    "location": "man/juno_frontend.html#Display-system-1",
-    "page": "The Juno.jl Front-End",
-    "title": "Display system",
-    "category": "section",
-    "text": "For a types that have no custom rendering defined (see below), Juno's display system will fall back toshow, if there's a show method more specific than the catch-all fallback method show(io, ::Any) or\nlazy structured display similar to Juno.structure otherwise.To change how Juno displays a typetype CustomType\n  field_a\n  field_b\nendit's necessary to add a new Juno.render method for that type:function Juno.render(i::Juno.Inline, x::CustomType)\n  Juno.render(i, Juno.Tree(Text(x.field_a), [Text(field_b)]))\nendor, using the more convenient Juno.@render macro, which calls Juno.render on it's first argument (Juno.Inline in this case) and whatever it's body evaluates into:Juno.@render Juno.Inline x::CustomType begin\n  Juno.Tree(Text(x.field_a), [Text(x.field_b)])\nendJuno.render\nJuno.@render(Image: custom rendering)Juno.Inline is one of the predefined rendering contexts defined in Juno:Juno.Inline\nJuno.Clipboard\nJuno.PlotPaneThere are render methods for all the HTML primitives defined in Hiccup.jl as well as for certain higher-level elements from Juno.jl or even BaseJuno.Tree\nJuno.LazyTree\nJuno.SubTree\nJuno.Link\nJuno.Table\nJuno.Row\nBase.TextShould you wish to render something in the PlotPane, you can get it's dimensions viaJuno.plotsize"
-},
-
-{
     "location": "man/juno_frontend.html#Juno.@progress",
     "page": "The Juno.jl Front-End",
     "title": "Juno.@progress",
@@ -490,42 +474,42 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "man/info_developer.html#",
-    "page": "Package Developing Information",
-    "title": "Package Developing Information",
+    "page": "Information for Package Developers",
+    "title": "Information for Package Developers",
     "category": "page",
     "text": ""
 },
 
 {
-    "location": "man/info_developer.html#Package-Developing-Information-1",
-    "page": "Package Developing Information",
-    "title": "Package Developing Information",
+    "location": "man/info_developer.html#Information-for-Package-Developers-1",
+    "page": "Information for Package Developers",
+    "title": "Information for Package Developers",
     "category": "section",
     "text": "In this page we giving some information that can help Package developers interact smoothly with Juno, and use it to their advantage for e.g. displaying Types, graphics etc."
 },
 
 {
-    "location": "man/info_developer.html#Custom-Type-printing-1",
-    "page": "Package Developing Information",
-    "title": "Custom Type printing",
+    "location": "man/info_developer.html#Juno.plotsize",
+    "page": "Information for Package Developers",
+    "title": "Juno.plotsize",
+    "category": "Function",
+    "text": "plotsize()\n\nGet the size of Juno's plot pane in px. Does not yet have a fallback for other environments.\n\n\n\n"
+},
+
+{
+    "location": "man/info_developer.html#Custom-Type-Printing-1",
+    "page": "Information for Package Developers",
+    "title": "Custom Type Printing",
     "category": "section",
-    "text": "As was mentioned in the Basic Usage page, you can enhance the way user-defined types  are printed in the Juno console (or similarly during inline evaluation). Note: The difference between printing in Juno and in the REPL is discussed in the follow-up section.This enhancing is done by extending the Juno.render(::MyType) function to match your Type. There are many ways you can modify this function, and most of the information is contained at the Juno Front-end manual page.As an example here, we will use the type:struct System{T}\n  d::Int\n  state::Vector{T}\n  vel::Vector{T}\nend\n\ns = System(2, rand(2), rand(2))which, by default is displayed in Juno using a Juno.Tree structure, with the \"head\" displaying the Type information,  and expandable arrows for all the fields that are expandable, meaning, the head itself, as well as the 2nd and 3rd fields, which are vectors.The most basic way to change this, is to simply add some custom strings to Juno.render like:import Juno.render\nfunction Juno.render(i::Juno.Inline, s::System)\n  str = \"$(s.d)-dimensional system\"\n  Juno.render(i, Text(str))\nendand then, this will change the way Juno displays the system to simply: \"2-dimensional system\". It is important to have the first argument i::Juno.Inline in your definition, instead of some println() function call, because this ensures that the information is shown correctly either at the console or on inline evaluation (with e.g. Shift+Enter at the editor).However, with this approach you lose the cool interactivity of Juno allowing you to expand fields as you like. Let's say that you would like to keep the Juno display format, but simply change the message displayed on the \"head\", because for example you might not want the type information to be displayed. This is done by changing the \"head\" of the Juno.Tree that is  created by default:function Juno.render(i::Juno.Inline, s::System)\n  t = Juno.render(i, Juno.defaultrepr(s))\n  t[:head] = Juno.render(i, Text(\"$(length(s.state))-dimensional system\"))\n  t\nendBut now you notice that you display the dimension information both at the \"head\" of the tree, but also on one of the  \"children\", since by default all fields of a Type are printed. Well, thankfully, it is really easy to remove  a children from display:function Juno.render(i::Juno.Inline, s::System)\n  t = Juno.render(i, Juno.defaultrepr(s))\n  t[:head] = Juno.render(i, Text(\"$(length(s.state))-dimensional system\"))\n  t[:children ] = t[:children][2:3]\n  return t\nendHere, each entry in the vector t[:children] is one displayed entity of the Juno.Tree. By removing the first entry  (which is the first field of our Type) we are now displaying only the fields state and vel. Of course, it goes without saying that you can completely change how the fields are displayed (e.g. change the vel display to velocity) by going deeper into t[:children]."
+    "text": "As was mentioned in the Basic Usage page, you can enhance the way user-defined types are printed in the Juno console (or similarly during inline evaluation). Note: The difference between printing in Juno and in the REPL is discussed in the follow-up section.This enhancing is done by extending the Juno.render(::MyType) function to match your type.Juno.render\nJuno.@renderAs an example, we will use the typestruct System{T}\n  d::Int\n  state::Vector{T}\n  vel::Vector{T}\nend\n\ns = System(2, rand(2), rand(2))which, by default is displayed in Juno using a Juno.Tree structure, with the \"head\" displaying the Type information, and expandable arrows for all the fields that are expandable, meaning, the head itself, as well as the 2nd and 3rd fields, which are vectors.The most basic way to change this, is to simply add some custom strings to Juno.render like:import Juno.render\nfunction Juno.render(i::Juno.Inline, s::System)\n  str = \"$(s.d)-dimensional system\"\n  Juno.render(i, Text(str))\nendand then, this will change the way Juno displays the system to simply: \"2-dimensional system\". It is important to have the first argument i::Juno.Inline in your definition, instead of some println() function call, because this ensures that the information is shown correctly either at the console or on inline evaluation (with e.g. Shift+Enter at the editor).Juno.Inline is one of the predefined rendering contexts defined in Juno:Juno.Inline\nJuno.Clipboard\nJuno.PlotPaneHowever, with this approach you lose the cool interactivity of Juno allowing you to expand fields as you like. Let's say that you would like to keep the Juno display format, but simply change the message displayed on the \"head\", because for example you might not want the type information to be displayed. This is done by changing the \"head\" of the Juno.Tree that is created by default:function Juno.render(i::Juno.Inline, s::System)\n  t = Juno.render(i, Juno.defaultrepr(s))\n  t[:head] = Juno.render(i, Text(\"$(length(s.state))-dimensional system\"))\n  t\nendJuno.defaultreprBut now you notice that you display the dimension information both at the \"head\" of the tree, but also on one of the \"children\", since by default all fields of a Type are printed. Well, thankfully, it is really easy to remove a children from display:function Juno.render(i::Juno.Inline, s::System)\n  t = Juno.render(i, Juno.defaultrepr(s))\n  t[:head] = Juno.render(i, Text(\"$(length(s.state))-dimensional system\"))\n  t[:children ] = t[:children][2:3]\n  return t\nendHere, each entry in the vector t[:children] is one displayed entity of the Juno.Tree. By removing the first entry (which is the first field of our Type) we are now displaying only the fields state and vel. Of course, it goes without saying that you can completely change how the fields are displayed (e.g. change the vel display to velocity) by going deeper into t[:children].It's also possible to display arbitrary HTML in results: There are render methods for all the HTML primitives defined in Hiccup.jl as well as for certain higher-level elements from Juno.jl or even BaseJuno.Tree\nJuno.LazyTree\nJuno.SubTree\nJuno.Link\nJuno.Table\nJuno.Row\nBase.TextShould you wish to render something in the PlotPane, you can get it's dimensions viaJuno.plotsize"
 },
 
 {
     "location": "man/info_developer.html#Printing-in-REPL-vs.-Juno-1",
-    "page": "Package Developing Information",
+    "page": "Information for Package Developers",
     "title": "Printing in REPL vs. Juno",
     "category": "section",
-    "text": "If a method for Base.show is present, but no method exists for Juno.render, then Juno will fallback to show. If both exist however, you can get the awesome display capabilities of Juno, while still having custom support for your Types in the REPL. For example, by adding the function:import Base.show\nfunction Base.show(io::IO, s::System)\n  println(io, \"$(length(s.state))-dimensional system\")\n  println(io, \"state: $(s.state)\")\n  println(io, \"velocity $(s.vel)\")\nendyou can support custom printing at the REPL as well, without ruining the Juno printing."
-},
-
-{
-    "location": "man/info_developer.html#Avoiding-adding-Juno-to-REQUIRE-1",
-    "page": "Package Developing Information",
-    "title": "Avoiding adding Juno to REQUIRE",
-    "category": "section",
-    "text": "If you want to avoid adding Juno to your REQUIRE file, then you have to use Requires.jl. Simply add Requires to your REQUIRE file, and wrap your Juno.render function in this macro:@require Juno begin\n  import Juno.render\n  function Juno.render(i::Juno.Inline, s::System)\n    t = Juno.render(i, Juno.defaultrepr(s))\n    t[:head] = Juno.render(i, Text(\"$(length(s.state))-dimensional system\"))\n    t[:children] = t[:children][2:3]\n    return t\n  end\nendand you are good to go! The code will only be loaded if Juno is loaded (which happens by default when using Atom)."
+    "text": "If a method for Base.show is present, but no method exists for Juno.render, then Juno will fall back to show. If both exist however, you can get the awesome display capabilities of Juno, while still having custom support for your Types in the REPL. For example, by adding the function:import Base.show\nfunction Base.show(io::IO, s::System)\n  println(io, \"$(length(s.state))-dimensional system\")\n  println(io, \"state: $(s.state)\")\n  println(io, \"velocity $(s.vel)\")\nendyou can support custom printing at the REPL as well, without ruining the Juno printing."
 },
 
 {
