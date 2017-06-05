@@ -62,6 +62,8 @@ function Juno.render(i::Juno.Inline, s::System)
   return t
 end
 ```
+![custom rendering](../assets/custom_rendering.png)
+
 Here, each entry in the vector `t[:children]` is one displayed entity of the `Juno.Tree`. By removing the first entry (which is the first field of our Type) we are now displaying only the fields `state` and `vel`. Of course, it goes without saying that you can completely change how the fields are displayed (e.g. change the `vel` display to `velocity`) by going deeper into `t[:children]`.
 
 It's also possible to display arbitrary HTML in results: There are `render` methods for all the HTML primitives defined in [Hiccup.jl](https://github.com/JunoLab/Hiccup.jl) as well as for certain higher-level elements from Juno.jl or even Base
