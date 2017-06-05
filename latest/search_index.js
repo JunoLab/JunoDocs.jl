@@ -517,7 +517,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Information for Package Developers",
     "title": "Conditionally defining Juno-specific render methods",
     "category": "section",
-    "text": "It is possible to use (Requires.jl)[https://github.com/MikeInnes/Requires.jl] to circumvent having a hard dependency on Juno.jl for rendering:@require Juno begin\n  using Juno\n  function Juno.render(i::Juno.Inline, s::System)\n    t = Juno.render(i, Juno.defaultrepr(s))\n    t[:head] = Juno.render(i, Text(\"$(length(s.state))-dimensional system\"))\n    t[:children] = t[:children][2:3]\n    return t\n  end\nendWarning: This may or may not break everything and anything, see here for some discussion."
+    "text": "It is possible to use Requires.jl to circumvent having a hard dependency on Juno.jl for rendering:@require Juno begin\n  using Juno\n  function Juno.render(i::Juno.Inline, s::System)\n    t = Juno.render(i, Juno.defaultrepr(s))\n    t[:head] = Juno.render(i, Text(\"$(length(s.state))-dimensional system\"))\n    t[:children] = t[:children][2:3]\n    return t\n  end\nendWarning: This may or may not break everything and anything, see here for some discussion."
 },
 
 {
