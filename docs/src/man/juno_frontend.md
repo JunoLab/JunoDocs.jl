@@ -34,9 +34,28 @@ or provide structured display for arbitrary objects (similar to `Base.dump`)
 Juno.structure
 ```
 
+## Profiler
+Profiles collected by `@profile` can be displayed as a flame chart (similar to `ProfileView.jl`)
+inside of Juno by calling `Juno.profiler()`. `Juno.profiletree()` will display the stack
+trace similar to the output of Base's `Profile.print()`. There's also a `@profiler` macro
+which does the same as `@profile` but also displays the collected information as a flame chart
+and clears all collected backtraces beforehand.
+
+```@docs
+Juno.profiler
+Juno.profiletree
+Juno.@profiler
+```
+![profiler](../assets/profiler.png)
+
+Clicking on one of the boxes in the profile view will take you to the corresponding file/line.
+The length of the lines in the editor correspond to the percentage of calls made in that line;
+to clear the profile view and the in-editor display, click the `Forget Plot` button in the
+profile view toolbar.
+
 ## Progress Meters
 
-Juno.jl allows package developers to use the progressbar which is provided in the
+Juno.jl allows package developers to use the progress bar which is provided in the
 Atom window. For example, you can easily show a progress meter for a `for loop`
 via the command:
 
