@@ -29,7 +29,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Home",
     "title": "Reporting Issues / Bugs",
     "category": "section",
-    "text": "If you have any issues with this setup, please do report them at discuss.junolab.org. We'll do our best to help you get going."
+    "text": "If you have any issues with this setup, please do report them at discourse.julialang.org. We'll do our best to help you get going."
 },
 
 {
