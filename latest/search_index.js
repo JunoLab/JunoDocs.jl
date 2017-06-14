@@ -373,7 +373,7 @@ var documenterSearchIndex = {"docs": [
     "page": "The Juno.jl Front-End",
     "title": "Juno.structure",
     "category": "Function",
-    "text": "structure(x)\n\nDisplay x's underlying representation, rather than using its normal display method. For example, structure(:(2x+1)) displays the Expr object with its head and args fields instead of printing the expression.\n\n\n\n"
+    "text": "structure(x)\n\nDisplay x's underlying representation, rather than using its normal display method.\n\nFor example, structure(:(2x+1)) displays the Expr object with its head and args fields instead of printing the expression.\n\n\n\n"
 },
 
 {
@@ -382,6 +382,30 @@ var documenterSearchIndex = {"docs": [
     "title": "Enhanced Display",
     "category": "section",
     "text": "Juno.jl includes features which allow package developers to created enhanced displays in Juno.For example, we can print info to the console in a nicer way:info(\"foo\")(Image: info)Juno.infoor provide structured display for arbitrary objects (similar to Base.dump)(Image: structure)Juno.structure"
+},
+
+{
+    "location": "man/juno_frontend.html#Juno.profiler",
+    "page": "The Juno.jl Front-End",
+    "title": "Juno.profiler",
+    "category": "Function",
+    "text": "profiler()\n\nShow currently collected profile information as an in-editor flamechart.\n\n\n\n"
+},
+
+{
+    "location": "man/juno_frontend.html#Juno.profiletree",
+    "page": "The Juno.jl Front-End",
+    "title": "Juno.profiletree",
+    "category": "Function",
+    "text": "profiletree()\n\nShow currently collected profile information in tree-form. Falls back to Profile.print().\n\n\n\n"
+},
+
+{
+    "location": "man/juno_frontend.html#Juno.@profiler",
+    "page": "The Juno.jl Front-End",
+    "title": "Juno.@profiler",
+    "category": "Macro",
+    "text": "@profiler\n\nClear currently collected profile traces, profile the provided expression and show it via Juno.profiler().\n\n\n\n"
 },
 
 {
@@ -469,7 +493,15 @@ var documenterSearchIndex = {"docs": [
     "page": "The Juno.jl Front-End",
     "title": "Juno.input",
     "category": "Function",
-    "text": "input() -> \"...\"\n\nPrompt the user to input some text, and return it.\n\n\n\n"
+    "text": "input(prompt = \"\") -> \"...\"\n\nPrompt the user to input some text, and return it. Optionally display a prompt.\n\n\n\n"
+},
+
+{
+    "location": "man/juno_frontend.html#Juno.notify",
+    "page": "The Juno.jl Front-End",
+    "title": "Juno.notify",
+    "category": "Function",
+    "text": "notify(msg)\n\nDisplay msg as an OS specific notification.\n\nUseful for signaling the end of a long running computation or similar. This disregards the Notifications setting in julia-client. Falls back to info(msg) in other environments.\n\n\n\n"
 },
 
 {
@@ -494,6 +526,14 @@ var documenterSearchIndex = {"docs": [
     "title": "Information for Package Developers",
     "category": "section",
     "text": "In this page we giving some information that can help Package developers interact smoothly with Juno, and use it to their advantage for e.g. displaying Types, graphics etc."
+},
+
+{
+    "location": "man/info_developer.html#Juno.defaultrepr",
+    "page": "Information for Package Developers",
+    "title": "Juno.defaultrepr",
+    "category": "Function",
+    "text": "defaultrepr(x, lazy = false)\n\nrender fallback for types without any specialized show methods.\n\nIf lazy is true, then the type's fields will be loaded lazily when expanding the tree. This is useful when the fields contain big elements that might need to be inspectable.\n\nCan be used by packages to restore Juno's default printing if they have defined a show method that should not be used by Juno:\n\nJuno.render(i::Juno.Inline, x::myType) = Juno.render(i, Juno.defaultrepr(x))\n\n\n\n"
 },
 
 {
