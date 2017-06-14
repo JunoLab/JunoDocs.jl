@@ -385,6 +385,14 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "man/juno_frontend.html#Profiler-1",
+    "page": "The Juno.jl Front-End",
+    "title": "Profiler",
+    "category": "section",
+    "text": "Profiles collected by @profile can be displayed as a flame chart (similar to ProfileView.jl) inside of Juno by calling Juno.profiler(). Juno.profiletree() will display the stack trace similar to the output of Base's Profile.print(). There's also a @profiler macro which does the same as @profile but also displays the collected information as a flame chart and clears all collected backtraces beforehand.Juno.profiler\nJuno.profiletree\nJuno.@profiler(Image: profiler)Clicking on one of the boxes in the profile view will take you to the corresponding file/line. The length of the lines in the editor correspond to the percentage of calls made in that line; to clear the profile view and the in-editor display, click the Forget Plot button in the profile view toolbar."
+},
+
+{
     "location": "man/juno_frontend.html#Juno.@progress",
     "page": "The Juno.jl Front-End",
     "title": "Juno.@progress",
@@ -445,7 +453,7 @@ var documenterSearchIndex = {"docs": [
     "page": "The Juno.jl Front-End",
     "title": "Progress Meters",
     "category": "section",
-    "text": "Juno.jl allows package developers to use the progressbar which is provided in the Atom window. For example, you can easily show a progress meter for a for loop via the command:@progress for ...(Image: progress)The following functions provide this interface:Juno.@progress\nJuno.progress\nJuno.ProgressBar\nJuno.name\nJuno.msg\nJuno.right_text\nJuno.doneIt is recommended to either use the @progress macro or theprogress(name = \"Foo\") do p\n\nendnotation to ensure that the progress bars are properly unregistered in the frontend."
+    "text": "Juno.jl allows package developers to use the progress bar which is provided in the Atom window. For example, you can easily show a progress meter for a for loop via the command:@progress for ...(Image: progress)The following functions provide this interface:Juno.@progress\nJuno.progress\nJuno.ProgressBar\nJuno.name\nJuno.msg\nJuno.right_text\nJuno.doneIt is recommended to either use the @progress macro or theprogress(name = \"Foo\") do p\n\nendnotation to ensure that the progress bars are properly unregistered in the frontend."
 },
 
 {
