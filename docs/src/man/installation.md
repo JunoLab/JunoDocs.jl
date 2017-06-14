@@ -51,7 +51,7 @@ installation feature. When complete, Julia and Atom will be linked.
 
 If you experience problems after installing Juno, have a look at the [FAQ](@ref).
 In case you can't solve your problem with the instructions here or in the FAQ,
-then please post [at the discussion board](http://discuss.junolab.org/) and we're
+then please post [at the discussion board](https://discourse.julialang.org/) and we're
  happy to help.
 
 #### Juno could not be started.

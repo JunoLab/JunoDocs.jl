@@ -2,7 +2,7 @@
 
 ### I am having issues, where do I leave a bug report?
 
-Please leave bug reports either [at the discussion board](http://discuss.junolab.org/)
+Please leave bug reports either [at the discussion board](https://discourse.julialang.org)
 or [at the Juno.jl Github repository](https://github.com/JunoLab/Juno.jl/issues).
 
 ### Some Juno package is using the wrong precompile cache, what do I do?

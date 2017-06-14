@@ -4,7 +4,7 @@
 
 This project is composed of many sub-projects, and it can be hard to know the appropriate
 place to file issues. For that reason we prefer that non-developers report issues on the
-[Juno discussion forum](http://discuss.junolab.org/) under the "issue" category or
+[Juno discussion forum](https://discourse.julialang.org/) under the "issue" category or
 or [at the Juno.jl Github repository](https://github.com/JunoLab/Juno.jl/issues). If
 you know which package the issue is appropriate in, then please open an issue there.
 Bug reports can be some of the most helpful contributions!
@@ -12,7 +12,7 @@ Bug reports can be some of the most helpful contributions!
 ### Contributing to the Packages
 
 If you have feature ideas you'd like to implement, or bugs you'd like to fix, feel free to
-open a [discussion](http://discuss.junolab.org/) under the "dev" category – we're always happy
+open a [discussion](https://discourse.julialang.org/) under the "dev" category – we're always happy
 to help people flesh out their ideas or get unstuck on problems. Another good place
 to discuss with developers is in the [Juno Gitter](https://gitter.im/JunoLab/Juno).
 Come by and we can chat about your ideas.

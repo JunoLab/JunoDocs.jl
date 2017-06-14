@@ -16,7 +16,7 @@ If you wish to use Juno with the Julia nightly version, you may need to use the
 ### Reporting Issues / Bugs
 
 If you have any issues with this setup, please do report them at
-[discuss.junolab.org](http://discuss.junolab.org). We'll do our best to help you get going.
+[discuss.junolab.org](https://discourse.julialang.org). We'll do our best to help you get going.
 
 ### User Manual
 
