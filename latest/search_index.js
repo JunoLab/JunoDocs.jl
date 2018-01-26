@@ -61,13 +61,13 @@ var documenterSearchIndex = {"docs": [
     "page": "Installation Instructions",
     "title": "Installation Instructions",
     "category": "section",
-    "text": "Getting Juno takes a couple of simple steps. One needs to:Install Julia\nInstall Atom\nInstall the Juno plugin for Atom (uber-juno)Follow this and you'll be running Julia code in no time!"
+    "text": "Getting Juno takes a couple of simple steps:"
 },
 
 {
-    "location": "man/installation.html#Getting-Julia-1",
+    "location": "man/installation.html#.-Install-Julia-1",
     "page": "Installation Instructions",
-    "title": "Getting Julia",
+    "title": "1. Install Julia",
     "category": "section",
     "text": "First, download Julia (command line version) for your platform from the downloads page.Then:"
 },
@@ -97,27 +97,27 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "man/installation.html#Getting-Atom-1",
+    "location": "man/installation.html#.-Install-Atom-1",
     "page": "Installation Instructions",
-    "title": "Getting Atom",
+    "title": "2. Install Atom",
     "category": "section",
-    "text": "Download, install and open Atom. If you have it already, make sure it's up to date (version 1.7+)."
+    "text": "Download, install and open Atom. If you have it already, make sure it's up to date (version 1.23+)."
 },
 
 {
-    "location": "man/installation.html#Installing-the-Juno-Plugin-1",
+    "location": "man/installation.html#.-Install-Juno-1",
     "page": "Installation Instructions",
-    "title": "Installing the Juno Plugin",
+    "title": "3. Install Juno",
     "category": "section",
     "text": "In Atom, go to Settings (Ctrl+,, or Cmd+, on OS X) and go to the \"Install\" panel.Type uber-juno into the search box and hit enter. Click the install button on the package of the same name.Atom will then set up Juno for you, installing the required Atom and Julia packages."
 },
 
 {
-    "location": "man/installation.html#Installing-the-Atom-Julia-Interaction-1",
+    "location": "man/installation.html#.-Use-Juno-1",
     "page": "Installation Instructions",
-    "title": "Installing the Atom-Julia Interaction",
+    "title": "4. Use Juno",
     "category": "section",
-    "text": "The Atom-Julia interaction is automatically installed by using a command in the console. To do this, go to Packages > Julia > Open Console to open the console, and type in any Julia command like 2+2. This will start the automatic installation feature. When complete, Julia and Atom will be linked."
+    "text": "You should be good to go now – try opening the REPL with Packages > Julia > Open Console or Ctrl-J Ctrl-O and press Enter to start a Julia session."
 },
 
 {
@@ -125,7 +125,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Installation Instructions",
     "title": "Common Problems",
     "category": "section",
-    "text": "If you experience problems after installing Juno, have a look at the FAQ. In case you can't solve your problem with the instructions here or in the FAQ, then please post at the discussion board and we're  happy to help."
+    "text": "If you experience problems after installing Juno, have a look at the FAQ. In case you can't solve your problem with the instructions here or in the FAQ, then please post at the discussion board and we're happy to help."
 },
 
 {
@@ -134,14 +134,6 @@ var documenterSearchIndex = {"docs": [
     "title": "Juno could not be started.",
     "category": "section",
     "text": "Go to Packages > Julia > Settings and change \"Julia Path\" to point to the Julia binary."
-},
-
-{
-    "location": "man/installation.html#MbedTLS-not-properly-installed.-1",
-    "page": "Installation Instructions",
-    "title": "MbedTLS not properly installed.",
-    "category": "section",
-    "text": "If you getERROR: LoadError: MbedTLS not properly installed. Please run Pkg.build(\"MbedTLS\")in the Julia console, first try Pkg.build(\"MbedTLS\") in the Julia REPL. If that errors and you are on Linux, try installing cmake and then calling the above command again."
 },
 
 {
@@ -165,7 +157,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Usage",
     "title": "The Command Panel",
     "category": "section",
-    "text": "To open the command panel, use Ctrl+Shift+p or go to Packages > Command Pallete > Toggle. In the command pallete you can search for common commands. For example, type in \"julia\" and you will see the commands which relate to Julia (and the keyboard shortcuts for the commands)."
+    "text": "To open the command panel, use Ctrl+Shift+p or go to Packages > Command Palette > Toggle. In the command pallete you can search for common commands. For example, type in \"julia\" and you will see the commands which relate to Julia (and the keyboard shortcuts for the commands)."
 },
 
 {
@@ -289,14 +281,6 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "man/faq.html#What-are-these-warnings-in-the-console?-1",
-    "page": "FAQ",
-    "title": "What are these warnings in the console?",
-    "category": "section",
-    "text": "If you are experiencing warnings like:WARNING: julia-client: can't render lazyorWARNING: Atom.jl: unrecognised message clearLazy.there's no reason to be alarmed: these warnings are harmless. They mostly occur because Juno is developing very fast, and so the package versions you have may be \"out of sync\". The most common fix is to Pkg.update() and to make sure your your Atom packages are up to date (a blue box shows up in the in the bottom right corner when an update is available).(Image: UpdateBoxScreenshot)If none of these work, again there's no need to worry since these warnings are not breaking. Note that if you are on the Julia nightly version, you should expect that these warnings may occur, it's just part of being on the bleeding edge."
-},
-
-{
     "location": "man/faq.html#I-am-having-a-problem-running-Juno-with-an-older-version-of-Julia,-why?-1",
     "page": "FAQ",
     "title": "I am having a problem running Juno with an older version of Julia, why?",
@@ -313,6 +297,14 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "man/faq.html#How-do-I-execute-code-on-Juno-startup?-1",
+    "page": "FAQ",
+    "title": "How do I execute code on Juno startup?",
+    "category": "section",
+    "text": "Much like Julia has its .juliarc.jl file for executing code on startup, Juno will execute code contained in ~/.junorc.jl after Julia has been booted and a connection with the editor is established. This allows running code on startup that queries the frontend, e.g. Juno.syntaxcolors."
+},
+
+{
     "location": "man/faq.html#Advanced-topics-1",
     "page": "FAQ",
     "title": "Advanced topics",
@@ -326,14 +318,6 @@ var documenterSearchIndex = {"docs": [
     "title": "Connecting to an external julia session on a remote machine",
     "category": "section",
     "text": "Use case: local installation of Juno with a remote julia sessionLaunch Atom/Juno on your local machine\nIn Atom/Juno, bring up the command palette with cmd-shift-p (macOS) or ctrl-shift-p )Linux/Windows) and search for Julia Client: Connect External Process (Juno will then tell you which port to use locally –> we'll call it Port#2)\nPort forwardingLinux/Unix: Open a local terminal and connect to your remote server : ssh -R PORT#1:localhost:PORT#2 your.server.comWindows: Port forwarding via netsh should work. See here for an example.Launch julia in the terminal on the remote machine\nType in julia session: using Juno; Juno.connect(PORT#1)"
-},
-
-{
-    "location": "man/faq.html#Executing-code-on-Juno-startup-1",
-    "page": "FAQ",
-    "title": "Executing code on Juno startup",
-    "category": "section",
-    "text": "Much like Julia has its .juliarc.jl file for executing code on startup, Juno will execute code contained in ~/.junorc.jl after booting the client."
 },
 
 {
@@ -361,14 +345,6 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "man/juno_frontend.html#Juno.info",
-    "page": "The Juno.jl Front-End",
-    "title": "Juno.info",
-    "category": "Function",
-    "text": "info(msg)\n\nShow the given message in Juno's console using blue styling, or fall back to Base.info.\n\nIn a package, you can use import Juno: info to replace the default version with this one.\n\n\n\n"
-},
-
-{
     "location": "man/juno_frontend.html#Juno.structure",
     "page": "The Juno.jl Front-End",
     "title": "Juno.structure",
@@ -381,7 +357,7 @@ var documenterSearchIndex = {"docs": [
     "page": "The Juno.jl Front-End",
     "title": "Enhanced Display",
     "category": "section",
-    "text": "Juno.jl includes features which allow package developers to created enhanced displays in Juno.For example, we can print info to the console in a nicer way:info(\"foo\")(Image: info)Juno.infoor provide structured display for arbitrary objects (similar to Base.dump)(Image: structure)Juno.structure"
+    "text": "Juno.jl includes features which allow package developers to created enhanced displays in Juno.For example, we can print provide structured display for arbitrary objects (similar to Base.dump)(Image: structure)Juno.structure"
 },
 
 {
@@ -436,7 +412,7 @@ var documenterSearchIndex = {"docs": [
     "location": "man/juno_frontend.html#Juno.ProgressBar",
     "page": "The Juno.jl Front-End",
     "title": "Juno.ProgressBar",
-    "category": "Type",
+    "category": "Function",
     "text": "ProgressBar(;name = \"\", msg = \"\")\n\nCreate a new progress bar and register it with Juno, if possible.\n\nTake care to unregister the progress bar by calling done on it, or use the progress(f::Function) syntax, which will handle that automatically.\n\n\n\n"
 },
 
@@ -465,9 +441,9 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "man/juno_frontend.html#Base.done",
+    "location": "man/juno_frontend.html#Juno.done",
     "page": "The Juno.jl Front-End",
-    "title": "Base.done",
+    "title": "Juno.done",
     "category": "Function",
     "text": "done(p::ProgressBar)\n\nRemove p from the frontend.\n\n\n\n"
 },
@@ -489,14 +465,6 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "man/juno_frontend.html#Juno.input",
-    "page": "The Juno.jl Front-End",
-    "title": "Juno.input",
-    "category": "Function",
-    "text": "input(prompt = \"\") -> \"...\"\n\nPrompt the user to input some text, and return it. Optionally display a prompt.\n\n\n\n"
-},
-
-{
     "location": "man/juno_frontend.html#Juno.notify",
     "page": "The Juno.jl Front-End",
     "title": "Juno.notify",
@@ -505,11 +473,19 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "man/juno_frontend.html#Juno.syntaxcolors",
+    "page": "The Juno.jl Front-End",
+    "title": "Juno.syntaxcolors",
+    "category": "Function",
+    "text": "syntaxcolors(selectors = Atom.SELECTORS)::Dict{String, UInt32}\n\nGet the colors used by the current Atom theme. selectors should be a Dict{String, Vector{String}} which assigns a css selector (e.g. syntax--julia) to a name (e.g. variable).\n\n\n\n"
+},
+
+{
     "location": "man/juno_frontend.html#Interaction-1",
     "page": "The Juno.jl Front-End",
     "title": "Interaction",
     "category": "section",
-    "text": "Juno.jl lets package developers interact with users via the Atom frontend. For example, you can allow the user to select from a list of options:Juno.selector(Image: selector)or get input in the console:Juno.input(Image: input)Juno.notifyAs of version 0.5.11 of Atom.jl, Base.readline() will also correctly request user input from the console instead of stalling indefinitely."
+    "text": "Juno.jl lets package developers interact with users via the Atom frontend. For example, you can allow the user to select from a list of options:Juno.selector(Image: selector)or send an OS-level notification:Juno.notifyYou can also useJuno.syntaxcolorsfor querying the currently used syntax colors in Atom (and generate a plot theme or an OhMyREPL syntax theme from that)."
 },
 
 {
