@@ -113,10 +113,8 @@ and `a` will use the special Juno console rendering, even if the package does
 not require/use Juno.jl.
 
 ### Using the Debugger (experimental)
-Juno features an interactive debugger based on [Gallium.jl](https://github.com/Keno/Gallium.jl). The easiest way to access it to use the `Juno.@step` macro on a function call:
+Juno features an interactive debugger based on [ASTInterpreter2.jl](https://github.com/Keno/ASTInterpreter2.jl). The easiest way to access it to use the `Juno.@enter` macro on a function call:
 
-![stepping](../assets/stepping.gif)
+![stepping](../assets/stepper.gif)
 
-While you are stepping through a function, it's local variables will be displayed in the workspace and you can access them in the console (note, however, that it is *not* possible to assign to variables right now).
-
-It is also possible to set a breakpoint (only via the `Juno.breakpoint` function for now), which will initialize the debugger at the breakpoint. `Juno.breakpoint` takes the same arguments as `Gallium.breakpoint`, so see [here](https://github.com/Keno/Gallium.jl#breakpointing-options) for a description.
+While you are stepping through a function, it's local variables will be displayed in the workspace and you can access them in the console.

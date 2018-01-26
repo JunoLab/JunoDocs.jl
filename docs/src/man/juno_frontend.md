@@ -98,3 +98,9 @@ Juno.syntaxcolors
 ```
 
 for querying the currently used syntax colors in Atom (and generate a plot theme or an OhMyREPL syntax theme from that).
+
+The console can be cleared with
+```@docs
+Juno.clearconsole
+```
+or `Ctrl-J Ctrl-C`.
