@@ -14,19 +14,7 @@ Juno.isactive
 Juno.jl includes features which allow package developers to created enhanced displays
 in Juno.
 
-For example, we can print `info` to the console in a nicer way:
-
-```julia
-info("foo")
-```
-
-![info](../assets/info.gif)
-
-```@docs
-Juno.info
-```
-
-or provide structured display for arbitrary objects (similar to `Base.dump`)
+For example, we can print provide structured display for arbitrary objects (similar to `Base.dump`)
 
 ![structure](../assets/structure.png)
 
@@ -97,16 +85,16 @@ Juno.selector
 
 ![selector](../assets/selector.gif)
 
-or get input in the console:
-
-```@docs
-Juno.input
-```
-
-![input](../assets/input.gif)
+or send an OS-level notification:
 
 ```@docs
 Juno.notify
 ```
 
-As of version 0.5.11 of Atom.jl, `Base.readline()` will also correctly request user input from the console instead of stalling indefinitely.
+You can also use
+
+```@docs
+Juno.syntaxcolors
+```
+
+for querying the currently used syntax colors in Atom (and generate a plot theme or an OhMyREPL syntax theme from that).

@@ -26,32 +26,6 @@ using Atom
 
 That will force Julia to re-compile all of the cache files and should fix the problem.
 
-### What are these warnings in the console?
-
-If you are experiencing warnings like:
-
-```julia
-WARNING: julia-client: can't render lazy
-```
-
-or
-
-```julia
-WARNING: Atom.jl: unrecognised message clearLazy.
-```
-
-there's no reason to be alarmed: these warnings are harmless. They mostly occur
-because Juno is developing very fast, and so the package versions you have may
-be "out of sync". The most common fix is to `Pkg.update()` and to make sure your
-your Atom packages are up to date (a blue box shows up in the in the bottom right corner
-when an update is available).
-
-![UpdateBoxScreenshot](../assets/updatepic.PNG)
-
-If none of these work, again there's no need to worry since these warnings are not
-breaking. Note that if you are on the Julia nightly version, you should expect that these
-warnings may occur, it's just part of being on the bleeding edge.
-
 ### I am having a problem running Juno with an older version of Julia, why?
 
 Juno is under rapid development, so it's expected that previous versions may not
@@ -70,6 +44,10 @@ should work using the [Developer Install](). Note that this will require you to
 be on master for the Julia and Atom packages, so things will be changing likely
 before documentation changes.
 
+### How do I execute code on Juno startup?
+
+Much like Julia has its `.juliarc.jl` file for executing code on startup, Juno will execute code contained in `~/.junorc.jl` after Julia has been booted and a connection with the editor is established. This allows running code on startup that queries the frontend, e.g. [`Juno.syntaxcolors`](@ref).
+
 ## Advanced topics
 
 ### Connecting to an external julia session on a remote machine
@@ -86,6 +64,3 @@ Use case: local installation of Juno with a remote julia session
 
 4. Launch julia in the terminal on the remote machine
 5. Type in julia session: `using Juno; Juno.connect(PORT#1)`
-
-### Executing code on Juno startup
-Much like Julia has its `.juliarc.jl` file for executing code on startup, Juno will execute code contained in `~/.junorc.jl` after booting the client.
