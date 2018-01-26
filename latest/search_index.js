@@ -245,7 +245,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Usage",
     "title": "Using the Debugger (experimental)",
     "category": "section",
-    "text": "Juno features an interactive debugger based on Gallium.jl. The easiest way to access it to use the Juno.@step macro on a function call:(Image: stepping)While you are stepping through a function, it's local variables will be displayed in the workspace and you can access them in the console (note, however, that it is not possible to assign to variables right now).It is also possible to set a breakpoint (only via the Juno.breakpoint function for now), which will initialize the debugger at the breakpoint. Juno.breakpoint takes the same arguments as Gallium.breakpoint, so see here for a description."
+    "text": "Juno features an interactive debugger based on ASTInterpreter2.jl. The easiest way to access it to use the Juno.@enter macro on a function call:(Image: stepping)While you are stepping through a function, it's local variables will be displayed in the workspace and you can access them in the console."
 },
 
 {
@@ -481,11 +481,19 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "man/juno_frontend.html#Juno.clearconsole",
+    "page": "The Juno.jl Front-End",
+    "title": "Juno.clearconsole",
+    "category": "Function",
+    "text": "clearconsole()\n\nClear the console if Juno is used; does nothing otherwise.\n\n\n\n"
+},
+
+{
     "location": "man/juno_frontend.html#Interaction-1",
     "page": "The Juno.jl Front-End",
     "title": "Interaction",
     "category": "section",
-    "text": "Juno.jl lets package developers interact with users via the Atom frontend. For example, you can allow the user to select from a list of options:Juno.selector(Image: selector)or send an OS-level notification:Juno.notifyYou can also useJuno.syntaxcolorsfor querying the currently used syntax colors in Atom (and generate a plot theme or an OhMyREPL syntax theme from that)."
+    "text": "Juno.jl lets package developers interact with users via the Atom frontend. For example, you can allow the user to select from a list of options:Juno.selector(Image: selector)or send an OS-level notification:Juno.notifyYou can also useJuno.syntaxcolorsfor querying the currently used syntax colors in Atom (and generate a plot theme or an OhMyREPL syntax theme from that).The console can be cleared withJuno.clearconsoleor Ctrl-J Ctrl-C."
 },
 
 {
@@ -557,7 +565,15 @@ var documenterSearchIndex = {"docs": [
     "page": "Settings",
     "title": "Settings",
     "category": "section",
-    "text": "Julia Path: The location of the Julia binary. This is the command that Atom uses to call Julia. It defaults to the command julia which requires that Julia has been added to the path. If Julia is not in the path, this must be the path to the Julia binary.\nBoot Mode: This is the type of process list that atom-julia-client is using.\nThe default is Basic, which only has one process running at a time.\nCycler instead has a process queue per window, meaning that if you quit the REPL (Ctrl+j+ Ctrl+o) then there exists an already running process which will seamlessly replace it.\nServer has a shared process queue between all windows, resulting in less processes (2+n vs 2n where n is the number of windows), but is still experimental. Currently disabled due to instability.\nDeprecation Warnings: Checkbox for whether to show the Julia deprecation warnings in the console.\nOptimization Level: Sets the -O optimization level for the Julia LLVM compiler. The default is 3 corresponding to -O3 which is the default for the Julia REPL. Higher levels take longer to compile but produce faster code.\nEnable Powershell Wrapper (Windows only): Use a Powershell wrapper to spawn Julia. This is required in order to allow interrupts.\nNotifications: Enables popup notifications when the evaluation finishes.\nError Notifications: When evaluating a script, this will show a popup when errors are encountered instead of only printing the error to the console.\nEnable Menu: Enables the Julia menu in the menu bar. This option requires a restart of Atom for the change to take effect.\nEnable Tool Bar: Shows the Julia icons in the tool bar. This option requires a restart of Atom for the change to take effect.\nUse Standard Layout: Sets up a classical IDE UI (editor, console, and workspace) on startup.\nMaximum Console Size: Limits the number of displayed lines in the Console (default: 10,000). A larger value will display more entries at the cost of slowing down Atom.\nTerminal: The command which is used to open a new REPL.\nResult Display Mode: Determines where the result of an inline evaluation is displayed:\nFloat results next to code\nDisplay results under code\nDisplay results in the console"
+    "text": "Julia Path: The location of the Julia binary. This is the command that Atom uses to call Julia. It defaults to the command julia which requires that Julia has been added to the path. If Julia is not in the path, this must be the path to the Julia binary."
+},
+
+{
+    "location": "man/settings.html#Julia-Options-1",
+    "page": "Settings",
+    "title": "Julia Options",
+    "category": "section",
+    "text": "Arguments: Sets the ARGS variable to emulate calls to julia script.jl arg1 arg2. Boot Mode: This is the type of process list that atom-julia-client is using.The default is Basic, which only has one process running at a time.\nCycler instead has a process queue per window, meaning that if you quit the REPL (Ctrl+j+ Ctrl+k) then there exists an already running process which will seamlessly replace it.Console Style: Switch between a REPL-based console (default) and the legacy HTML based console.Deprecation Warnings: Checkbox for whether to show the Julia deprecation warnings in the console.Number of Threads: Sets the number of threads – global will use whatever is set in $JULIA_NUM_THREADS and auto will set it to the number of physical cores.Optimization Level: Sets the -O optimization level for the Julia LLVM compiler. The default is 3 corresponding to -O3 which is the default for the Julia REPL. Higher levels take longer to compile but produce faster code.Enable Powershell Wrapper (Windows only): Use a Powershell wrapper to spawn Julia. This is required in order to allow interrupts for in-editor evaluation.Notifications: Enables popup notifications when the evaluation finishes.Error Notifications: When evaluating a script, this will show a popup when errors are encountered instead of only printing the error to the console.Enable Menu: Enables the Julia menu in the menu bar. This option requires a restart of Atom for the change to take effect.Enable Tool Bar: Shows the Julia icons in the tool bar. This option requires a restart of Atom for the change to take effect.Maximum Console Size: Limits the number of displayed lines in the Console (default: 10,000). A larger value will display more entries at the cost of slowing down Atom.Shell: Sets the shell used for spawning a new terminal via Julia Client: New Terminal.Terminal: The command which is used to open a new REPL.Result Display Mode: Determines where the result of an inline evaluation is displayed:Float results next to code\nDisplay results under code\nDisplay results in the console"
 },
 
 {
