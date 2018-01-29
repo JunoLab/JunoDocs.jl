@@ -9,7 +9,7 @@ integration with Julia's debugger (Gallium), a console for running code, and muc
 ### Installation
 
 To install Juno, please see the [Installation Instructions](@ref). These installation
-instructions should work for Windows, Mac OSX, and Linux on the current Julia release (v0.5).
+instructions should work for Windows, Mac OSX, and Linux on the current Julia release (v0.6).
 If you wish to use Juno with the Julia nightly version, you may need to use the
 [Developer Installation Instructions](@ref).
 
