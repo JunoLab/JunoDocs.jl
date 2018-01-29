@@ -21,7 +21,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Home",
     "title": "Installation",
     "category": "section",
-    "text": "To install Juno, please see the Installation Instructions. These installation instructions should work for Windows, Mac OSX, and Linux on the current Julia release (v0.5). If you wish to use Juno with the Julia nightly version, you may need to use the Developer Installation Instructions."
+    "text": "To install Juno, please see the Installation Instructions. These installation instructions should work for Windows, Mac OSX, and Linux on the current Julia release (v0.6). If you wish to use Juno with the Julia nightly version, you may need to use the Developer Installation Instructions."
 },
 
 {
