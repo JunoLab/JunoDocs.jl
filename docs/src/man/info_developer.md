@@ -2,7 +2,7 @@
 In this page we giving some information that can help Package developers interact smoothly with Juno, and use it to their advantage for e.g. displaying Types, graphics etc.
 
 ## Custom Type Printing
-As was mentioned in the [Basic Usage](/man/basic_usage) page, you can enhance the way user-defined types are printed in the Juno console (or similarly during inline evaluation). *Note*: The difference
+As was mentioned in the [Basic Usage](@ref) page, you can enhance the way user-defined types are printed in the Juno console (or similarly during inline evaluation). *Note*: The difference
 between printing in Juno and in the REPL is discussed in the follow-up section.
 
 This enhancing is done by extending the `Juno.render(::MyType)` function to match your type.

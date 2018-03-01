@@ -2,7 +2,7 @@
 
 These instructions assume that you have already installed Juno. If you have not yet installed Juno, please see the [Installation Instructions](@ref).
 
-### The Command Panel
+### The Command Palette
 
 To open the command panel, use `Ctrl+Shift+p` or go to Packages > Command Palette > Toggle. In the command pallete you can search for common commands. For example, type in "julia" and you will see the commands which relate to Julia (and the keyboard shortcuts for the commands).
 
