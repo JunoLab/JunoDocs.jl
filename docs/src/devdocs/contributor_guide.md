@@ -35,7 +35,7 @@ For extra general resources, consider the following:
   with JS a little more convenient.
 * [The Atom Docs](https://atom.io/docs) – the Atom Flight Manual is a very readable introduction
   to Atom's internals, and the API docs are a useful reference.
-* [julia-client developer docs](docs/) – These docs go into more detail about the internals
+* [julia-client developer docs](@ref Communication) – These docs go into more detail about the internals
   of this project and the development workflow.
 
 Most open source projects, including ours, use [git](http://git-scm.org) to help work
