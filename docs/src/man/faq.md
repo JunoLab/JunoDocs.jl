@@ -84,7 +84,7 @@ Use case: local installation of Juno with a remote julia session
 4. Juno will respond with a Julia command, e.g. `using Juno; Juno.connect([Atom port])`, where **[Atom port]** is the port Atom is listening on for the Julia session to connect.
 3. Port forwarding: choose a port, **[Remote port]** for your remote server to use to connect to Atom.
 
-  *Linux/Unix*: Open a local terminal and connect to your remote server : `ssh -R [Remote port]:localhost:[Atom port] your.server.com`
+  *Linux/Unix*: Open a local terminal and connect to your remote server : `ssh -R [Remote port]:localhost:[Atom port]:your.server.com`
 
   *Windows*: Port forwarding via `netsh` should work. See [here](http://stackoverflow.com/questions/11525703/port-forwarding-in-windows) for an example.
 
