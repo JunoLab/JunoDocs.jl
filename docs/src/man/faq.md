@@ -65,8 +65,14 @@ docker run -it --network=host [container_name] julia
 3. Juno will respond with a Julia command, e.g. `using Juno; Juno.connect([Atom port])`, where **[Atom port]** is the port Atom is listening on for the Julia session to connect.
 5. In the Julia session, replace **[Atom port]** in the following command with the port specified by Atom & enter the following command to connect your Julia session to Atom
 
+For Mac:
 ```julia
 using Juno; Juno.connect("docker.for.mac.host.internal", [Atom port])
+```
+
+For Linux (untested):
+```julia
+using Juno; Juno.connect("docker0", [Atom port])
 ```
 
 ### Connecting to an external julia session on a remote machine
