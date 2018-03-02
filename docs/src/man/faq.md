@@ -62,7 +62,7 @@ docker run -it --network=host [container_name] julia
 ```
 
 3. In Atom/Juno, bring up [The Command Palette](@ref) and search for `Julia Client: Connect External Process`
-3. Juno will respond with a Julia command, e.g. `using Juno; Juno.connect([Atom port])`, where **[Atom port]** is the port Atom is listening on for the Julia session to connect.
+4. Juno will respond with a Julia command, e.g. `using Juno; Juno.connect([Atom port])`, where **[Atom port]** is the port Atom is listening on for the Julia session to connect.
 5. In the Julia session, replace **[Atom port]** in the following command with the port specified by Atom & enter the following command to connect your Julia session to Atom
 
 For Mac:
@@ -82,11 +82,11 @@ Use case: local installation of Juno with a remote julia session
 1. Launch Atom/Juno on your local machine
 3. In Atom/Juno, bring up [The Command Palette](@ref) and search for `Julia Client: Connect External Process`
 4. Juno will respond with a Julia command, e.g. `using Juno; Juno.connect([Atom port])`, where **[Atom port]** is the port Atom is listening on for the Julia session to connect.
-3. Port forwarding: choose a port, **[Remote port]** for your remote server to use to connect to Atom.
+5. Port forwarding: choose a port, **[Remote port]** for your remote server to use to connect to Atom.
 
   *Linux/Unix*: Open a local terminal and connect to your remote server : `ssh -R [Remote port]:localhost:[Atom port]:your.server.com`
 
   *Windows*: Port forwarding via `netsh` should work. See [here](http://stackoverflow.com/questions/11525703/port-forwarding-in-windows) for an example.
 
-4. Launch julia in the terminal on the remote machine
-5. Type in julia session: `using Juno; Juno.connect([Remote port])`
+6. Launch julia in the terminal on the remote machine
+7. Type in julia session: `using Juno; Juno.connect([Remote port])`
