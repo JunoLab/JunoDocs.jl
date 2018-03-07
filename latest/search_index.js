@@ -285,7 +285,7 @@ var documenterSearchIndex = {"docs": [
     "page": "FAQ",
     "title": "I am having a problem running Juno with an older version of Julia, why?",
     "category": "section",
-    "text": "Juno is under rapid development, so it\'s expected that previous versions may not be compatible with the Atom packages overtime. Julia will automatically use older versions on the Julia-side packages, but Atom will always give you the most up-to-date packages it knows about, which causes this issue. The easy way to solve this is to always use the current Julia release. Otherwise, resort to the Developer Install for the Atom packages and use git to checkout an older version. This requires some git know-how, so it\'s only recommended if the older version of Julia is truly necessary."
+    "text": "Juno is under rapid development, so it\'s expected that previous versions may not be compatible with the Atom packages overtime. Julia will automatically use older versions on the Julia-side packages, but Atom will always give you the most up-to-date packages it knows about, which causes this issue. The easy way to solve this is to always use the current Julia release. Otherwise, resort to the Developer Installation Instructions for the Atom packages and use git to checkout an older version. This requires some git know-how, so it\'s only recommended if the older version of Julia is truly necessary."
 },
 
 {
@@ -293,7 +293,7 @@ var documenterSearchIndex = {"docs": [
     "page": "FAQ",
     "title": "How do I use Juno with the Julia Nightly version?",
     "category": "section",
-    "text": "If you want to use Juno with the nightly version use caution: this package is under rapid development so do so at your own risk. That being said, the Julia nightly should work using the Developer Install. Note that this will require you to be on master for the Julia and Atom packages, so things will be changing likely before documentation changes."
+    "text": "If you want to use Juno with the nightly version use caution: this package is under rapid development so do so at your own risk. That being said, the Julia nightly should work using the Developer Installation Instructions. Note that this will require you to be on master for the Julia and Atom packages, so things will be changing likely before documentation changes."
 },
 
 {
@@ -313,11 +313,19 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "man/faq.html#Connecting-to-a-Julia-session-in-a-(local)-Docker-container-1",
+    "page": "FAQ",
+    "title": "Connecting to a Julia session in a (local) Docker container",
+    "category": "section",
+    "text": "Use case: local installation of Juno with a local Docker containerLaunch Atom/Juno on your local machine\nSpin up your docker container with network_mode:host, ie.docker run -it --network=host [container_name] juliaIn Atom/Juno, bring up The Command Palette and search for Julia Client: Connect External Process\nJuno will respond with a Julia command, e.g. using Juno; Juno.connect([Atom port]), where [Atom port] is the port Atom is listening on for the Julia session to connect.\nIn the Julia session, replace [Atom port] in the following command with the port specified by Atom & enter the following command to connect your Julia session to AtomFor Mac:using Juno; Juno.connect(\"docker.for.mac.host.internal\", [Atom port])For Linux (untested):using Juno; Juno.connect(\"docker0\", [Atom port])"
+},
+
+{
     "location": "man/faq.html#Connecting-to-an-external-julia-session-on-a-remote-machine-1",
     "page": "FAQ",
     "title": "Connecting to an external julia session on a remote machine",
     "category": "section",
-    "text": "Use case: local installation of Juno with a remote julia sessionLaunch Atom/Juno on your local machine\nIn Atom/Juno, bring up the command palette with cmd-shift-p (macOS) or ctrl-shift-p )Linux/Windows) and search for Julia Client: Connect External Process (Juno will then tell you which port to use locally –> we\'ll call it Port#2)\nPort forwardingLinux/Unix: Open a local terminal and connect to your remote server : ssh -R PORT#1:localhost:PORT#2 your.server.comWindows: Port forwarding via netsh should work. See here for an example.Launch julia in the terminal on the remote machine\nType in julia session: using Juno; Juno.connect(PORT#1)"
+    "text": "Use case: local installation of Juno with a remote julia sessionLaunch Atom/Juno on your local machine\nIn Atom/Juno, bring up The Command Palette and search for Julia Client: Connect External Process\nJuno will respond with a Julia command, e.g. using Juno; Juno.connect([Atom port]), where [Atom port] is the port Atom is listening on for the Julia session to connect.\nPort forwarding: choose a port, [Remote port] for your remote server to use to connect to Atom.Linux/Unix: Open a local terminal and connect to your remote server : ssh -R [Remote port]:localhost:[Atom port]:your.server.comWindows: Port forwarding via netsh should work. See here for an example.Launch julia in the terminal on the remote machine\nType in julia session: using Juno; Juno.connect([Remote port])"
 },
 
 {
@@ -332,7 +340,7 @@ var documenterSearchIndex = {"docs": [
     "location": "man/juno_frontend.html#Juno.isactive",
     "page": "The Juno.jl Front-End",
     "title": "Juno.isactive",
-    "category": "Function",
+    "category": "function",
     "text": "isactive()\n\nWill return true when the current Julia process is connected to a running Juno frontend.\n\n\n\n"
 },
 
@@ -348,7 +356,7 @@ var documenterSearchIndex = {"docs": [
     "location": "man/juno_frontend.html#Juno.structure",
     "page": "The Juno.jl Front-End",
     "title": "Juno.structure",
-    "category": "Function",
+    "category": "function",
     "text": "structure(x)\n\nDisplay x\'s underlying representation, rather than using its normal display method.\n\nFor example, structure(:(2x+1)) displays the Expr object with its head and args fields instead of printing the expression.\n\n\n\n"
 },
 
@@ -364,7 +372,7 @@ var documenterSearchIndex = {"docs": [
     "location": "man/juno_frontend.html#Juno.profiler",
     "page": "The Juno.jl Front-End",
     "title": "Juno.profiler",
-    "category": "Function",
+    "category": "function",
     "text": "profiler()\n\nShow currently collected profile information as an in-editor flamechart.\n\n\n\n"
 },
 
@@ -372,7 +380,7 @@ var documenterSearchIndex = {"docs": [
     "location": "man/juno_frontend.html#Juno.profiletree",
     "page": "The Juno.jl Front-End",
     "title": "Juno.profiletree",
-    "category": "Function",
+    "category": "function",
     "text": "profiletree()\n\nShow currently collected profile information in tree-form. Falls back to Profile.print().\n\n\n\n"
 },
 
@@ -380,7 +388,7 @@ var documenterSearchIndex = {"docs": [
     "location": "man/juno_frontend.html#Juno.@profiler",
     "page": "The Juno.jl Front-End",
     "title": "Juno.@profiler",
-    "category": "Macro",
+    "category": "macro",
     "text": "@profiler\n\nClear currently collected profile traces, profile the provided expression and show it via Juno.profiler().\n\n\n\n"
 },
 
@@ -396,7 +404,7 @@ var documenterSearchIndex = {"docs": [
     "location": "man/juno_frontend.html#Juno.@progress",
     "page": "The Juno.jl Front-End",
     "title": "Juno.@progress",
-    "category": "Macro",
+    "category": "macro",
     "text": "@progress [name] for i = ...\n\nShow a progress metre for the given loop if possible.\n\n\n\n"
 },
 
@@ -404,7 +412,7 @@ var documenterSearchIndex = {"docs": [
     "location": "man/juno_frontend.html#Juno.progress",
     "page": "The Juno.jl Front-End",
     "title": "Juno.progress",
-    "category": "Function",
+    "category": "function",
     "text": "progress(p::ProgressBar, prog::Number)\n\nUpdate p\'s progress to prog.\n\n\n\nprogress(p::ProgressBar)\n\nSet p to an indeterminate progress bar.\n\n\n\nprogress(f::Function; name = \"\", msg = \"\")\n\nEvaluates f with p = ProgressBar(name = name, msg = msg) as the argument and calls done(p) afterwards. This is guaranteed to clean up the progress bar, even if f errors.\n\n\n\n"
 },
 
@@ -412,7 +420,7 @@ var documenterSearchIndex = {"docs": [
     "location": "man/juno_frontend.html#Juno.ProgressBar",
     "page": "The Juno.jl Front-End",
     "title": "Juno.ProgressBar",
-    "category": "Function",
+    "category": "function",
     "text": "ProgressBar(;name = \"\", msg = \"\")\n\nCreate a new progress bar and register it with Juno, if possible.\n\nTake care to unregister the progress bar by calling done on it, or use the progress(f::Function) syntax, which will handle that automatically.\n\n\n\n"
 },
 
@@ -420,7 +428,7 @@ var documenterSearchIndex = {"docs": [
     "location": "man/juno_frontend.html#Juno.name",
     "page": "The Juno.jl Front-End",
     "title": "Juno.name",
-    "category": "Function",
+    "category": "function",
     "text": "name(p::ProgressBar, m)\n\nUpdate ps name.\n\n\n\n"
 },
 
@@ -428,7 +436,7 @@ var documenterSearchIndex = {"docs": [
     "location": "man/juno_frontend.html#Juno.msg",
     "page": "The Juno.jl Front-End",
     "title": "Juno.msg",
-    "category": "Function",
+    "category": "function",
     "text": "msg(p::ProgressBar, m)\n\nUpdate the message that will be displayed in the frontend when hovering over the corrseponding progress bar.\n\n\n\n"
 },
 
@@ -436,7 +444,7 @@ var documenterSearchIndex = {"docs": [
     "location": "man/juno_frontend.html#Juno.right_text",
     "page": "The Juno.jl Front-End",
     "title": "Juno.right_text",
-    "category": "Function",
+    "category": "function",
     "text": "right_text(p::ProgressBar, m)\n\nUpdate the string that will be displayed to the right of the progress bar.\n\nDefaults to the linearly extrpolated remaining time based upon the time difference between registering a progress bar and the latest update.\n\n\n\n"
 },
 
@@ -444,7 +452,7 @@ var documenterSearchIndex = {"docs": [
     "location": "man/juno_frontend.html#Juno.done",
     "page": "The Juno.jl Front-End",
     "title": "Juno.done",
-    "category": "Function",
+    "category": "function",
     "text": "done(p::ProgressBar)\n\nRemove p from the frontend.\n\n\n\n"
 },
 
@@ -460,7 +468,7 @@ var documenterSearchIndex = {"docs": [
     "location": "man/juno_frontend.html#Juno.selector",
     "page": "The Juno.jl Front-End",
     "title": "Juno.selector",
-    "category": "Function",
+    "category": "function",
     "text": "selector([xs...]) -> x\n\nAllow the user to select one of the xs.\n\nxs should be an iterator of strings. Currently there is no fallback in other environments.\n\n\n\n"
 },
 
@@ -468,7 +476,7 @@ var documenterSearchIndex = {"docs": [
     "location": "man/juno_frontend.html#Juno.notify",
     "page": "The Juno.jl Front-End",
     "title": "Juno.notify",
-    "category": "Function",
+    "category": "function",
     "text": "notify(msg)\n\nDisplay msg as an OS specific notification.\n\nUseful for signaling the end of a long running computation or similar. This disregards the Notifications setting in julia-client. Falls back to info(msg) in other environments.\n\n\n\n"
 },
 
@@ -476,7 +484,7 @@ var documenterSearchIndex = {"docs": [
     "location": "man/juno_frontend.html#Juno.syntaxcolors",
     "page": "The Juno.jl Front-End",
     "title": "Juno.syntaxcolors",
-    "category": "Function",
+    "category": "function",
     "text": "syntaxcolors(selectors = Atom.SELECTORS)::Dict{String, UInt32}\n\nGet the colors used by the current Atom theme. selectors should be a Dict{String, Vector{String}} which assigns a css selector (e.g. syntax--julia) to a name (e.g. variable).\n\n\n\n"
 },
 
@@ -484,7 +492,7 @@ var documenterSearchIndex = {"docs": [
     "location": "man/juno_frontend.html#Juno.clearconsole",
     "page": "The Juno.jl Front-End",
     "title": "Juno.clearconsole",
-    "category": "Function",
+    "category": "function",
     "text": "clearconsole()\n\nClear the console if Juno is used; does nothing otherwise.\n\n\n\n"
 },
 
@@ -516,7 +524,7 @@ var documenterSearchIndex = {"docs": [
     "location": "man/info_developer.html#Juno.defaultrepr",
     "page": "Information for Package Developers",
     "title": "Juno.defaultrepr",
-    "category": "Function",
+    "category": "function",
     "text": "defaultrepr(x, lazy = false)\n\nrender fallback for types without any specialized show methods.\n\nIf lazy is true, then the type\'s fields will be loaded lazily when expanding the tree. This is useful when the fields contain big elements that might need to be inspectable.\n\nCan be used by packages to restore Juno\'s default printing if they have defined a show method that should not be used by Juno:\n\nJuno.render(i::Juno.Inline, x::myType) = Juno.render(i, Juno.defaultrepr(x))\n\n\n\n"
 },
 
@@ -524,7 +532,7 @@ var documenterSearchIndex = {"docs": [
     "location": "man/info_developer.html#Juno.plotsize",
     "page": "Information for Package Developers",
     "title": "Juno.plotsize",
-    "category": "Function",
+    "category": "function",
     "text": "plotsize()\n\nGet the size of Juno\'s plot pane in px. Does not yet have a fallback for other environments.\n\n\n\n"
 },
 
