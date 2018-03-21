@@ -273,6 +273,14 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "man/faq.html#Juno-doesn\'t-work-properly-after-an-update.-What-do-I-do?-1",
+    "page": "FAQ",
+    "title": "Juno doesn\'t work properly after an update. What do I do?",
+    "category": "section",
+    "text": "Check whether you have a little red bug symbol in the status bar (lower right):(Image: native bug)If so, click on it and then click on \"Rebuild Packages\":(Image: native update)Restart Atom and you should be good to go!"
+},
+
+{
     "location": "man/faq.html#Some-Juno-package-is-using-the-wrong-precompile-cache,-what-do-I-do?-1",
     "page": "FAQ",
     "title": "Some Juno package is using the wrong precompile cache, what do I do?",
