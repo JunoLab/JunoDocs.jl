@@ -5,6 +5,17 @@
 Please leave bug reports either [at the discussion board](https://discourse.julialang.org)
 or [at the Juno.jl Github repository](https://github.com/JunoLab/Juno.jl/issues).
 
+### Juno doesn't work properly after an update. What do I do?
+Check whether you have a little red bug symbol in the status bar (lower right):
+
+![native bug](../assets/native_bug.png)
+
+If so, click on it and then click on "Rebuild Packages":
+
+![native update](../assets/native_update.png)
+
+Restart Atom and you should be good to go!
+
 ### Some Juno package is using the wrong precompile cache, what do I do?
 
 This problem manifests itself in errors like:
