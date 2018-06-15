@@ -78,7 +78,7 @@ docker run -it --network=host [container_name] julia
 
 For Mac:
 ```julia
-using Juno; Juno.connect("docker.for.mac.host.internal", [Atom port])
+using Juno; Juno.connect("host.docker.internal", [Atom port])
 ```
 
 For Linux (untested):
