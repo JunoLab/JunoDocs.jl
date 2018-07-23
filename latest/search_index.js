@@ -413,7 +413,7 @@ var documenterSearchIndex = {"docs": [
     "page": "The Juno.jl Front-End",
     "title": "Juno.@progress",
     "category": "macro",
-    "text": "@progress [name] for i = ...\n\nShow a progress metre for the given loop if possible.\n\n\n\n"
+    "text": "@progress [name=\"\", threshold=0.005] for i = ...\n\nShow a progress meter named name for the given loop if possible. Update frequency is limited by threshold (one update per 0.5% of progress by default).\n\n\n\n"
 },
 
 {
@@ -453,7 +453,7 @@ var documenterSearchIndex = {"docs": [
     "page": "The Juno.jl Front-End",
     "title": "Juno.right_text",
     "category": "function",
-    "text": "right_text(p::ProgressBar, m)\n\nUpdate the string that will be displayed to the right of the progress bar.\n\nDefaults to the linearly extrpolated remaining time based upon the time difference between registering a progress bar and the latest update.\n\n\n\n"
+    "text": "right_text(p::ProgressBar, m)\n\nUpdate the string that will be displayed to the right of the progress bar.\n\nDefaults to the linearly extrapolated remaining time based upon the time difference between registering a progress bar and the latest update.\n\n\n\n"
 },
 
 {
