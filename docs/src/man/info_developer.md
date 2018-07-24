@@ -1,109 +1,177 @@
 # Information for Package Developers
-In this page we giving some information that can help Package developers interact smoothly with Juno, and use it to their advantage for e.g. displaying Types, graphics etc.
 
-## Custom Type Printing
-As was mentioned in the [Basic Usage](@ref) page, you can enhance the way user-defined types are printed in the Juno console (or similarly during inline evaluation). *Note*: The difference
-between printing in Juno and in the REPL is discussed in the follow-up section.
+## Custom Inline Display
+Juno's inline display system operates on three distinct levels:
 
-This enhancing is done by extending the `Juno.render(::MyType)` function to match your type.
+1. If you create a new type and don't define a `show` method for it, Juno will use a fallback that lazily shows all fields.
+2. If you've defined a `show` method for the `text/plain` MIME type Juno will use that to create a simple Tree View.
+3. [TreeViews.jl](https://github.com/pfitzseb/TreeViews.jl) allows customizing *everything* about how your type is displayed.
 
-```@docs
-Juno.render
-Juno.@render
-```
+The following will show how to use the TreeViews.jl API for pretty-printing in a few simple cases.
 
-As an example, we will use the type
+First, let's define some custom types we want to display:
 ```julia
-struct System{T}
-  d::Int
-  state::Vector{T}
-  vel::Vector{T}
+struct Foo
+    field1
+    field2
 end
 
-s = System(2, rand(2), rand(2))
-```
-which, by default is displayed in Juno using a `Juno.Tree` structure, with the "head" displaying the Type information, and expandable arrows for all the fields that are expandable, meaning, the head itself, as well as the 2nd and 3rd fields, which are vectors.
-
-The most basic way to change this, is to simply add some custom strings to `Juno.render` like:
-```julia
-import Juno.render
-function Juno.render(i::Juno.Inline, s::System)
-  str = "$(s.d)-dimensional system"
-  Juno.render(i, Text(str))
+struct Bar
+    a
+    field1
 end
 ```
-and then, this will change the way Juno displays the system to simply: "2-dimensional system". It is important to have the first argument `i::Juno.Inline` in your definition, instead of some `println()` function call, because this ensures that the information is shown correctly either at the console or on inline evaluation (with e.g. Shift+Enter at the editor).
 
-`Juno.Inline` is one of the predefined rendering contexts defined in Juno:
-```@docs
-Juno.Inline
-Juno.Clipboard
-Juno.PlotPane
-```
+By default, Juno displays those like this:
 
-However, with this approach you lose the cool interactivity of Juno allowing you to expand fields as you like. Let's say that you would like to keep the Juno display format, but simply change the message displayed on the "head", because for example you might not want the type information to be displayed. This is done by changing the "head" of the `Juno.Tree` that is created by default:
+![custom rendering 1](../assets/inline_0.png)
+
+To switch to a TreeViews.jl display we can simply overload the following methods for out types:
 ```julia
-function Juno.render(i::Juno.Inline, s::System)
-  t = Juno.render(i, Juno.defaultrepr(s))
-  t[:head] = Juno.render(i, Text("$(length(s.state))-dimensional system"))
-  t
-end
+import TreeViews: hastreeview, numberofnodes, treelabel, treenode
+hastreeview(::Foo) = true
+hastreeview(::Bar) = true
 ```
-```@docs
-Juno.defaultrepr
-```
+Since TreeViews.jl implements sensible defaults for custom types, this gives us
 
-But now you notice that you display the dimension information both at the "head" of the tree, but also on one of the "children", since by default all fields of a Type are printed. Well, thankfully, it is really easy to remove a children from display:
+![custom rendering 2](../assets/inline_1.png)
+
+It is of course possible to customize this to your heart's content. For example, we might
+only want to display `Foo`s first field with
 ```julia
-function Juno.render(i::Juno.Inline, s::System)
-  t = Juno.render(i, Juno.defaultrepr(s))
-  t[:head] = Juno.render(i, Text("$(length(s.state))-dimensional system"))
-  t[:children ] = t[:children][2:3]
-  return t
-end
+numberofnodes(::Foo) = 1
 ```
-![custom rendering](../assets/custom_rendering.png)
-
-Here, each entry in the vector `t[:children]` is one displayed entity of the `Juno.Tree`. By removing the first entry (which is the first field of our Type) we are now displaying only the fields `state` and `vel`. Of course, it goes without saying that you can completely change how the fields are displayed (e.g. change the `vel` display to `velocity`) by going deeper into `t[:children]`.
-
-It's also possible to display arbitrary HTML in results: There are `render` methods for all the HTML primitives defined in [Hiccup.jl](https://github.com/JunoLab/Hiccup.jl) as well as for certain higher-level elements from Juno.jl or even Base
-```@docs
-Juno.Tree
-Juno.LazyTree
-Juno.SubTree
-Juno.Link
-Juno.Table
-Juno.Row
-Base.Text
-```
-
-Should you wish to render something in the `PlotPane`, you can get it's dimensions via
-```@docs
-Juno.plotsize
-```
-
-### Printing in REPL vs. Juno
-If a method for `Base.show` is present, but *no* method exists for `Juno.render`, then Juno will fall back to `show`. If both exist however, you can get the awesome display capabilities of Juno, while still having custom support for your Types in the REPL. For example, by adding the function:
+or change the `Foo` in the first line to something else:
 ```julia
-import Base.show
-function Base.show(io::IO, s::System)
-  println(io, "$(length(s.state))-dimensional system")
-  println(io, "state: $(s.state)")
-  println(io, "velocity $(s.vel)")
-end
+treelabel(io::IO, x::Foo, ::MIME"text/plain") = print(io, "I'm a Foo.")
 ```
-you can support custom printing at the REPL as well, without ruining the Juno printing.
+![custom rendering 3](../assets/inline_2.png)
 
-### Conditionally defining Juno-specific render methods
-It is possible to use [Requires.jl](https://github.com/MikeInnes/Requires.jl) to circumvent having a hard dependency on Juno.jl for rendering:
+Juno accepts a few different MIME types:
+  - `text/plain`: Probably best compatibility.
+  - `text/html`: Allows much richer display options (e.g. LaTeX).
+  - `application/juno+inline`: Same as `text/html`, but specific to Juno.
+
+Even `text/plain` allows for some (limited) control over styling (colors, decorations).
+In general, you can print the correct [SGR codes](https://en.wikipedia.org/wiki/ANSI_escape_code#SGR) and
+everything will work, but I'd recommend using [Crayons.jl](https://github.com/KristofferC/Crayons.jl) or a
+similar library instead:
 ```julia
-@require Juno begin
-  using Juno
-  function Juno.render(i::Juno.Inline, s::System)
-    t = Juno.render(i, Juno.defaultrepr(s))
-    t[:head] = Juno.render(i, Text("$(length(s.state))-dimensional system"))
-    t[:children] = t[:children][2:3]
-    return t
-  end
-end
+# plain SGR
+treelabel(io::IO, x::Foo, ::MIME"text/plain") =
+  print(io, "\x1b[32mHello\x1b[0m there")
+
+using Crayons
+treelabel(io::IO, x::Foo, i::Int, ::MIME"text/plain") =
+  print(io, crayon"(250,20,105) bold"("General"), " Kenobi")
 ```
+
+![custom rendering 4](../assets/inline_3.png)
+
+!!! note
+
+    Those styles also apply to display in the REPL, provided for example by the as-of-yet
+    unregistered [REPLTreeViews.jl](https://github.com/pfitzseb/REPLTreeViews.jl) package:
+
+    ![repl tree views](../assets/repltreeviews.png)
+
+
+Using `text/html` allows for greater customization by using inline CSS
+```julia
+treelabel(io::IO, x::Foo, i::Int, ::MIME"text/html") =
+  print(io, "<span><span style=\"color:aqua; font-size:0.7em\">General</span> Kenobi</span>")
+```
+![custom rendering 5](../assets/inline_4.png)
+
+The `application/juno+inline` MIME type allows you to make use of the styling Atom uses:
+```julia
+treelabel(io::IO, x::Foo, ::MIME"application/juno+inline") =
+  print(io, "<span class=\"syntax--support syntax--type syntax--julia\">Junoooooooo!</span>")
+```
+![custom rendering 6](../assets/inline_5.png)
+
+It's also possible to e.g. print no label for `Foo`s first field and handle everything in with `treenode`:
+```julia
+treelabel(io::IO, x::Foo, i::Int, ::MIME"application/juno+inline") = print(io, "")
+using Markdown
+treenode(x::Foo, i::Int) = MD("""
+    ## Markdown
+
+    with ``\\LaTeX``\n
+    and `code = 2+sqrt(4)`
+    """)
+```
+![custom rendering 7](../assets/inline_6.png)
+
+To hide the `treenode` display, simply return `missing`:
+```julia
+treenode(x::Foo, i::Int) = missing
+treelabel(io::IO, x::Foo, i::Int, ::MIME"application/juno+inline") = print(io, "...")
+```
+![custom rendering 8](../assets/inline_7.png)
+
+Nothing at all will be shown if `treelabel` doesn't print anything *and* `treenode` returns
+`missing`.
+
+
+## Displaying Plots and Graphics
+Plots can be displayed by providing a `show` method for one of the following MIME types (ordered
+by priority):
+  1. `application/juno+plotpane` - rendered in a [`webview`](https://electronjs.org/docs/api/webview-tag)
+  2. `image/svg+xml` - rendered in a [`webview`](https://electronjs.org/docs/api/webview-tag)
+  3. `image/png`
+  4. `image/jpeg`
+  5. `image/tiff`
+  6. `image/bmp`
+  7. `image/gif`
+
+The first two of those MIME types are rendered in a `webview` to a) prevent XSS and b) make sure not to crash
+Atom for big or complex graphics. For the others we provide some basic pan and zoom utilities.
+
+
+So if you want to e.g. display an `svg` you can do the following:
+```julia
+struct Baz
+    data
+end
+
+Base.show(io::IO, ::MIME"image/svg+xml", b::Baz) = print(io, b.data)
+Baz(open(f -> read(f, String), "emu.svg"))
+```
+![plot pane svg](../assets/plotpane_svg.png)
+
+`application/juno+plotpane` is HTML, but also indicates that you want your type to be displayed in Juno's Plot
+Pane.
+```julia
+struct Blah
+    data
+end
+
+function Base.show(io::IO, ::MIME"application/juno+plotpane", b::Blah)
+    colors = get(io, :juno_colors, nothing)
+    size = get(io, :juno_plotsize, [100, 100])
+
+    html = """
+    <div style="
+        background-color: #eee;
+        color: #222;
+        width: $(size[1]-40)px;
+        height: $(size[2]-40)px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 20px;
+        margin: 0;
+        ">
+        <span>$(b.data)</span>
+        <br/>
+        <input/>
+    </div>
+    """    
+
+    print(io, html)
+end
+
+Blah("Input stuff here:")
+```
+![plot pane html](../assets/plotpane_smart.png)
