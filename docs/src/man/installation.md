@@ -34,6 +34,11 @@ Type `uber-juno` into the search box and hit enter. Click the install button on 
 
 Atom will then set up Juno for you, installing the required Atom and Julia packages.
 
+### Note
+
+You may need to add the path to Julia if it is not accessible via the command `julia`. To do so, go to Packages > Julia > Settings
+and in the first box for "Julia Path" insert the path to your Julia installation (example: C:\Users\UserName\AppData\Local\Julia-1.0.0\bin\julia.exe)
+
 ## 4. Use Juno
 
 You should be good to go now -- try opening the REPL with Packages > Julia > Open Console or `Ctrl-J Ctrl-O` and press `Enter` to start a Julia session.
