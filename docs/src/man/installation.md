@@ -28,7 +28,7 @@ Download, install and open [Atom](https://atom.io). If you have it already, make
 
 ## 3. Install Juno
 
-In Atom, go to Settings (`Ctrl+,`, or `Cmd+,` on OS X) and go to the "Install" panel.
+In Atom, go to Settings (`Ctrl+,`, or `Cmd+,` on macOS) and go to the "Install" panel.
 
 Type `uber-juno` into the search box and hit enter. Click the install button on the package of the same name.
 
@@ -41,7 +41,7 @@ and in the first box for "Julia Path" insert the path to your Julia installation
 
 ## 4. Use Juno
 
-You should be good to go now -- try opening the REPL with Packages > Julia > Open Console or `Ctrl-J Ctrl-O` and press `Enter` to start a Julia session.
+You should be good to go now -- try opening the REPL with Packages > Julia > Open Console or `Ctrl-J Ctrl-O` (`Cmd-J Cmd-O` on macOS) and press `Enter` to start a Julia session.
 
 
 ## Common Problems
