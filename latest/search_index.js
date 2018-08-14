@@ -109,7 +109,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Installation Instructions",
     "title": "3. Install Juno",
     "category": "section",
-    "text": "In Atom, go to Settings (Ctrl+,, or Cmd+, on OS X) and go to the \"Install\" panel.Type uber-juno into the search box and hit enter. Click the install button on the package of the same name.Atom will then set up Juno for you, installing the required Atom and Julia packages."
+    "text": "In Atom, go to Settings (Ctrl+,, or Cmd+, on macOS) and go to the \"Install\" panel.Type uber-juno into the search box and hit enter. Click the install button on the package of the same name.Atom will then set up Juno for you, installing the required Atom and Julia packages."
 },
 
 {
@@ -125,7 +125,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Installation Instructions",
     "title": "4. Use Juno",
     "category": "section",
-    "text": "You should be good to go now – try opening the REPL with Packages > Julia > Open Console or Ctrl-J Ctrl-O and press Enter to start a Julia session."
+    "text": "You should be good to go now – try opening the REPL with Packages > Julia > Open Console or Ctrl-J Ctrl-O (Cmd-J Cmd-O on macOS) and press Enter to start a Julia session."
 },
 
 {
