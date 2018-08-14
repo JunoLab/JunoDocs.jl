@@ -113,6 +113,14 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "man/installation.html#Note-1",
+    "page": "Installation Instructions",
+    "title": "Note",
+    "category": "section",
+    "text": "You may need to add the path to Julia if it is not accessible via the command julia. To do so, go to Packages > Julia > Settings and in the first box for \"Julia Path\" insert the path to your Julia installation (example: C:\\Users\\UserName\\AppData\\Local\\Julia-1.0.0\\bin\\julia.exe)"
+},
+
+{
     "location": "man/installation.html#.-Use-Juno-1",
     "page": "Installation Instructions",
     "title": "4. Use Juno",
