@@ -4,8 +4,11 @@
 Juno's inline display system operates on three distinct levels:
 
 1. If you create a new type and don't define a `show` method for it, Juno will use a fallback that lazily shows all fields.
-2. If you've defined a `show` method for the `text/plain` MIME type Juno will use that to create a simple Tree View.
-3. [TreeViews.jl](https://github.com/pfitzseb/TreeViews.jl) allows customizing *everything* about how your type is displayed.
+2. If you've defined a `show` method for the `application/juno+inline` MIME type then Juno will
+  - display what is printed by that method or
+  - display the above fallback for the object returned by the `show`  method.
+3. If you've defined a `show` method for the `text/plain` MIME type Juno will use that to create a simple Tree View.
+4. [TreeViews.jl](https://github.com/pfitzseb/TreeViews.jl) allows customizing *everything* about how your type is displayed.
 
 The following will show how to use the TreeViews.jl API for pretty-printing in a few simple cases.
 
@@ -26,7 +29,21 @@ By default, Juno displays those like this:
 
 ![custom rendering 1](../assets/inline_0.png)
 
-To switch to a TreeViews.jl display we can simply overload the following methods for out types:
+This default rendering method will not be used if you define e.g.
+```julia
+Base.show(io::IO, ::MIME"text/plain", ::Foo) = print(io, "Foo")
+```
+for displaying this nicely in the REPL. If you also define a `Base.show(io::IO, ::MIME"application/juno+inline", ::Foo)`
+method, that will be used instead. As a special case, you can also *return* an object
+from that show method, and Juno will show that with its default display methods (which allows
+you to recover what is shown above):
+```julia
+Base.show(io::IO, ::MIME"application/juno+inline", x::Foo) = x
+```
+
+---
+
+To switch to a TreeViews.jl display we can simply overload the following methods for our types:
 ```julia
 import TreeViews: hastreeview, numberofnodes, treelabel, treenode
 hastreeview(::Foo) = true
@@ -167,7 +184,7 @@ function Base.show(io::IO, ::MIME"application/juno+plotpane", b::Blah)
         <br/>
         <input/>
     </div>
-    """    
+    """
 
     print(io, html)
 end
