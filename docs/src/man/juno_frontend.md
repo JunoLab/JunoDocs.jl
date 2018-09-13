@@ -58,11 +58,6 @@ The following functions provide this interface:
 ```@docs
 Juno.@progress
 Juno.progress
-Juno.ProgressBar
-Juno.name
-Juno.msg
-Juno.right_text
-Juno.done
 ```
 
 It is recommended to either use the `@progress` macro or the

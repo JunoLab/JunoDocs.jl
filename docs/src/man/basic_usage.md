@@ -90,31 +90,3 @@ Gadfly also will use the plot pane.
 
 A workspace pane is available for showing the variables declared in the workspace.
 To open the pane, go to Packages > Julia > Open Workspace.
-
-### Enhanced Rendering
-
-Juno's enhanced rendering system makes it easy to view complex types and large
-arrays by being able to fold the values. This is naturally done in the Juno
-console, but is not shown for standard prints. In order to `print` using this
-special rendering, use the `render` function from Juno.jl. Inside of a package
-if you imported Juno, then the `render` function will be available. `render`
-will also be available at the REPL.
-
-For interactive usage inside of a module which does not import Main (i.e. during
-package development), note that this function is automatically imported to `Main`
-upon starting the Julia process, and thus can be accessed via `Main.Juno.render`.
-For example, one can debug by adding print statements like:
-
-```julia
-Main.Juno.render(a)
-```
-
-and `a` will use the special Juno console rendering, even if the package does
-not require/use Juno.jl.
-
-### Using the Debugger (experimental)
-Juno features an interactive debugger based on [ASTInterpreter2.jl](https://github.com/Keno/ASTInterpreter2.jl). The easiest way to access it to use the `Juno.@enter` macro on a function call:
-
-![stepping](../assets/stepper.gif)
-
-While you are stepping through a function, it's local variables will be displayed in the workspace and you can access them in the console.
