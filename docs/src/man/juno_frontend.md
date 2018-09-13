@@ -44,8 +44,8 @@ profile view toolbar.
 ## Progress Meters
 
 Juno.jl allows package developers to use the progress bar which is provided in the
-Atom window. For example, you can easily show a progress meter for a `for loop`
-via the command:
+Atom window. For example, you can easily show a progress meter for a `for` loop
+or a comprehension via the command:
 
 ```julia
 @progress for ...
