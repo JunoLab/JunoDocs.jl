@@ -16,6 +16,17 @@ If so, click on it and then click on "Rebuild Packages":
 
 Restart Atom and you should be good to go!
 
+---
+
+There's a chance the update of `julia-client` failed. To get a clean re-install
+while preserving any setting you might have changed, try the following steps:
+
+1. Close all Atom instances.
+2. Start a terminal (e.g. `cmd` on Windows or the Terminal App on MacOS)
+3. Execute `apm uninstall julia-client`.
+4. Execute `apm install julia-client`.
+5. Start Juno. Evertyhing should work again.
+
 ### Some Juno package is using the wrong precompile cache, what do I do?
 
 This problem manifests itself in errors like:
