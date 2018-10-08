@@ -301,7 +301,7 @@ var documenterSearchIndex = {"docs": [
     "page": "FAQ",
     "title": "How do I execute code on Juno startup?",
     "category": "section",
-    "text": "Much like Julia has its .juliarc.jl file for executing code on startup, Juno will execute code contained in ~/.junorc.jl after Julia has been booted and a connection with the editor is established. This allows running code on startup that queries the frontend, e.g. Juno.syntaxcolors."
+    "text": "Much like Julia has its ~/.julia/config/startup.jl file for executing code on startup, Juno will execute code contained in ~/.julia/config/juno_startup.jl after Julia has been booted and a connection with the editor is established. This allows running code on startup that queries the frontend, e.g. Juno.syntaxcolors."
 },
 
 {
@@ -321,11 +321,35 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "man/faq.html#Connecting-to-an-external-julia-session-on-a-remote-machine-1",
+    "location": "man/faq.html#Connecting-to-a-Julia-session-on-a-remote-machine-1",
     "page": "FAQ",
-    "title": "Connecting to an external julia session on a remote machine",
+    "title": "Connecting to a Julia session on a remote machine",
     "category": "section",
-    "text": "Use case: local installation of Juno with a remote julia sessionLaunch Atom/Juno on your local machine\nIn Atom/Juno, bring up The Command Palette and search for Julia Client: Connect External Process\nJuno will respond with a Julia command, e.g. using Juno; Juno.connect([Atom port]), where [Atom port] is the port Atom is listening on for the Julia session to connect.\nPort forwarding: choose a port, [Remote port] for your remote server to use to connect to Atom.Linux/Unix: Open a local terminal and connect to your remote server : ssh -R [Remote port]:localhost:[Atom port]:your.server.comWindows: Port forwarding via netsh should work. See here for an example.Launch julia in the terminal on the remote machine\nType in julia session: using Juno; Juno.connect([Remote port])"
+    "text": "Juno can be used for editing and executing code on a remote machine (which might be very useful for computationally expensive tasks or when you want to use hardware not available locally, e.g. GPUs)."
+},
+
+{
+    "location": "man/faq.html#Prerequisites-1",
+    "page": "FAQ",
+    "title": "Prerequisites",
+    "category": "section",
+    "text": "The remote machine must have Julia installed and you need to be able to open a ssh connection to it. On your local machine you need a working Juno installation as well as a remote code editing package, for example ftp-remote-edit (or remote-edit-ni)."
+},
+
+{
+    "location": "man/faq.html#Setting-up-Julia-1",
+    "page": "FAQ",
+    "title": "Setting up Julia",
+    "category": "section",
+    "text": "Open a new terminal in Juno with Julia Client: New Terminal and execute the Julia Client: Connect External Process command in Juno:(Image: )In the terminal you\'ll need to ssh into the remote machine with port forwarding. This can be done with the following commandssh -R <RemotePort>:localhost:<JunoPort> you@yourserverwhere <RemotePort> is a port you can choose freely and <JunoPort> is the port given by the Connect External Process command.For servers that listen on a non-standard ssh port you\'ll also need to add the correct -p flag; I\'d also recommend using an identity file with the -i option.(Image: )After you\'re succesfully logged into the server you need to start Julia, potentially pkg> add Atom Juno, and executeusing Atom; using Juno; Juno.conect(<RemotePort>)You should get a message telling you that Juno succesfully connect to an external process; after that basically all of Juno\'s features should work fine:(Image: )"
+},
+
+{
+    "location": "man/faq.html#Setting-up-remote-file-editing-1",
+    "page": "FAQ",
+    "title": "Setting up remote file editing",
+    "category": "section",
+    "text": "Add a new server in ftp-remote-edit\'s server browser:(Image: )and you can start editing files!(Image: )"
 },
 
 {
@@ -494,30 +518,6 @@ var documenterSearchIndex = {"docs": [
     "title": "Displaying Plots and Graphics",
     "category": "section",
     "text": "Plots can be displayed by providing a show method for one of the following MIME types (ordered by priority):application/juno+plotpane - rendered in a webview\nimage/svg+xml - rendered in a webview\nimage/png\nimage/jpeg\nimage/tiff\nimage/bmp\nimage/gifThe first two of those MIME types are rendered in a webview to a) prevent XSS and b) make sure not to crash Atom for big or complex graphics. For the others we provide some basic pan and zoom utilities.So if you want to e.g. display an svg you can do the following:struct Baz\n    data\nend\n\nBase.show(io::IO, ::MIME\"image/svg+xml\", b::Baz) = print(io, b.data)\nBaz(open(f -> read(f, String), \"emu.svg\"))(Image: plot pane svg)application/juno+plotpane is HTML, but also indicates that you want your type to be displayed in Juno\'s Plot Pane.struct Blah\n    data\nend\n\nfunction Base.show(io::IO, ::MIME\"application/juno+plotpane\", b::Blah)\n    colors = get(io, :juno_colors, nothing)\n    size = get(io, :juno_plotsize, [100, 100])\n\n    html = \"\"\"\n    <div style=\"\n        background-color: #eee;\n        color: #222;\n        width: $(size[1]-40)px;\n        height: $(size[2]-40)px;\n        position: absolute;\n        top: 0;\n        left: 0;\n        padding: 20px;\n        margin: 0;\n        \">\n        <span>$(b.data)</span>\n        <br/>\n        <input/>\n    </div>\n    \"\"\"\n\n    print(io, html)\nend\n\nBlah(\"Input stuff here:\")(Image: plot pane html)"
-},
-
-{
-    "location": "man/settings.html#",
-    "page": "Settings",
-    "title": "Settings",
-    "category": "page",
-    "text": ""
-},
-
-{
-    "location": "man/settings.html#Settings-1",
-    "page": "Settings",
-    "title": "Settings",
-    "category": "section",
-    "text": "Julia Path: The location of the Julia binary. This is the command that Atom uses to call Julia. It defaults to the command julia which requires that Julia has been added to the path. If Julia is not in the path, this must be the path to the Julia binary."
-},
-
-{
-    "location": "man/settings.html#Julia-Options-1",
-    "page": "Settings",
-    "title": "Julia Options",
-    "category": "section",
-    "text": "Arguments: Sets the ARGS variable to emulate calls to julia script.jl arg1 arg2. Boot Mode: This is the type of process list that atom-julia-client is using.The default is Basic, which only has one process running at a time.\nCycler instead has a process queue per window, meaning that if you quit the REPL (Ctrl+j+ Ctrl+k) then there exists an already running process which will seamlessly replace it.Console Style: Switch between a REPL-based console (default) and the legacy HTML based console.Deprecation Warnings: Checkbox for whether to show the Julia deprecation warnings in the console.Number of Threads: Sets the number of threads – global will use whatever is set in $JULIA_NUM_THREADS and auto will set it to the number of physical cores.Optimization Level: Sets the -O optimization level for the Julia LLVM compiler. The default is 3 corresponding to -O3 which is the default for the Julia REPL. Higher levels take longer to compile but produce faster code.Enable Powershell Wrapper (Windows only): Use a Powershell wrapper to spawn Julia. This is required in order to allow interrupts for in-editor evaluation.Notifications: Enables popup notifications when the evaluation finishes.Error Notifications: When evaluating a script, this will show a popup when errors are encountered instead of only printing the error to the console.Enable Menu: Enables the Julia menu in the menu bar. This option requires a restart of Atom for the change to take effect.Enable Tool Bar: Shows the Julia icons in the tool bar. This option requires a restart of Atom for the change to take effect.Maximum Console Size: Limits the number of displayed lines in the Console (default: 10,000). A larger value will display more entries at the cost of slowing down Atom.Shell: Sets the shell used for spawning a new terminal via Julia Client: New Terminal.Terminal: The command which is used to open a new REPL.Result Display Mode: Determines where the result of an inline evaluation is displayed:Float results next to code\nDisplay results under code\nDisplay results in the console"
 },
 
 {
