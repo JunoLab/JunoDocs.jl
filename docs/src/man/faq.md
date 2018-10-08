@@ -124,7 +124,7 @@ For servers that listen on a non-standard `ssh` port you'll also need to add the
 
 After you're succesfully logged into the server you need to start Julia, potentially `pkg> add Atom Juno`, and execute
 ```
-using Atom; using Juno; Juno.conect(<RemotePort>)
+using Atom; using Juno; Juno.connect(<RemotePort>)
 ```
 You should get a message telling you that Juno succesfully connect to an external process; after that basically all of Juno's features should work fine:
 
