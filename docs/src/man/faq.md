@@ -68,7 +68,7 @@ before documentation changes.
 
 ### How do I execute code on Juno startup?
 
-Much like Julia has its `.juliarc.jl` file for executing code on startup, Juno will execute code contained in `~/.junorc.jl` after Julia has been booted and a connection with the editor is established. This allows running code on startup that queries the frontend, e.g. [`Juno.syntaxcolors`](@ref).
+Much like Julia has its `~/.julia/config/startup.jl` file for executing code on startup, Juno will execute code contained in `~/.julia/config/juno_startup.jl` after Julia has been booted and a connection with the editor is established. This allows running code on startup that queries the frontend, e.g. [`Juno.syntaxcolors`](@ref).
 
 ## Advanced topics
 
@@ -97,18 +97,45 @@ For Linux (untested):
 using Juno; Juno.connect("docker0", [Atom port])
 ```
 
-### Connecting to an external julia session on a remote machine
+### Connecting to a Julia session on a remote machine
 
-Use case: local installation of Juno with a remote julia session
+Juno can be used for editing and executing code on a remote machine (which might be very useful for computationally expensive tasks or when you want to use hardware not available locally, e.g. GPUs).
 
-1. Launch Atom/Juno on your local machine
-2. In Atom/Juno, bring up [The Command Palette](@ref) and search for `Julia Client: Connect External Process`
-3. Juno will respond with a Julia command, e.g. `using Juno; Juno.connect([Atom port])`, where **[Atom port]** is the port Atom is listening on for the Julia session to connect.
-4. Port forwarding: choose a port, **[Remote port]** for your remote server to use to connect to Atom.
+#### Prerequisites
 
-  *Linux/Unix*: Open a local terminal and connect to your remote server : `ssh -R [Remote port]:localhost:[Atom port]:your.server.com`
+The remote machine must have Julia installed and you need to be able to open a ssh connection to it. On your local machine you need a working Juno installation as well as a remote code editing package, for example [`ftp-remote-edit`](https://github.com/h3imdall/ftp-remote-edit) (or [`remote-edit-ni`](https://github.com/newinnovations/remote-edit-ni)).
 
-  *Windows*: Port forwarding via `netsh` should work. See [here](http://stackoverflow.com/questions/11525703/port-forwarding-in-windows) for an example.
+#### Setting up Julia
 
-5. Launch julia in the terminal on the remote machine
-6. Type in julia session: `using Juno; Juno.connect([Remote port])`
+Open a new terminal in Juno with `Julia Client: New Terminal` and execute the `Julia Client: Connect External Process` command in Juno:
+
+![](../assets/remote1.png)
+
+In the terminal you'll need to `ssh` into the remote machine with port forwarding. This can be done with the
+following command
+```
+ssh -R <RemotePort>:localhost:<JunoPort> you@yourserver
+```
+where `<RemotePort>` is a port you can choose freely and `<JunoPort>` is the port given by the `Connect External Process` command.
+
+For servers that listen on a non-standard `ssh` port you'll also need to add the correct `-p` flag; I'd also recommend using an identity file with the `-i` option.
+
+![](../assets/remote2.png)
+
+After you're succesfully logged into the server you need to start Julia, potentially `pkg> add Atom Juno`, and execute
+```
+using Atom; using Juno; Juno.conect(<RemotePort>)
+```
+You should get a message telling you that Juno succesfully connect to an external process; after that basically all of Juno's features should work fine:
+
+![](../assets/remote3.png)
+
+#### Setting up remote file editing
+
+Add a new server in `ftp-remote-edit`'s server browser:
+
+![](../assets/remote3.5.png)
+
+and you can start editing files!
+
+![](../assets/remote4.png)
