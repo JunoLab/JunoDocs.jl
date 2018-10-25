@@ -265,11 +265,27 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "man/faq.html#Juno-doesn\'t-work-properly-after-an-update.-What-do-I-do?-1",
+    "location": "man/faq.html#Juno-doesn\'t-work-properly-after-an-Atom-update.-What-do-I-do?-1",
     "page": "FAQ",
-    "title": "Juno doesn\'t work properly after an update. What do I do?",
+    "title": "Juno doesn\'t work properly after an Atom update. What do I do?",
     "category": "section",
-    "text": "Check whether you have a little red bug symbol in the status bar (lower right):(Image: native bug)If so, click on it and then click on \"Rebuild Packages\":(Image: native update)Restart Atom and you should be good to go!There\'s a chance the update of julia-client failed. To get a clean re-install while preserving any setting you might have changed, try the following steps:Close all Atom instances.\nStart a terminal (e.g. cmd on Windows or the Terminal App on MacOS)\nExecute apm uninstall julia-client.\nExecute apm install julia-client.\nStart Juno. Evertyhing should work again."
+    "text": "Check whether you have a little red bug symbol in the status bar (lower right):(Image: native bug)If so, click on it and then click on \"Rebuild Packages\":(Image: native update)Restart Atom and you should be good to go!"
+},
+
+{
+    "location": "man/faq.html#Juno-doesn\'t-work-properly-after-some-Atom-packages-were-updated.-What-do-I-do?-1",
+    "page": "FAQ",
+    "title": "Juno doesn\'t work properly after some Atom packages were updated. What do I do?",
+    "category": "section",
+    "text": "There\'s a chance the update of julia-client failed. To get a clean re-install while preserving any setting you might have changed, try the following steps:Close all Atom instances.\nStart a terminal (e.g. cmd on Windows or the Terminal App on MacOS)\nExecute apm uninstall julia-client.\nExecute apm install julia-client.\nStart Juno. Evertyhing should work again."
+},
+
+{
+    "location": "man/faq.html#The-REPL-is-unbearably-slow.-How-do-I-fix-it?-1",
+    "page": "FAQ",
+    "title": "The REPL is unbearably slow. How do I fix it?",
+    "category": "section",
+    "text": "Enable the Fallback Renderer option in the julia-client settings and restart Atom for good measure."
 },
 
 {
