@@ -4,7 +4,7 @@
 Juno's inline display system operates on three distinct levels:
 
 1. If you create a new type and don't define a `show` method for it, Juno will use a fallback that lazily shows all fields.
-2. If you've defined a `show` method for the `application/juno+inline` MIME type then Juno will
+2. If you've defined a `show` method for the `application/prs.juno.inline` MIME type then Juno will
   - display what is printed by that method or
   - display the above fallback for the object returned by the `show`  method.
 3. If you've defined a `show` method for the `text/plain` MIME type Juno will use that to create a simple Tree View.
@@ -33,12 +33,12 @@ This default rendering method will not be used if you define e.g.
 ```julia
 Base.show(io::IO, ::MIME"text/plain", ::Foo) = print(io, "Foo")
 ```
-for displaying this nicely in the REPL. If you also define a `Base.show(io::IO, ::MIME"application/juno+inline", ::Foo)`
+for displaying this nicely in the REPL. If you also define a `Base.show(io::IO, ::MIME"application/prs.juno.inline", ::Foo)`
 method, that will be used instead. As a special case, you can also *return* an object
 from that show method, and Juno will show that with its default display methods (which allows
 you to recover what is shown above):
 ```julia
-Base.show(io::IO, ::MIME"application/juno+inline", x::Foo) = x
+Base.show(io::IO, ::MIME"application/prs.juno.inline", x::Foo) = x
 ```
 
 ---
@@ -67,7 +67,7 @@ treelabel(io::IO, x::Foo, ::MIME"text/plain") = print(io, "I'm a Foo.")
 Juno accepts a few different MIME types:
   - `text/plain`: Probably best compatibility.
   - `text/html`: Allows much richer display options (e.g. LaTeX).
-  - `application/juno+inline`: Same as `text/html`, but specific to Juno.
+  - `application/prs.juno.inline`: Same as `text/html`, but specific to Juno.
 
 Even `text/plain` allows for some (limited) control over styling (colors, decorations).
 In general, you can print the correct [SGR codes](https://en.wikipedia.org/wiki/ANSI_escape_code#SGR) and
@@ -100,16 +100,16 @@ treelabel(io::IO, x::Foo, i::Int, ::MIME"text/html") =
 ```
 ![custom rendering 5](../assets/inline_4.png)
 
-The `application/juno+inline` MIME type allows you to make use of the styling Atom uses:
+The `application/prs.juno.inline` MIME type allows you to make use of the styling Atom uses:
 ```julia
-treelabel(io::IO, x::Foo, ::MIME"application/juno+inline") =
+treelabel(io::IO, x::Foo, ::MIME"application/prs.juno.inline") =
   print(io, "<span class=\"syntax--support syntax--type syntax--julia\">Junoooooooo!</span>")
 ```
 ![custom rendering 6](../assets/inline_5.png)
 
 It's also possible to e.g. print no label for `Foo`s first field and handle everything in with `treenode`:
 ```julia
-treelabel(io::IO, x::Foo, i::Int, ::MIME"application/juno+inline") = print(io, "")
+treelabel(io::IO, x::Foo, i::Int, ::MIME"application/prs.juno.inline") = print(io, "")
 using Markdown
 treenode(x::Foo, i::Int) = MD("""
     ## Markdown
@@ -123,7 +123,7 @@ treenode(x::Foo, i::Int) = MD("""
 To hide the `treenode` display, simply return `missing`:
 ```julia
 treenode(x::Foo, i::Int) = missing
-treelabel(io::IO, x::Foo, i::Int, ::MIME"application/juno+inline") = print(io, "...")
+treelabel(io::IO, x::Foo, i::Int, ::MIME"application/prs.juno.inline") = print(io, "...")
 ```
 ![custom rendering 8](../assets/inline_7.png)
 
@@ -134,7 +134,7 @@ Nothing at all will be shown if `treelabel` doesn't print anything *and* `treeno
 ## Displaying Plots and Graphics
 Plots can be displayed by providing a `show` method for one of the following MIME types (ordered
 by priority):
-  1. `application/juno+plotpane` - rendered in a [`webview`](https://electronjs.org/docs/api/webview-tag)
+  1. `application/prs.juno.plotpane+html` - rendered in a [`webview`](https://electronjs.org/docs/api/webview-tag)
   2. `image/svg+xml` - rendered in a [`webview`](https://electronjs.org/docs/api/webview-tag)
   3. `image/png`
   4. `image/jpeg`
@@ -157,14 +157,14 @@ Baz(open(f -> read(f, String), "emu.svg"))
 ```
 ![plot pane svg](../assets/plotpane_svg.png)
 
-`application/juno+plotpane` is HTML, but also indicates that you want your type to be displayed in Juno's Plot
+`application/prs.juno.plotpane+html` is HTML, but also indicates that you want your type to be displayed in Juno's Plot
 Pane.
 ```julia
 struct Blah
     data
 end
 
-function Base.show(io::IO, ::MIME"application/juno+plotpane", b::Blah)
+function Base.show(io::IO, ::MIME"application/prs.juno.plotpane+html", b::Blah)
     colors = get(io, :juno_colors, nothing)
     size = get(io, :juno_plotsize, [100, 100])
 
