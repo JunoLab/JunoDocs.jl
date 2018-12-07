@@ -337,14 +337,6 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "man/faq.html#Connecting-to-a-Julia-session-in-a-(local)-Docker-container-1",
-    "page": "FAQ",
-    "title": "Connecting to a Julia session in a (local) Docker container",
-    "category": "section",
-    "text": "Use case: local installation of Juno with a local Docker containerLaunch Atom/Juno on your local machine\nSpin up your docker container with network_mode:host, ie.docker run -it --network=host [container_name] juliaIn Atom/Juno, bring up The Command Palette and search for Julia Client: Connect External Process\nJuno will respond with a Julia command, e.g. using Juno; Juno.connect([Atom port]), where [Atom port] is the port Atom is listening on for the Julia session to connect.\nIn the Julia session, replace [Atom port] in the following command with the port specified by Atom & enter the following command to connect your Julia session to AtomFor Mac:using Juno; Juno.connect(\"host.docker.internal\", [Atom port])For Linux (untested):using Juno; Juno.connect(\"docker0\", [Atom port])"
-},
-
-{
     "location": "man/faq.html#Connecting-to-a-Julia-session-on-a-remote-machine-1",
     "page": "FAQ",
     "title": "Connecting to a Julia session on a remote machine",
@@ -366,6 +358,14 @@ var documenterSearchIndex = {"docs": [
     "title": "Setup",
     "category": "section",
     "text": "Add a new server in ftp-remote-edit\'s server browser with the Ftp Remote Edit: Edit Servers command:(Image: )Select that server in the \"Remote\" tree view and click the planet icon in the toolbar to start a Julia session on the selected remote machine. If you want to start a remote session by default then you can change the Boot Mode to Remote in the julia-client settings.(Image: )If you have tmux installed on the server then you can also use a persistent session, which you can connect to and disconnect from at will without losing progress. To use this feature enable the Use persistent tmux session option in the julia-client settings."
+},
+
+{
+    "location": "man/faq.html#Connecting-to-a-Julia-session-in-a-(local)-Docker-container-1",
+    "page": "FAQ",
+    "title": "Connecting to a Julia session in a (local) Docker container",
+    "category": "section",
+    "text": "Use case: local installation of Juno with a local Docker containerLaunch Atom/Juno on your local machine\nSpin up your docker container with network_mode:host, ie.docker run -it --network=host [container_name] juliaIn Atom/Juno, bring up The Command Palette and search for Julia Client: Connect External Process\nJuno will respond with a Julia command, e.g. using Juno; Juno.connect([Atom port]), where [Atom port] is the port Atom is listening on for the Julia session to connect.\nIn the Julia session, replace [Atom port] in the following command with the port specified by Atom & enter the following command to connect your Julia session to AtomFor Mac:using Juno; Juno.connect(\"host.docker.internal\", [Atom port])For Linux (untested):using Juno; Juno.connect(\"docker0\", [Atom port])"
 },
 
 {
