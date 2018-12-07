@@ -265,6 +265,14 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "man/faq.html#The-installation-of-some-Atom-packages-fails.-What-can-I-do?-1",
+    "page": "FAQ",
+    "title": "The installation of some Atom packages fails. What can I do?",
+    "category": "section",
+    "text": "It is possible that your Antivirus Software prevents certain files to be downloaded or executed that are necessary for Juno to function. Consider disabling antivirus software\'s real time monitoring for the duration of the installation. For certain scanners (Avast and McAffee) it might also be necessary to excludeC:\\Users\\you\\.atom\\packages\\julia-client\\node_modules\\node-pty-prebuilt\\build\\Release\\winpty-agent.exefrom the real time monitoring after installation. This is an upstream issue which should hopefully be resolved soon."
+},
+
+{
     "location": "man/faq.html#Juno-doesn\'t-work-properly-after-an-Atom-update.-What-do-I-do?-1",
     "page": "FAQ",
     "title": "Juno doesn\'t work properly after an Atom update. What do I do?",
@@ -349,23 +357,15 @@ var documenterSearchIndex = {"docs": [
     "page": "FAQ",
     "title": "Prerequisites",
     "category": "section",
-    "text": "The remote machine must have Julia installed and you need to be able to open a ssh connection to it. On your local machine you need a working Juno installation as well as a remote code editing package, for example ftp-remote-edit (or remote-edit-ni)."
+    "text": "The remote machine must have Julia installed and you need to be able to open a ssh connection to it. On your local machine you need a working Juno installation as well as ftp-remote-edit for editing remote files."
 },
 
 {
-    "location": "man/faq.html#Setting-up-Julia-1",
+    "location": "man/faq.html#Setup-1",
     "page": "FAQ",
-    "title": "Setting up Julia",
+    "title": "Setup",
     "category": "section",
-    "text": "Open a new terminal in Juno with Julia Client: New Terminal and execute the Julia Client: Connect External Process command in Juno:(Image: )In the terminal you\'ll need to ssh into the remote machine with port forwarding. This can be done with the following commandssh -R <RemotePort>:localhost:<JunoPort> you@yourserverwhere <RemotePort> is a port you can choose freely and <JunoPort> is the port given by the Connect External Process command.For servers that listen on a non-standard ssh port you\'ll also need to add the correct -p flag; I\'d also recommend using an identity file with the -i option.(Image: )After you\'re succesfully logged into the server you need to start Julia, potentially pkg> add Atom Juno, and executeusing Atom; using Juno; Juno.connect(<RemotePort>)You should get a message telling you that Juno succesfully connect to an external process; after that basically all of Juno\'s features should work fine:(Image: )"
-},
-
-{
-    "location": "man/faq.html#Setting-up-remote-file-editing-1",
-    "page": "FAQ",
-    "title": "Setting up remote file editing",
-    "category": "section",
-    "text": "Add a new server in ftp-remote-edit\'s server browser:(Image: )and you can start editing files!(Image: )"
+    "text": "Add a new server in ftp-remote-edit\'s server browser with the Ftp Remote Edit: Edit Servers command:(Image: )Select that server in the \"Remote\" tree view and click the planet icon in the toolbar to start a Julia session on the selected remote machine. If you want to start a remote session by default then you can change the Boot Mode to Remote in the julia-client settings.(Image: )If you have tmux installed on the server then you can also use a persistent session, which you can connect to and disconnect from at will without losing progress. To use this feature enable the Use persistent tmux session option in the julia-client settings."
 },
 
 {
