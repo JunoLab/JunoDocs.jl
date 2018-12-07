@@ -5,6 +5,17 @@
 Please leave bug reports either [at the discussion board](https://discourse.julialang.org)
 or [at the Juno.jl Github repository](https://github.com/JunoLab/Juno.jl/issues).
 
+### The installation of some Atom packages fails. What can I do?
+
+It is possible that your Antivirus Software prevents certain files to be downloaded or
+executed that are necessary for Juno to function. Consider disabling antivirus software's
+real time monitoring for the duration of the installation. For certain scanners
+(Avast and McAffee) it might also be necessary to exclude
+```
+C:\Users\you\.atom\packages\julia-client\node_modules\node-pty-prebuilt\build\Release\winpty-agent.exe
+```
+from the real time monitoring after installation. This is an [upstream issue](https://github.com/rprichard/winpty/issues/142) which should hopefully be resolved soon.
+
 ### Juno doesn't work properly after an Atom update. What do I do?
 Check whether you have a little red bug symbol in the status bar (lower right):
 
