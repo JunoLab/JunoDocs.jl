@@ -119,39 +119,16 @@ Juno can be used for editing and executing code on a remote machine (which might
 
 #### Prerequisites
 
-The remote machine must have Julia installed and you need to be able to open a ssh connection to it. On your local machine you need a working Juno installation as well as a remote code editing package, for example [`ftp-remote-edit`](https://github.com/h3imdall/ftp-remote-edit) (or [`remote-edit-ni`](https://github.com/newinnovations/remote-edit-ni)).
+The remote machine must have Julia installed and you need to be able to open a ssh connection to it. On your local machine you need a working Juno installation as well as [`ftp-remote-edit`](https://github.com/h3imdall/ftp-remote-edit) for editing remote files.
 
-#### Setting up Julia
-
-Open a new terminal in Juno with `Julia Client: New Terminal` and execute the `Julia Client: Connect External Process` command in Juno:
-
-![](../assets/remote1.png)
-
-In the terminal you'll need to `ssh` into the remote machine with port forwarding. This can be done with the
-following command
-```
-ssh -R <RemotePort>:localhost:<JunoPort> you@yourserver
-```
-where `<RemotePort>` is a port you can choose freely and `<JunoPort>` is the port given by the `Connect External Process` command.
-
-For servers that listen on a non-standard `ssh` port you'll also need to add the correct `-p` flag; I'd also recommend using an identity file with the `-i` option.
-
-![](../assets/remote2.png)
-
-After you're succesfully logged into the server you need to start Julia, potentially `pkg> add Atom Juno`, and execute
-```
-using Atom; using Juno; Juno.connect(<RemotePort>)
-```
-You should get a message telling you that Juno succesfully connect to an external process; after that basically all of Juno's features should work fine:
-
-![](../assets/remote3.png)
-
-#### Setting up remote file editing
-
-Add a new server in `ftp-remote-edit`'s server browser:
+#### Setup
+Add a new server in `ftp-remote-edit`'s server browser with the `Ftp Remote Edit: Edit Servers` command:
 
 ![](../assets/remote3.5.png)
 
-and you can start editing files!
+Select that server in the "Remote" tree view and click the planet icon in the toolbar to start a Julia session on the selected remote machine. If you want to start a remote session by default then you can change the `Boot Mode` to `Remote` in the julia-client settings.
 
 ![](../assets/remote4.png)
+
+If you have `tmux` installed on the server then you can also use a persistent session, which you can connect to and disconnect from at will without losing progress. To use this feature enable the `Use
+persistent tmux session` option in the julia-client settings.
