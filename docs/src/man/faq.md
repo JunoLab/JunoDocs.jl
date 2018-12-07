@@ -88,6 +88,27 @@ Much like Julia has its `~/.julia/config/startup.jl` file for executing code on 
 
 ## Advanced topics
 
+### Connecting to a Julia session on a remote machine
+
+Juno can be used for editing and executing code on a remote machine (which might be very useful for computationally expensive tasks or when you want to use hardware not available locally, e.g. GPUs).
+
+#### Prerequisites
+
+The remote machine must have Julia installed and you need to be able to open a ssh connection to it. On your local machine you need a working Juno installation as well as [`ftp-remote-edit`](https://github.com/h3imdall/ftp-remote-edit) for editing remote files.
+
+#### Setup
+Add a new server in `ftp-remote-edit`'s server browser with the `Ftp Remote Edit: Edit Servers` command:
+
+![](../assets/remote3.5.png)
+
+Select that server in the "Remote" tree view and click the planet icon in the toolbar to start a Julia session on the selected remote machine. If you want to start a remote session by default then you can change the `Boot Mode` to `Remote` in the julia-client settings.
+
+![](../assets/remote4.png)
+
+If you have `tmux` installed on the server then you can also use a persistent session, which you can connect to and disconnect from at will without losing progress. To use this feature enable the `Use
+persistent tmux session` option in the julia-client settings.
+
+
 ### Connecting to a Julia session in a (local) Docker container
 
 Use case: local installation of Juno with a local Docker container
@@ -112,23 +133,3 @@ For Linux (untested):
 ```julia
 using Juno; Juno.connect("docker0", [Atom port])
 ```
-
-### Connecting to a Julia session on a remote machine
-
-Juno can be used for editing and executing code on a remote machine (which might be very useful for computationally expensive tasks or when you want to use hardware not available locally, e.g. GPUs).
-
-#### Prerequisites
-
-The remote machine must have Julia installed and you need to be able to open a ssh connection to it. On your local machine you need a working Juno installation as well as [`ftp-remote-edit`](https://github.com/h3imdall/ftp-remote-edit) for editing remote files.
-
-#### Setup
-Add a new server in `ftp-remote-edit`'s server browser with the `Ftp Remote Edit: Edit Servers` command:
-
-![](../assets/remote3.5.png)
-
-Select that server in the "Remote" tree view and click the planet icon in the toolbar to start a Julia session on the selected remote machine. If you want to start a remote session by default then you can change the `Boot Mode` to `Remote` in the julia-client settings.
-
-![](../assets/remote4.png)
-
-If you have `tmux` installed on the server then you can also use a persistent session, which you can connect to and disconnect from at will without losing progress. To use this feature enable the `Use
-persistent tmux session` option in the julia-client settings.
