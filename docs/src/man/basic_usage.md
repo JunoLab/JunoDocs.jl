@@ -4,7 +4,7 @@ These instructions assume that you have already installed Juno. If you have not 
 
 ### The Command Palette
 
-To open the command panel, use `Ctrl+Shift+p` or go to Packages > Command Palette > Toggle. In the command pallete you can search for common commands. For example, type in "julia" and you will see the commands which relate to Julia (and the keyboard shortcuts for the commands).
+To open the command panel, use `Ctrl+Shift+p` or go to Packages > Command Palette > Toggle. In the command palette you can search for common commands. For example, type in "julia" and you will see the commands which relate to Julia (and the keyboard shortcuts for the commands).
 
 ### Opening the Console Window
 
@@ -19,6 +19,20 @@ You can evaluate your Julia code inline by navigating your cursor to the appropr
 ### Cell Evaluation
 
 Juno also supports cell-based evaluation. A cell boundary is defined by a line starting with `##`, `#---`, or `# %%`. You can easily navigate cells via `Alt-Up` and `Alt-Down`, evaluate them with  `Alt-Enter`, or evaluate a cell and move to the next one via `Alt-Shift-Enter`.
+
+### Activating the debugger
+
+Activate the Juno debugger from the console like this:
+
+```
+Juno.@enter gcd(10, 20)
+```
+
+An editing pane will switch to the source for `gcd` and you will be able to step through it using
+a debug controller or key bindings (see below). Your console which switch to a `debug>` prompt,
+from which you can evaluate expressions that reference variables internal to `gcd`.
+
+See [Debugging](@ref) for a step-by-step guide.
 
 ### Common Keyboard Shortcuts
 
@@ -35,6 +49,12 @@ For MacOS, replace `Ctrl` by `Cmd`.
 - `Ctrl+j Ctrl+p` - Open the Plot Pane
 - `Ctrl+j Ctrl-d` - Get the documentation for the symbol under the cursor
 - `Ctrl+j Ctrl-g` - Go to the definition of the symbol under the cursor
+
+When debugging,
+
+- `F10` - advance to next expression
+- `F11` - step into function call
+- `Shift-F11` - step out of function call
 
 #### Adding Your Own Shortcuts
 
