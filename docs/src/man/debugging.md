@@ -49,7 +49,7 @@ Below the Callstack pane is a very important pane, "Breakpoints."
 Breakpoints allow you to skip over many lines without stepping, and then
 stop at a particular line. You can set breakpoints in the console using the
 [commands implemented by JuliaInterpreter](https://juliadebug.github.io/JuliaInterpreter.jl/stable/),
-but perhaps easier is to click in the leftmost column.
+but perhaps easier is to click in the leftmost column (you'll need to run `using Revise` prior to this).
 You'll see this location gets added to the list (previously empty) of
 breakpoints on the right hand side.
 
