@@ -26,7 +26,7 @@ On the Julia side, we need to set up a handler for this message, which happens a
 
 ```julia
 handle("eval") do code
-  eval(parse(code))
+  eval(Meta.parse(code))
 end
 ```
 

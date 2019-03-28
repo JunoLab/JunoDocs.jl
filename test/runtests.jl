@@ -1,4 +1,4 @@
 using JunoDocs
-using Base.Test
+using Test
 
 #Pkg.checkout("Juno")
