@@ -3,8 +3,8 @@
 ### Help & Bug Reporting
 
 This project is composed of many sub-projects, and it can be hard to know the appropriate
-place to file issues. For that reason we prefer that non-developers report issues on the
-[Juno discussion forum](https://discourse.julialang.org/) under the "issue" category or
+place to file issues. For that reason, we prefer that non-developers report issues on the
+[Juno discussion forum](https://discourse.julialang.org/) under the "issue" category
 or [at the Juno.jl Github repository](https://github.com/JunoLab/Juno.jl/issues). If
 you know which package the issue is appropriate in, then please open an issue there.
 Bug reports can be some of the most helpful contributions!
