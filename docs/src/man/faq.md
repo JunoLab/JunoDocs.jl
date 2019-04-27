@@ -107,6 +107,8 @@ Select that server in the "Remote" tree view and click the planet icon in the to
 
 If you have `tmux` installed on the server then you can also use a persistent session, which you can connect to and disconnect from at will without losing progress. To use this feature enable the `Use
 persistent tmux session` option in the julia-client settings.
+Note that using `tmux` changes the behavior of the console, affecting scrolling and copy/paste.
+See [the manual page](https://man.openbsd.org/OpenBSD-current/man1/tmux.1#DEFAULT_KEY_BINDINGS) for more information.
 
 
 ### Connecting to a Julia session in a (local) Docker container
