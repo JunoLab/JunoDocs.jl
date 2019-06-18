@@ -88,9 +88,9 @@ interface. The following describes the package interactions in more depth.
 Plots.jl supports usage of the plot pane with compatible backends. The backends
 which are compatible are:
 
-- PlotlyJS
-- PyPlot
-- GR
+- [PlotlyJS](https://github.com/sglyon/PlotlyJS.jl)
+- [PyPlot](https://github.com/JuliaPy/PyPlot.jl)
+- [GR](https://github.com/jheinen/GR.jl)
 
 The `plot` command will plot to the plot pane by default. To open up a non-plot
 pane window, use the `gui()` command. For example,
@@ -102,9 +102,12 @@ plot(rand(4,4)) # This will plot to the plot pane
 gui() # This will open up a separate interactive GUI window
 ```
 
-#### Gadfly
+#### Other plotting packages
 
-Gadfly also will use the plot pane.
+These packages are compatible with Juno and will also use the plot plane:
+
+- [Gadfly](https://github.com/GiovineItalia/Gadfly.jl)
+- [Gaston](https://github.com/mbaz/Gaston.jl)
 
 ### Using the Workspace Pane
 
