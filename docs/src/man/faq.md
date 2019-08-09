@@ -110,6 +110,22 @@ persistent tmux session` option in the julia-client settings.
 Note that using `tmux` changes the behavior of the console, affecting scrolling and copy/paste.
 See [the manual page](https://man.openbsd.org/OpenBSD-current/man1/tmux.1#DEFAULT_KEY_BINDINGS) for more information.
 
+If you have a more elaborate setup on the remote server, you can use the command to launch julia option for a custom script
+
+![](../assets/remote5.png)
+
+where `julia.sh` can be something like
+```bash
+# do setup
+/usr/bin/julia "$@"
+```
+The important part is to use `"$@"` in order to pass the arguments to Julia required to start Juno
+and of course to guarantee that at the end of the script a Julia session will be opened.
+For example, to launch Julia in a singularity container on the remote, something like the following can be used
+```bash
+export JULIA_NUM_THREADS="$(( `nproc` / 2 ))"
+singularity exec /path/to/singularity/image/julia.sif /usr/local/julia/bin/julia -O 3 "$@"
+```
 
 ### Connecting to a Julia session in a (local) Docker container
 
