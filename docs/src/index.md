@@ -28,6 +28,7 @@ Pages = [
     "man/installation.md",
     "man/basic_usage.md",
     "man/faq.md",
+    "man/remote.md",
     "man/juno_frontend.md"
     ]
 Depth = 2
