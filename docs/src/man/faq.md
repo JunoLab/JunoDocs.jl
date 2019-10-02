@@ -88,51 +88,12 @@ Much like Julia has its `~/.julia/config/startup.jl` file for executing code on 
 
 ## Advanced topics
 
-### Connecting to a Julia session on a remote machine
-
-Juno can be used for editing and executing code on a remote machine (which might be very useful for computationally expensive tasks or when you want to use hardware not available locally, e.g. GPUs).
-
-#### Prerequisites
-
-The remote machine must have Julia installed and you need to be able to open a ssh connection to it. On your local machine you need a working Juno installation as well as [`ftp-remote-edit`](https://github.com/h3imdall/ftp-remote-edit) for editing remote files.
-
-#### Setup
-Add a new server in `ftp-remote-edit`'s server browser with the `Ftp Remote Edit: Edit Servers` command:
-
-![](../assets/remote3.5.png)
-
-Select that server in the "Remote" tree view and click the planet icon in the toolbar to start a Julia session on the selected remote machine. If you want to start a remote session by default then you can change the `Boot Mode` to `Remote` in the julia-client settings.
-
-![](../assets/remote4.png)
-
-If you have `tmux` installed on the server then you can also use a persistent session, which you can connect to and disconnect from at will without losing progress. To use this feature enable the `Use
-persistent tmux session` option in the julia-client settings.
-Note that using `tmux` changes the behavior of the console, affecting scrolling and copy/paste.
-See [the manual page](https://man.openbsd.org/OpenBSD-current/man1/tmux.1#DEFAULT_KEY_BINDINGS) for more information.
-
-If you have a more elaborate setup on the remote server, you can use the command to launch julia option for a custom script
-
-![](../assets/remote5.png)
-
-where `julia.sh` can be something like
-```bash
-# do setup
-/usr/bin/julia "$@"
-```
-The important part is to use `"$@"` in order to pass the arguments to Julia required to start Juno
-and of course to guarantee that at the end of the script a Julia session will be opened.
-For example, to launch Julia in a singularity container on the remote, something like the following can be used
-```bash
-export JULIA_NUM_THREADS="$(( `nproc` / 2 ))"
-singularity exec /path/to/singularity/image/julia.sif /usr/local/julia/bin/julia -O 3 "$@"
-```
-
 ### Connecting to a Julia session in a (local) Docker container
 
 Use case: local installation of Juno with a local Docker container
 
 1. Launch Atom/Juno on your local machine
-2. Spin up your docker container with network_mode:host, ie.
+2. Spin up your docker container with network_mode:host, i.e.
 
 ```bash
 docker run -it --network=host [container_name] julia
