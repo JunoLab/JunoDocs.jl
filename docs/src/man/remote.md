@@ -20,17 +20,37 @@ persistent tmux session` option in the julia-client settings.
 Note that using `tmux` changes the behavior of the console, affecting scrolling and copy/paste.
 See [the manual page](https://man.openbsd.org/OpenBSD-current/man1/tmux.1#DEFAULT_KEY_BINDINGS) for more information.
 
-### Advanced usage
+##### Note
+
+With older `tmux` versions like 1.8-4 (which is currently the latest in distributions
+like CentOS) the buffer used when creating a session has a
+[2028 character limit](https://github.com/tmux/tmux/issues/254)
+and Juno might not be able to start. If this happens you will receive the
+`command too long` error in the REPL console.
+
+You can manually start `tmux` on the server with
+```bash
+tmux new -s juno_tmux_session
+```
+then start Julia inside the session and
+```julia
+using Juno, Atom
+```
+and then detach.
+
+After this step Juno should be able to connect to the remote session.
+
+## Advanced usage
 
 If you have a more elaborate setup on the remote server, you can take control of
-the various stages of launching a remote julia session.
+the various stages of launching a remote Julia session.
 
-#### Customizing the command to launch julia
+### Customizing the command to launch Julia
 
-The command to launch julia can be replaced with a custom script that finishes with
-launching julia. This can be useful if you don't have julia installed directly on
+The command to launch Julia can be replaced with a custom script that finishes with
+launching Julia. This can be useful if you don't have Julia installed directly on
 the server, but inside a container, or if you need some job scheduling script
-to start julia. For this task put the path to your custom script as the
+to start Julia. For this task put the path to your custom script as the
 command to execute Julia on the remote server
 
 ![](../assets/remote5.png)
@@ -48,14 +68,15 @@ export JULIA_NUM_THREADS="$(( `nproc` / 2 ))"
 singularity exec /path/to/singularity/image/julia.sif /usr/local/julia/bin/julia -O 3 "$@"
 ```
 
-#### Manual port forwarding
+### Manual port forwarding
 
 Internally Juno uses a [ssh nodejs library](https://github.com/mscdex/ssh2)
 to establish the connection with the remote server.
 You can manually connect to the remote server and use port forwarding to
 connect Juno to the remote session. This can be useful if you need more control
-over the connection layer. One example would be needing to restart Julia without
-reestablishing the ssh connection.
+over the connection layer.
+
+#### Setup
 
 ##### On the local machine:
 
@@ -87,3 +108,17 @@ You should get a message telling you that Juno successfully connected to an exte
 after that basically all of Juno's features should work fine:
 
 ![](../assets/remote3.png)
+
+#### Possible use cases
+
+Besides having more control regarding how Julia is launched,
+this can be useful if you need more control regarding
+remote sessions. For example instead of using the `tmux` integration,
+you can manually use other applications like `screen`.
+For example, you could resume a `screen` session before
+launching Julia on the remote, and thus when you
+connect to it, you will be able to continue your work from
+Juno.
+
+Another example would be needing to restart Julia without
+reestablishing the ssh connection.
