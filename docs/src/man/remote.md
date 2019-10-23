@@ -11,7 +11,7 @@ Add a new server in `ftp-remote-edit`'s server browser with the `Ftp Remote Edit
 
 ![](../assets/remote3.5.png)
 
-Select that server in the "Remote" tree view and click the planet icon in the toolbar to start a Julia session on the selected remote machine. If you want to start a remote session by default then you can change the `Boot Mode` to `Remote` in the julia-client settings.
+Select that server in the "Remote" tree view and click the planet icon in the toolbar to start a Julia session on the selected remote machine. Click the planet icon a second time to open the remote server terminal. If you want to start a remote session by default then you can change the `Boot Mode` to `Remote` in the julia-client settings.
 
 ![](../assets/remote4.png)
 
