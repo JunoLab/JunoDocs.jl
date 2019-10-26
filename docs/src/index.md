@@ -4,7 +4,7 @@ Juno is an Integrated Development Environment (IDE) for the Julia language. It p
 powerful tools to help you develop code. Juno is built on Atom, a text editor
 provided by Github. Juno consists of both Julia and Atom packages in order to
 add Julia-specific enhancements, such as syntax highlighting, a plot pane,
-integration with Julia's debugger (Gallium), a console for running code, and much more.
+integration with Julia's debugger, a console for running code, and much more.
 
 ### Installation
 
