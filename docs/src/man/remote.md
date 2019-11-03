@@ -93,6 +93,8 @@ ssh -R <RemotePort>:localhost:<JunoPort> you@yourserver
 where `<RemotePort>` is a port you can choose freely and `<JunoPort>` is the port given by the `Connect External Process` command.
 The `<JunoPort>` can also be customized in the settings.
 
+Note: If you are on Windows, you should use `127.0.0.1` instead of `localhost`.
+
 For servers that listen on a non-standard `ssh` port you'll also need to add the correct `-p` flag;
 I'd also recommend using an identity file with the `-i` option.
 
