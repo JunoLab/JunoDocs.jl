@@ -24,7 +24,6 @@ makedocs(modules=Module[Juno],
              "devdocs/communication.md"
          ]])
 
-
 deploydocs(
    repo = "github.com/JunoLab/JunoDocs.jl.git",
 )

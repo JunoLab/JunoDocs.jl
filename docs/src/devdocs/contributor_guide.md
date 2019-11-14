@@ -4,26 +4,24 @@
 
 This project is composed of many sub-projects, and it can be hard to know the appropriate
 place to file issues. For that reason, we prefer that non-developers report issues on the
-[Juno discussion forum](https://discourse.julialang.org/) under the "issue" category
-or [at the Juno.jl Github repository](https://github.com/JunoLab/Juno.jl/issues). If
+[Julia's discussion forum under the `Tooling ▶ Juno` category](https://discourse.julialang.org/c/tools/juno/l/latest)
+or at [the Juno.jl GitHub repository](https://github.com/JunoLab/Juno.jl/issues). If
 you know which package the issue is appropriate in, then please open an issue there.
 Bug reports can be some of the most helpful contributions!
 
 ### Contributing to the Packages
 
 If you have feature ideas you'd like to implement, or bugs you'd like to fix, feel free to
-open a [discussion](https://discourse.julialang.org/) under the "dev" category – we're always happy
-to help people flesh out their ideas or get unstuck on problems. Another good place
-to discuss with developers is in the [Juno Gitter](https://gitter.im/JunoLab/Juno).
+open an [issue on Juno.jl GitHub repository](https://github.com/JunoLab/Juno.jl/issues)
+with an appropriate tag -- we're always happy to help people flesh out their ideas or get unstuck on problems.
+Another good place to communicate with Juno developers is [our Slack channel](https://julialang.slack.com/archives/C7JT7HQAD).
 Come by and we can chat about your ideas.
 
 If you look over the GitHub issues for the various packages, you may notice some labelled
-[up for
-grabs](https://github.com/JunoLab/atom-julia-client/issues?q=is%3Aopen+is%3Aissue+label%3A%22up+for+grabs%22).
-These are features or bugs for which the implementation or fix is reasonably straightforward –
+[up for grabs](https://github.com/JunoLab/atom-julia-client/issues?q=is%3Aopen+is%3Aissue+label%3A%22up+for+grabs%22).
+These are features or bugs for which the implementation or fix is reasonably straightforward –-
 they might take a few hours of effort or more, but they won't involve enormous expert-level
-challenges. As above, feel free to open up a discussion on these and we'll help you get
-going.
+challenges. As above, feel free to open up a discussion on these and we'll help you get going.
 
 For extra general resources, consider the following:
 
@@ -44,7 +42,7 @@ for Windows/Mac, SourceTree) are very helpful for learning the ropes.
 
 ### Contributing to the Documentation
 
-The documentation is provided by the JunoLab/JunoDocs.jl repository. It's built
-using Documenter.jl. To modify the documentation, simply modify the Markdown
-files in the docs/src folder. For more information on using Documenter.jl,
+The documentation is provided by the [JunoLab/JunoDocs.jl repository](https://github.com/JunoLab/JunoDocs.jl).
+It's built using [Documenter.jl](https://github.com/JuliaDocs/Documenter.jl). To modify the documentation,
+simply modify the Markdown files in the `docs/src` folder. For more information on using Documenter.jl,
 please see the [Documenter.jl Documentation](https://juliadocs.github.io/Documenter.jl/latest/).
