@@ -18,7 +18,7 @@ Another good place to communicate with Juno developers is [our Slack channel](ht
 Come by and we can chat about your ideas.
 
 If you look over the GitHub issues for the various packages, you may notice some labelled
-[up for grabs](https://github.com/JunoLab/atom-julia-client/issues?q=is%3Aopen+is%3Aissue+label%3A%22up+for+grabs%22).
+[up for grabs](https://github.com/search?q=org%3AJunoLab+is%3Aissue+label%3A%22up+for+grabs%22+is%3Aopen).
 These are features or bugs for which the implementation or fix is reasonably straightforward –-
 they might take a few hours of effort or more, but they won't involve enormous expert-level
 challenges. As above, feel free to open up a discussion on these and we'll help you get going.
