@@ -1,4 +1,4 @@
-# Juno's Ecosystem
+# Ecosystem
 
 Juno consists of a number of packages for both Julia and Atom:
 
