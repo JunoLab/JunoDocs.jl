@@ -2,9 +2,9 @@
 
 ### I am having issues, where do I leave a bug report?
 
-Please leave bug reports either at
-[Julia's discussion forum under the `Tooling ▶ Juno` category](https://discourse.julialang.org/c/tools/juno/l/latest)
-or [the Juno.jl GitHub repository](https://github.com/JunoLab/Juno.jl/issues).
+Please leave bug reports either
+on [Juno.jl GitHub repository](https://github.com/JunoLab/Juno.jl/issues) or
+at [Julia's discussion forum under the `Tooling ▶ Juno` category](https://discourse.julialang.org/c/tools/juno/l/latest).
 
 ### Juno could not be started.
 

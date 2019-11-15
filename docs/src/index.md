@@ -15,9 +15,9 @@ If you wish to use Juno with the Julia nightly version, you may need to use the
 
 ### Reporting Issues / Bugs
 
-If you have any issues with this setup, please do report them at
-[Julia's discussion forum under the `Tooling ▶ Juno` category](https://discourse.julialang.org/c/tools/juno/l/latest)
-or [Juno.jl GitHub repository](https://github.com/JunoLab/Juno.jl/issues).
+If you have any issues with this setup, please do report them
+on [Juno.jl GitHub repository](https://github.com/JunoLab/Juno.jl/issues) or
+at [Julia's discussion forum under the `Tooling ▶ Juno` category](https://discourse.julialang.org/c/tools/juno/l/latest).
 We'll do our best to help you get going.
 You can also ping us on [our Slack channel](https://julialang.slack.com/archives/C7JT7HQAD)
 to ask some random questions or for a chat.
