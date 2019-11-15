@@ -2,11 +2,12 @@
 
 Juno can be used for editing and executing code on a remote machine (which might be very useful for computationally expensive tasks or when you want to use hardware not available locally, e.g. GPUs).
 
-### Prerequisites
+!!! note "Prerequisites"
 
-The remote machine must have Julia installed and you need to be able to open a ssh connection to it. On your local machine you need a working Juno installation as well as [`ftp-remote-edit`](https://github.com/h3imdall/ftp-remote-edit) for editing remote files.
+    The remote machine must have Julia installed and you need to be able to open a ssh connection to it. On your local machine you need a working Juno installation as well as [`ftp-remote-edit`](https://github.com/h3imdall/ftp-remote-edit) for editing remote files.
 
-## Setup
+## Basic setup
+
 Add a new server in `ftp-remote-edit`'s server browser with the `Ftp Remote Edit: Edit Servers` command:
 
 ![](../assets/remote3.5.png)
@@ -20,27 +21,27 @@ persistent tmux session` option in the julia-client settings.
 Note that using `tmux` changes the behavior of the console, affecting scrolling and copy/paste.
 See [the manual page](https://man.openbsd.org/OpenBSD-current/man1/tmux.1#DEFAULT_KEY_BINDINGS) for more information.
 
-##### Note
+!!! info
 
-With older `tmux` versions like 1.8-4 (which is currently the latest in distributions
-like CentOS) the buffer used when creating a session has a
-[2028 character limit](https://github.com/tmux/tmux/issues/254)
-and Juno might not be able to start. If this happens you will receive the
-`command too long` error in the REPL console.
+    With older `tmux` versions like 1.8-4 (which is currently the latest in distributions
+    like CentOS) the buffer used when creating a session has a
+    [2028 character limit](https://github.com/tmux/tmux/issues/254)
+    and Juno might not be able to start. If this happens you will receive the
+    `command too long` error in the REPL console.
 
-You can manually start `tmux` on the server with
-```bash
-tmux new -s juno_tmux_session
-```
-then start Julia inside the session and
-```julia
-using Juno, Atom
-```
-and then detach.
+    You can manually start `tmux` on the server with
+    ```bash
+    tmux new -s juno_tmux_session
+    ```
+    then start Julia inside the session and
+    ```julia
+    using Juno, Atom
+    ```
+    and then detach.
 
-After this step Juno should be able to connect to the remote session.
+    After this step Juno should be able to connect to the remote session.
 
-## Advanced usage
+## Advanced usages
 
 If you have a more elaborate setup on the remote server, you can take control of
 the various stages of launching a remote Julia session.
@@ -124,3 +125,24 @@ Juno.
 
 Another example would be needing to restart Julia without
 reestablishing the ssh connection.
+
+## Connecting to a Julia session in a local Docker container
+
+You can also use [Manual port forwarding](@ref) described above for e.g. a local Docker container.
+
+1. Launch Atom/Juno on your local machine
+2. Spin up your docker container with network_mode:host, i.e.
+   ```bash
+   docker run -it --network=host [container_name] julia
+   ```
+3. In Atom/Juno, bring up [The Command Palette](@ref) and search for `Julia Client: Connect External Process`
+4. Juno will respond with a Julia command, e.g. `using Juno; Juno.connect([ATOM_PORT])`, where `ATOM_PORT` is the port Atom is listening on for the Julia session to connect.
+5. In the Julia session, replace `ATOM_PORT` in the following command with the port specified by Atom & enter the following command to connect your Julia session to Atom\n   
+   For Mac:
+   ```julia
+   using Juno; Juno.connect("host.docker.internal", [Atom port])
+   ```
+   For Linux (untested):
+   ```julia
+   using Juno; Juno.connect("docker0", [Atom port])
+   ```
