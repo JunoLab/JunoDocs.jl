@@ -91,30 +91,3 @@ before documentation changes.
 ### How do I execute code on Juno startup?
 
 Much like Julia has its `~/.julia/config/startup.jl` file for executing code on startup, Juno will execute code contained in `~/.julia/config/juno_startup.jl` after Julia has been booted and a connection with the editor is established. This allows running code on startup that queries the frontend, e.g. [`Juno.syntaxcolors`](@ref).
-
-## Advanced topics
-
-### Connecting to a Julia session in a (local) Docker container
-
-Use case: local installation of Juno with a local Docker container
-
-1. Launch Atom/Juno on your local machine
-2. Spin up your docker container with network_mode:host, i.e.
-
-```bash
-docker run -it --network=host [container_name] julia
-```
-
-3. In Atom/Juno, bring up [The Command Palette](@ref) and search for `Julia Client: Connect External Process`
-4. Juno will respond with a Julia command, e.g. `using Juno; Juno.connect([Atom port])`, where **[Atom port]** is the port Atom is listening on for the Julia session to connect.
-5. In the Julia session, replace **[Atom port]** in the following command with the port specified by Atom & enter the following command to connect your Julia session to Atom
-
-For Mac:
-```julia
-using Juno; Juno.connect("host.docker.internal", [Atom port])
-```
-
-For Linux (untested):
-```julia
-using Juno; Juno.connect("docker0", [Atom port])
-```
