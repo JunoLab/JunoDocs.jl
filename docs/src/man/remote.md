@@ -140,9 +140,9 @@ You can also use [Manual port forwarding](@ref) described above for e.g. a local
 5. In the Julia session, replace `ATOM_PORT` in the following command with the port specified by Atom & enter the following command to connect your Julia session to Atom\n   
    For Mac:
    ```julia
-   using Juno; Juno.connect("host.docker.internal", [Atom port])
+   using Juno; Juno.connect("host.docker.internal", [ATOM_PORT])
    ```
    For Linux (untested):
    ```julia
-   using Juno; Juno.connect("docker0", [Atom port])
+   using Juno; Juno.connect("docker0", [ATOM_PORT])
    ```
