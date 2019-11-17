@@ -4,7 +4,7 @@
 
 Execute the following in a Julia prompt:
 ```julia
-pkg> dev Atom Juno CodeTools
+pkg> dev Atom Juno
 ```
 This will automatically clone the git repos of most of the packages that power Juno
 into `~/.julia/dev`. It might make sense to do this in a clean environment, so you
@@ -15,13 +15,11 @@ can switch back to a known working version.
 Executing the following lines of code in a terminal will give you the development
 versions of the Atom packages that power Juno:
 ```
+λ apm dev language-julia
+
 λ apm dev julia-client
 
 λ apm dev ink
-
-λ apm dev language-julia
-
-λ apm dev latex-completions
 ```
 You'll find those packages in `~/github/` by default, but can also specify a
 directory as the second argument to `apm dev`.

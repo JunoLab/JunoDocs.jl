@@ -1,3 +1,4 @@
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
 Juno = "e5e0dc1b-0480-54bc-9374-aad01c23163d"
+JunoDocs = "d6178868-d068-5164-a8ce-96033d629bdc"

@@ -19,11 +19,10 @@ makedocs(modules=Module[Juno],
          "Developer Documentation" => Any[
              "devdocs/contributor_guide.md",
              "devdocs/dev_install.md",
-             "devdocs/package_info.md",
-             "devdocs/juno_ci.md",
+             "devdocs/ecosystem.md",
+             "devdocs/test_suites.md",
              "devdocs/communication.md"
          ]])
-
 
 deploydocs(
    repo = "github.com/JunoLab/JunoDocs.jl.git",

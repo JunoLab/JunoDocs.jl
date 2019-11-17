@@ -2,8 +2,13 @@
 
 ### I am having issues, where do I leave a bug report?
 
-Please leave bug reports either [at the discussion board](https://discourse.julialang.org)
-or [at the Juno.jl Github repository](https://github.com/JunoLab/Juno.jl/issues).
+Please leave bug reports either
+on [Juno.jl GitHub repository](https://github.com/JunoLab/Juno.jl/issues) or
+at [Julia's discussion forum under the `Tooling ▶ Juno` category](https://discourse.julialang.org/c/tools/juno/l/latest).
+
+### Juno could not be started.
+
+Go to `Packages > Juno > Settings` and change `Julia Path` to point to the Julia binary.
 
 ### The installation of some Atom packages fails. What can I do?
 
@@ -17,11 +22,12 @@ C:\Users\you\.atom\packages\julia-client\node_modules\node-pty-prebuilt\build\Re
 from the real time monitoring after installation. This is an [upstream issue](https://github.com/rprichard/winpty/issues/142) which should hopefully be resolved soon.
 
 ### Juno doesn't work properly after an Atom update. What do I do?
+
 Check whether you have a little red bug symbol in the status bar (lower right):
 
 ![native bug](../assets/native_bug.png)
 
-If so, click on it and then click on "Rebuild Packages":
+If so, click on it and then click on `Rebuild Packages`:
 
 ![native update](../assets/native_update.png)
 
@@ -29,19 +35,19 @@ Restart Atom and you should be good to go!
 
 ### Juno doesn't work properly after some Atom packages were updated. What do I do?
 
-There's a chance the update of `julia-client` failed. To get a clean re-install
+There's a chance the update of julia-client failed. To get a clean re-install
 while preserving any setting you might have changed, try the following steps:
 
 1. Close all Atom instances.
 2. Start a terminal (e.g. `cmd` on Windows or the Terminal App on MacOS)
 3. Execute `apm uninstall julia-client`.
 4. Execute `apm install julia-client`.
-5. Start Juno. Evertyhing should work again.
+5. Start Juno. Everything should work again.
 
-### The REPL is unbearably slow. How do I fix it?
+### The integrated REPL/terminal is unbearably slow. How do I fix it?
 
-Enable the `Fallback Renderer` option in the `julia-client` settings and restart
-Atom for good measure.
+Enable the `Fallback Renderer` option in the `Terminal Options` in julia-client's settings
+and restart Atom for good measure.
 
 ### Some Juno package is using the wrong precompile cache, what do I do?
 
