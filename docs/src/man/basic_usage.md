@@ -4,7 +4,7 @@ These instructions assume that you have already installed Juno. If you have not 
 
 ### The Command Palette
 
-To open the command panel, use `Ctrl+Shift+p` or go to Packages > Command Palette > Toggle. In the command palette you can search for common commands. For example, type in "julia" and you will see the commands which relate to Julia (and the keyboard shortcuts for the commands).
+To open the command panel, use `Ctrl+Shift+p` or go to Packages > Command Palette > Toggle. In the command palette, you can search for common commands. For example, type in "julia" and you will see the commands which relate to Julia (and the keyboard shortcuts for the commands).
 
 ### Opening the Console Window
 
@@ -29,7 +29,7 @@ Juno.@enter gcd(10, 20)
 ```
 
 An editing pane will switch to the source for `gcd` and you will be able to step through it using
-a debug controller or key bindings (see below). Your console which switch to a `debug>` prompt,
+a debug controller or key bindings (see below). Your console which switches to a `debug>` prompt,
 from which you can evaluate expressions that reference variables internal to `gcd`.
 
 See [Debugging](@ref) for a step-by-step guide.
