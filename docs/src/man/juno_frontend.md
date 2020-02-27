@@ -1,4 +1,5 @@
 # The Juno.jl Front-End
+
 Juno provides some functionality using Atom's UI, which will usually have a
 fallback for use in other environments.
 
@@ -11,7 +12,7 @@ Juno.isactive
 
 ## Enhanced Display
 
-Juno.jl includes features which allow package developers to created enhanced displays
+Juno.jl includes features which allow package developers to create enhanced displays
 in Juno.
 
 For example, we can print provide structured display for arbitrary objects (similar to `Base.dump`)
@@ -23,23 +24,35 @@ Juno.structure
 ```
 
 ## Profiler
-Profiles collected by `@profile` can be displayed as a flame chart (similar to `ProfileView.jl`)
-inside of Juno by calling `Juno.profiler()`. `Juno.profiletree()` will display the stack
-trace similar to the output of Base's `Profile.print()`. There's also a `@profiler` macro
-which does the same as `@profile` but also displays the collected information as a flame chart
-and clears all collected backtraces beforehand.
+
+Profiles collected by `Profile.@profile` can be displayed as a flame chart 
+(similar to [`ProfileView.jl`](https://github.com/timholy/ProfileView.jl))
+inside of Juno by calling `Juno.profiler`.
+There's also a `Juno.@profiler` macro which does the same as `Profile.@profile`
+but also displays the collected information as a flame chart after clearing all the collected backtraces beforehand.
+Just using the `Juno.@profiler` macro will be enough for most cases, and it's way much simpler.
 
 ```@docs
 Juno.profiler
-Juno.profiletree
 Juno.@profiler
 ```
-![profiler](../assets/profiler.png)
+
+![profiler view](../assets/profiler.png)
 
 Clicking on one of the boxes in the profile view will take you to the corresponding file/line.
-The length of the lines in the editor correspond to the percentage of calls made in that line;
-to clear the profile view and the in-editor display, click the `Forget Plot` button in the
-profile view toolbar.
+The width of the boxes in the profile view and the length of the lines in the editor
+correspond to the percentage of calls made in that line.
+Also note that there are specially colored lines:
+- yellow means the line was dynamically dispatched
+- red means there was a garbage collection happened at the line
+
+!!! tip
+    See [the performance tips](https://docs.julialang.org/en/v1.5-dev/manual/performance-tips/#Avoid-changing-the-type-of-a-variable-1) or
+    [this thread](https://discourse.julialang.org/t/dynamic-dispatch/6963)
+    for how/why dynamic dispatch can affect the performance.
+
+To clear the profile view and the in-editor display,
+click the `Forget Plot` button in the profile view toolbar or use `Julia Client: Clear Profile` command.
 
 ## Progress Meters
 
@@ -92,10 +105,12 @@ You can also use
 Juno.syntaxcolors
 ```
 
-for querying the currently used syntax colors in Atom (and generate a plot theme or an OhMyREPL syntax theme from that).
+for querying the currently used syntax colors in Atom (, which can be used to generate a plot theme or an OhMyREPL syntax theme from that, etc).
 
 The console can be cleared with
+
 ```@docs
 Juno.clearconsole
 ```
-or `Ctrl-J Ctrl-C`.
+
+or `Ctrl-J Ctrl-C` (i.e. `Julia Client: Clear REPL` command).
