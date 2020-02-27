@@ -5,7 +5,7 @@ uuid = "d6178868-d068-5164-a8ce-96033d629bdc"
 Juno = "e5e0dc1b-0480-54bc-9374-aad01c23163d"
 
 [compat]
-Juno = "≥ 0.7.0"
+Juno = "≥ 0.8.0"
 julia = "≥ 1.0.0"
 
 [extras]
