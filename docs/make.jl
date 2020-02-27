@@ -26,4 +26,5 @@ makedocs(modules=Module[Juno],
 
 deploydocs(
    repo = "github.com/JunoLab/JunoDocs.jl.git",
+   push_preview = true,
 )
