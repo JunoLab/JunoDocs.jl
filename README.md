@@ -3,7 +3,7 @@
 [![Developer Chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JunoLab/Juno)
 [![Travis](https://travis-ci.org/JunoLab/JunoDocs.jl.svg?branch=master)](https://travis-ci.org/JunoLab/JunoDocs.jl)
 [![Docs](https://img.shields.io/badge/docs-stable-blue.svg)](https://JunoLab.github.io/JunoDocs.jl/stable)
-[![Docs](https://img.shields.io/badge/docs-latest-blue.svg)](https://JunoLab.github.io/JunoDocs.jl/latest)
+[![Docs](https://img.shields.io/badge/docs-dev-blue.svg)](https://JunoLab.github.io/JunoDocs.jl/dev)
 
 This is the documentation for the Juno IDE, hosted at http://docs.junolab.org.
 It is created using [Documenter.jl](https://github.com/JuliaDocs/Documenter.jl)
