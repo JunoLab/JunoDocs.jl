@@ -9,16 +9,16 @@ It is created using [Documenter.jl](https://github.com/JuliaDocs/Documenter.jl)
 
 ## Contributing to the Documentation
 
-In order to contribute to the documentation, simply modify the files in the `/docs/src`
-folder and open a PR against the `master` branch. When committed, Travis will run
-[Documenter.jl](https://github.com/JuliaDocs/Documenter.jl) which will
-[automatically update the documentation website](https://juliadocs.github.io/Documenter.jl/stable/man/hosting/)
+In order to contribute to the documentation, simply modify the files in the `/docs/src` folder
+and open a PR against the `master` branch.
+When committed, Travis will run [Documenter.jl](https://github.com/JuliaDocs/Documenter.jl)
+which will automatically update [the documentation website](https://juliadocs.github.io/Documenter.jl/stable/man/hosting/)
 by pushing to the `gh-pages` branch, meaning that no build steps are required.
 
 ## Local build of the Documentation
 
-Although it's not necessary, If you want to check how the documentations looks before you make a PR,
-you can build the documentations locally and check the results in `docs/build`:
+Although it's not necessary, if you want to check how the new documentation pages would look like in advance of opening a PR,
+you can build documentations locally and check the results generated in `docs/build` by the following step:
 
 > from the root of this repository:
 
