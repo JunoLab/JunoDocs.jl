@@ -16,17 +16,18 @@ makedocs(
             "man/installation.md",
             "man/basic_usage.md",
             "man/debugging.md",
-            "man/faq.md",
             "man/remote.md",
             "man/juno_frontend.md",
-            "man/info_developer.md"
+            "man/info_developer.md",
+            "man/update.md",
+            "man/faq.md",
         ],
         "Developer Documentation" => Any[
             "devdocs/contributor_guide.md",
             "devdocs/dev_install.md",
             "devdocs/ecosystem.md",
             "devdocs/test_suites.md",
-            "devdocs/communication.md"
+            "devdocs/communication.md",
         ]
     ]
 )
