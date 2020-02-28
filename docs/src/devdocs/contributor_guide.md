@@ -5,7 +5,7 @@
 This project is composed of many sub-projects, and it can be hard to know the appropriate
 place to file issues. For that reason, we prefer that non-developers report issues
 on [Juno.jl GitHub repository](https://github.com/JunoLab/Juno.jl/issues) or
-at [Julia's discussion forum under the `Tooling ▶ Juno` category](https://discourse.julialang.org/c/tools/juno/l/latest).
+at [Julia Discourse under the `Tooling ▶ Juno` category](https://discourse.julialang.org/c/tools/juno/l/latest).
 If you know which package the issue is appropriate in, then please open an issue there.
 Bug reports can be some of the most helpful contributions!
 

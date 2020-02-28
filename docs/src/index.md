@@ -6,20 +6,25 @@ editor provided by GitHub. Juno consists of both Julia and Atom packages in orde
 add Julia-specific enhancements, such as syntax highlighting, a plot pane,
 integration with Julia's debugger, a console for running code, and much more.
 
-### Installation
+### Installation / Updates
 
 To install Juno, please see the [Installation Instructions](@ref). These installation
 instructions should work for Windows, Mac OSX, and Linux on the current Julia release (v1).
 If you wish to use Juno with the Julia nightly version, you may need to use the
 [Developer Installation Instructions](@ref).
 
-### Reporting Issues / Bugs
+Since Juno is under a rapid development, there will be lots of updates and
+you need to follow some steps to update Juno.
+When you update your Juno, please first read through [Update Instructions](@ref).
 
-If you have any issues with this setup, please do report them
+### Reporting Issues / Bugs / Discussions
+
+If you have any issues with this setup, look up for a [FAQ](@ref) section first.
+If it doesn't help, please do report them
 on [Juno.jl GitHub repository](https://github.com/JunoLab/Juno.jl/issues) or
-at [Julia's discussion forum under the `Tooling ▶ Juno` category](https://discourse.julialang.org/c/tools/juno/l/latest).
+at [Julia Discourse under the `Tooling ▶ Juno` category](https://discourse.julialang.org/c/tools/juno/l/latest).
 We'll do our best to help you get going.
-You can also ping us on [our Slack channel](https://julialang.slack.com/archives/C7JT7HQAD)
+You can also ping us on the `#juno-bridged` channel in [the Julia slack](https://slackinvite.julialang.org/)
 to ask some random questions or for a chat.
 
 ### User Manual
@@ -31,10 +36,13 @@ Juno, along with answer questions most new users encounter.
 Pages = [
     "man/installation.md",
     "man/basic_usage.md",
-    "man/faq.md",
+    "man/debugging.md",
     "man/remote.md",
-    "man/juno_frontend.md"
-    ]
+    "man/juno_frontend.md",
+    "man/info_developer.md",
+    "man/update.md",
+    "man/faq.md" 
+]
 Depth = 2
 ```
 

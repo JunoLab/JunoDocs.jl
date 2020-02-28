@@ -4,22 +4,18 @@
 
 Please leave bug reports either
 on [Juno.jl GitHub repository](https://github.com/JunoLab/Juno.jl/issues) or
-at [Julia's discussion forum under the `Tooling ▶ Juno` category](https://discourse.julialang.org/c/tools/juno/l/latest).
+at [Julia Discourse under the `Tooling ▶ Juno` category](https://discourse.julialang.org/c/tools/juno/l/latest).
+
+!!! note
+    When you report a problem, please add the output of `Julia Client: Debug Info` command or `Juno > Debug Information` menus entry if possible.
 
 ### Juno could not be started.
 
 Go to `Packages > Juno > Settings` and change `Julia Path` to point to the Julia binary.
 
-### The installation of some Atom packages fails. What can I do?
+### I have issues on update !
 
-It is possible that your Antivirus Software prevents certain files to be downloaded or
-executed that are necessary for Juno to function. Consider disabling antivirus software's
-real time monitoring for the duration of the installation. For certain scanners
-(Avast and McAffee) it might also be necessary to exclude
-```
-C:\Users\you\.atom\packages\julia-client\node_modules\node-pty-prebuilt\build\Release\winpty-agent.exe
-```
-from the real time monitoring after installation. This is an [upstream issue](https://github.com/rprichard/winpty/issues/142) which should hopefully be resolved soon.
+Please follow the steps described in [Update Instructions](@ref).
 
 ### Juno doesn't work properly after an Atom update. What do I do?
 
@@ -32,17 +28,6 @@ If so, click on it and then click on `Rebuild Packages`:
 ![native update](../assets/native_update.png)
 
 Restart Atom and you should be good to go!
-
-### Juno doesn't work properly after some Atom packages were updated. What do I do?
-
-There's a chance the update of julia-client failed. To get a clean re-install
-while preserving any setting you might have changed, try the following steps:
-
-1. Close all Atom instances.
-2. Start a terminal (e.g. `cmd` on Windows or the Terminal App on MacOS)
-3. Execute `apm uninstall julia-client`.
-4. Execute `apm install julia-client`.
-5. Start Juno. Everything should work again.
 
 ### The integrated REPL/terminal is unbearably slow. How do I fix it?
 
