@@ -51,7 +51,7 @@ or `Ctrl-J Ctrl-O` (`Cmd-J Cmd-O` on macOS), and then press `Enter` in the REPL 
 If you experience problems after installing Juno, have a look at the [FAQ](@ref) section.
 In case you can't solve your problem with the instructions here or in the FAQ, then please post
 on [Juno.jl GitHub repository](https://github.com/JunoLab/Juno.jl/issues) or
-at [Julia's discussion forum under the `Tooling ▶ Juno` category](https://discourse.julialang.org/c/tools/juno/l/latest),
+at [Julia Discourse under the `Tooling ▶ Juno` category](https://discourse.julialang.org/c/tools/juno/l/latest),
 and we're happy to help.
 
 !!! note

@@ -4,7 +4,7 @@
 
 Please leave bug reports either
 on [Juno.jl GitHub repository](https://github.com/JunoLab/Juno.jl/issues) or
-at [Julia's discussion forum under the `Tooling ▶ Juno` category](https://discourse.julialang.org/c/tools/juno/l/latest).
+at [Julia Discourse under the `Tooling ▶ Juno` category](https://discourse.julialang.org/c/tools/juno/l/latest).
 
 !!! note
     When you report a problem, please add the output of `Julia Client: Debug Info` command or `Juno > Debug Information` menus entry if possible.
