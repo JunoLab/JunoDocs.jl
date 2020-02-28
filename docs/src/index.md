@@ -13,13 +13,14 @@ instructions should work for Windows, Mac OSX, and Linux on the current Julia re
 If you wish to use Juno with the Julia nightly version, you may need to use the
 [Developer Installation Instructions](@ref).
 
-Since Juno is under a rapid development, there will be lots of updates after your installation
-and they needs some steps.
+Since Juno is under a rapid development, there will be lots of updates and
+you need to follow some steps to update Juno.
 When you update your Juno, please first read through [Update Instructions](@ref).
 
 ### Reporting Issues / Bugs / Discussions
 
-If you have any issues with this setup, please do report them
+If you have any issues with this setup, look up for a [FAQ](@ref) section first.
+If it doesn't help, please do report them
 on [Juno.jl GitHub repository](https://github.com/JunoLab/Juno.jl/issues) or
 at [Julia's discussion forum under the `Tooling ▶ Juno` category](https://discourse.julialang.org/c/tools/juno/l/latest).
 We'll do our best to help you get going.
