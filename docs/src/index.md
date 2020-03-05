@@ -35,15 +35,15 @@ Juno, along with answer questions most new users encounter.
 ```@contents
 Pages = [
     "man/installation.md",
+    "man/getting_started.md",
     "man/basic_usage.md",
     "man/debugging.md",
     "man/remote.md",
     "man/juno_frontend.md",
     "man/info_developer.md",
     "man/update.md",
-    "man/faq.md" 
+    "man/faq.md"
 ]
-Depth = 2
 ```
 
 ### Developer Documentation
@@ -60,5 +60,4 @@ Pages = [
     "devdocs/test_suites.md",
     "devdocs/communication.md"
 ]
-Depth = 2
 ```

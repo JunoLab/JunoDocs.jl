@@ -43,8 +43,7 @@ Atom will then set up Juno for you, installing the required Atom and Julia packa
 
 ## 4. Use Juno
 
-You should be good to go now -- try opening the REPL with `Juno > Open REPL`
-or `Ctrl-J Ctrl-O` (`Cmd-J Cmd-O` on macOS), and then press `Enter` in the REPL to start a Julia session.
+You should be good to go now – move on to [Getting Started](@ref) section and let's start to use Juno.
 
 ## Troubleshooting
 

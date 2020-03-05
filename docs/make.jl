@@ -14,6 +14,7 @@ makedocs(
         "Home" => "index.md",
         "Manual" => Any[
             "man/installation.md",
+            "man/getting_started.md",
             "man/basic_usage.md",
             "man/debugging.md",
             "man/remote.md",

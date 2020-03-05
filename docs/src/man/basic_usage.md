@@ -1,24 +1,57 @@
 # Basic Usage
 
-These instructions assume that you have already installed Juno. If you have not yet installed Juno, please see the [Installation Instructions](@ref).
+## Inline Evaluation
 
-### The Command Palette
+You can evaluate your Julia code inline by navigating your cursor to the code you want to evaluate and hitting `Ctrl+Enter` (i.e. `Julia Client: Run Block` command).
+Juno will automatically detect an appropriate unit of code to run (i.e. code block) that the cursor is contained in, and then evaluate it.
+For example, if you go to the top of a `for` loop, it will evaluate the whole for loop, or if it's inside of a function, it will evaluate the function (i.e. define the function).
+To specifically choose which code to evaluate, select the appropriate parts and just use `Ctrl+Enter`.
 
-To open the command panel, use `Ctrl+Shift+p` or go to Packages > Command Palette > Toggle. In the command palette, you can search for common commands. For example, type in "julia" and you will see the commands which relate to Julia (and the keyboard shortcuts for the commands).
+`Shift+Enter` (`Julia-Client: Run-And-Move`) will do the same as `Ctrl+Enter` but also moves to the next code block.
 
-### Opening the Console Window
+### Fancy Inline Display
 
-To open the console, use the command `Ctrl+j` then `Ctrl+o`, or go to Packages > Julia > Open Console. This will open a window with the title console. To use the console, simply type in a command and hit `Enter`. This will run the command in Julia (the first time a command is run, the connection between Julia and Atom will be installed, taking a bit more time). To clear the console, use the command `Ctrl+j` followed by `Ctrl+c`.
+<!-- TODO -->
 
-Using the console is similar to using the REPL. For example, to enter multi-line input, use `Ctrl+Enter`. Tab completion will be available with a window for selecting the desired completion (which can be scrolled through using the arrow keys). Juno also features enhanced displaying of output types. For example, types like `Array` show an arrow on the side. By clicking on the header for this output you will expand the array in the console. Note that floating point numbers truncate their displays as well: to see more digits, click on the number.
+### In-Module Evaluation
 
-### Inline Evaluation
+The another important part of the Juno's inline evaluation is,
+when you evaluate your code inline,
+Juno will automatically try to detect the module in which the code lives in
+and evaluate the code _in the module_.
 
-You can evaluate your Julia code inline by navigating your cursor to the appropriate code and hitting `Ctrl+Enter`. This will run the code block that the cursor is contained in. For example, if you go to the top of a `for` loop, it will evaluate the whole for loop, or if it's inside of a function, it will evaluate the function (i.e. create the function). To specifically choose which code to evaluate, highlight the appropriate parts and use `Ctrl+Enter`. To evaluate the whole script, use `Ctrl+Shift+Enter`.
+This is very useful when you develop a package or even modify the language core like `Base` module, etc,
+since you can interactively change code in a specific module and test it, very easily.
+So in that sense, you can see Juno as an alternative of [Revise.jl](https://timholy.github.io/Revise.jl/stable/).
 
 ### Cell Evaluation
 
-Juno also supports cell-based evaluation. A cell boundary is defined by a line starting with `##`, `#---`, or `# %%`. You can easily navigate cells via `Alt-Up` and `Alt-Down`, evaluate them with  `Alt-Enter`, or evaluate a cell and move to the next one via `Alt-Shift-Enter`.
+Juno also supports "cell-based" evaluation, which can be useful for the "notebook style programming" like what
+[Jupyter Notebook](https://mybinder.org/v2/gh/binder-examples/demo-julia/master?filepath=demo.ipynb) provides.
+A cell boundary is defined by a line starting with `##`, `#---`, `#%%`, or `# %%`.
+You can easily navigate cells via `Alt+Up` (`Julia-Client: Prev-Cell`) and `Alt+Down` (`Julia-Client: Next-Cell`),
+evaluate them with  `Alt+Enter` (`Julia-Client: Run-Cell`) or evaluate a cell and move to the next one via `Alt+Shift+Enter` (`Julia-Client: Run-Cell-And-Move`).
+
+!!! tip
+    You can have your own cell delimiters setting by changing `Julia Client > UI Options > Cell Delimiter` config.
+    See [Juno Configurations](@ref) for more details.
+
+!!! tip
+    To convert your `.ipynb` file into a `.jl` script, which can be run by Juno,
+    you have multiple choices like below:
+    - [Weave.jl](http://weavejl.mpastell.com/stable/):
+    - [Literate.jl](https://fredrikekre.github.io/Literate.jl/stable/):
+    - [jupytext](https://jupytext.readthedocs.io/en/latest/?badge=latest):
+
+    Juno also provides [Weave.jl integration](@ref), meaning you use evaluate inline (or even debug) `.jmd` file.
+    We may add Literate.jl integration as well in the future.
+
+### Script Evaluation
+
+To evaluate the whole script, use `Ctrl+Shift+Enter` (`Julia-Client: Run-All`).
+
+You can also use menus in the tree-view to run (or debug) a file:
+![tree-view-menus](../assets/tree-view-menus.png)
 
 ### Activating the debugger
 
