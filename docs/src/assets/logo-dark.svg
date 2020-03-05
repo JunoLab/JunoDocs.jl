@@ -15,7 +15,7 @@
    version="1.1"
    id="svg1370"
    inkscape:version="0.92.4 5da689c313, 2019-01-14"
-   sodipodi:docname="juno_lightbg.svg">
+   sodipodi:docname="juno_darkbg.svg">
   <defs
      id="defs1364">
     <inkscape:path-effect
@@ -177,16 +177,30 @@
          inkscape:path-effect="#path-effect1678-4-9"
          inkscape:original-d="m 39.756899,14.122944 c 0.5842,-2.973326 0.2575,-5.2298798 -1.12335,-6.1266192 -0.46029,-0.2989113 -1.01213,-0.4297133 -1.63319,-0.4061373 -3.35376,0.127323 -8.76519,4.7450845 -13.1865,11.5533015 -5.24006,8.069002 -7.10224,16.155737 -4.15642,18.068778 1.39834,0.908092 3.62659,0.264364 6.1439,-1.529496" />
     </g>
-    <text
-       xml:space="preserve"
+    <g
+       aria-label="Juno"
        style="font-style:normal;font-weight:normal;font-size:22.49966621px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.5624916"
-       x="49.174271"
-       y="31.803734"
-       id="text847"><tspan
-         sodipodi:role="line"
-         id="tspan845"
-         x="49.174271"
-         y="31.803734"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.49966621px;font-family:'Tamil MN';-inkscape-font-specification:'Tamil MN, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.5624916">Juno</tspan></text>
+       id="text847">
+      <path
+         d="m 55.886818,16.159435 h 3.845157 V 27.66195 q 0,0.955796 -0.351557,1.757786 -0.351557,0.80199 -1.054672,1.384257 -0.692128,0.582267 -1.7468,0.911852 -1.054672,0.329584 -2.471887,0.329584 -0.791004,0 -1.46116,-0.14282 -0.670156,-0.131834 -1.252423,-0.351557 -0.571281,-0.230709 -1.076644,-0.51635 -0.505364,-0.296626 -0.966783,-0.593253 l 1.076644,-1.37327 q 0.241696,0.230709 0.582267,0.483391 0.351557,0.241696 0.769032,0.439447 0.42846,0.197751 0.911851,0.329585 0.483392,0.120847 1.010728,0.120847 1.010727,0 1.592994,-0.527336 0.593253,-0.538322 0.593253,-1.439187 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.49966621px;font-family:'Tamil MN';-inkscape-font-specification:'Tamil MN, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke-width:0.5624916"
+         id="path828"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 66.378606,20.015579 v 8.30554 q 0,0.351558 0.131834,0.65917 0.14282,0.296627 0.37353,0.51635 0.241695,0.219723 0.549308,0.351557 0.318599,0.131834 0.670156,0.131834 0.197751,0 0.450433,-0.109861 0.252681,-0.109862 0.505363,-0.307613 0.263668,-0.197751 0.505364,-0.461419 0.252682,-0.263668 0.450433,-0.582267 v -8.503291 h 3.581489 v 11.788155 h -3.581489 v -1.098617 q -0.703115,0.604239 -1.505105,0.966783 -0.791004,0.351557 -1.549049,0.351557 -0.878894,0 -1.636939,-0.28564 -0.758045,-0.296627 -1.31834,-0.791004 -0.560294,-0.505364 -0.878893,-1.17552 -0.318599,-0.681142 -0.318599,-1.450174 v -8.30554 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.49966621px;font-family:'Tamil MN';-inkscape-font-specification:'Tamil MN, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke-width:0.5624916"
+         id="path830"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 83.6159,23.728902 q 0,-0.450432 -0.09888,-0.80199 -0.09888,-0.351557 -0.263668,-0.582266 -0.164792,-0.241696 -0.384516,-0.362544 -0.208737,-0.120848 -0.439446,-0.120848 -0.23071,0 -0.538322,0.09888 -0.296627,0.08789 -0.626212,0.263668 -0.329585,0.164792 -0.670156,0.406488 -0.340571,0.241696 -0.65917,0.538322 v 8.635126 H 76.343058 V 20.015579 h 3.592476 v 0.922837 q 0.823963,-0.604239 1.768773,-0.878893 0.94481,-0.28564 1.88962,-0.28564 0.725087,0 1.373271,0.28564 0.65917,0.274654 1.142561,0.769032 0.494377,0.483391 0.780018,1.142561 0.296626,0.648184 0.296626,1.395243 v 8.437375 H 83.6159 Z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.49966621px;font-family:'Tamil MN';-inkscape-font-specification:'Tamil MN, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke-width:0.5624916"
+         id="path832"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 95.898432,32.023457 q -1.40623,0 -2.603722,-0.461419 -1.197492,-0.461419 -2.065399,-1.263409 -0.867907,-0.812976 -1.362284,-1.911593 -0.483391,-1.098616 -0.483391,-2.362025 0,-1.362285 0.483391,-2.504846 0.494377,-1.153547 1.362284,-1.977509 0.867907,-0.834949 2.054413,-1.296368 1.197492,-0.472405 2.603721,-0.472405 1.40623,0 2.603722,0.461419 1.208478,0.450433 2.076383,1.252423 0.8789,0.80199 1.37327,1.878634 0.49438,1.076644 0.49438,2.318081 0,1.307353 -0.49438,2.460901 -0.49437,1.153547 -1.37327,2.021454 -0.867905,0.856921 -2.065397,1.362285 -1.197492,0.494377 -2.603721,0.494377 z m 0.417474,-1.439188 q 0.494377,0 0.900865,-0.318598 0.417475,-0.318599 0.714101,-0.856921 0.296627,-0.538322 0.461419,-1.241437 0.175779,-0.703114 0.175779,-1.472146 0,-1.131575 -0.164793,-2.131316 -0.164792,-0.999741 -0.549308,-1.7468 -0.37353,-0.747059 -0.988755,-1.186506 -0.604239,-0.439447 -1.483132,-0.439447 -0.417474,0 -0.812976,0.318599 -0.384516,0.307613 -0.681143,0.834949 -0.296626,0.527336 -0.483391,1.219464 -0.175779,0.692128 -0.175779,1.450174 0,1.142561 0.208738,2.153288 0.208737,1.010727 0.604239,1.768773 0.406488,0.758045 0.977768,1.208478 0.571281,0.439446 1.296368,0.439446 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.49966621px;font-family:'Tamil MN';-inkscape-font-specification:'Tamil MN, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke-width:0.5624916"
+         id="path834"
+         inkscape:connector-curvature="0" />
+    </g>
   </g>
 </svg>
