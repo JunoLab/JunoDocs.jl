@@ -79,7 +79,7 @@ over the connection layer.
 
 #### Setup
 
-##### On the local machine:
+> On the local machine:
 
 Open a new terminal in Juno with `Julia Client: New Terminal` and execute the
 `Julia Client: Connect External Process` command in Juno:
@@ -101,7 +101,7 @@ I'd also recommend using an identity file with the `-i` option.
 
 ![](../assets/remote2.png)
 
-##### On the remote machine:
+> On the remote machine:
 
 After you're successfully logged into the server you need to start Julia, potentially `pkg> add Atom Juno`, and execute
 ```
@@ -126,7 +126,7 @@ Juno.
 Another example would be needing to restart Julia without
 reestablishing the ssh connection.
 
-## Connecting to a Julia session in a local Docker container
+#### Connecting to a Julia session in a local Docker container
 
 You can also use [Manual port forwarding](@ref) described above for e.g. a local Docker container.
 
@@ -137,7 +137,7 @@ You can also use [Manual port forwarding](@ref) described above for e.g. a local
    ```
 3. In Atom/Juno, bring up [The Command Palette](@ref) and search for `Julia Client: Connect External Process`
 4. Juno will respond with a Julia command, e.g. `using Juno; Juno.connect([ATOM_PORT])`, where `ATOM_PORT` is the port Atom is listening on for the Julia session to connect.
-5. In the Julia session, replace `ATOM_PORT` in the following command with the port specified by Atom & enter the following command to connect your Julia session to Atom\n   
+5. In the Julia session, replace `ATOM_PORT` in the following command with the port specified by Atom & enter the following command to connect your Julia session to Atom\n
    For Mac:
    ```julia
    using Juno; Juno.connect("host.docker.internal", [ATOM_PORT])
