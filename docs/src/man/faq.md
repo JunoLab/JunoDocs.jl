@@ -76,3 +76,14 @@ before documentation changes.
 ### How do I execute code on Juno startup?
 
 Much like Julia has its `~/.julia/config/startup.jl` file for executing code on startup, Juno will execute code contained in `~/.julia/config/juno_startup.jl` after Julia has been booted and a connection with the editor is established. This allows running code on startup that queries the frontend, e.g. [`Juno.syntaxcolors`](@ref).
+
+### How do I enable code autocompletion?
+
+Autocompletion is already active, but Juno needs an attached Julia session to
+fetch the function, struct and such definitions. A julia process can be started
+using the sidebar ("Start local julia process" option) or using the keyboard
+shortcut (`Ctrl-J Ctrl-S` by default). Following the same logic, autocompletions
+will be available for packages other than `Base` and `Core` only if they are
+loaded into the julia process. This can be achieved by executing the code in
+your source file using a shortcut like `Ctrl-Enter`. For example, executing
+`using LinearAlgebra` will enable autocompletions for the LinearAlgebra package.
