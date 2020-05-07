@@ -87,3 +87,13 @@ will be available for packages other than `Base` and `Core` only if they are
 loaded into the julia process. This can be achieved by executing the code in
 your source file using a shortcut like `Ctrl-Enter`. For example, executing
 `using LinearAlgebra` will enable autocompletions for the LinearAlgebra package.
+
+### What do I do about `/lib64/libstdc++.so.6: version 'CXXABI_1.3.9' not found` issues on older Linux versions?
+
+If you cannot update your libstdc++ (or Linux distro) then you can use the libstdc++ shipped with Julia 
+instead by running
+```
+export LD_PRELOAD=${JULIA_INSTALL}/lib/julia/libstdc++.so.6
+```
+before starting Atom.
+
