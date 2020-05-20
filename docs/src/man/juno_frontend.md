@@ -25,7 +25,7 @@ Juno.structure
 
 ## Profiler
 
-Profiles collected by `Profile.@profile` can be displayed as a flame chart 
+Profiles collected by `Profile.@profile` can be displayed as a flame chart
 (similar to [`ProfileView.jl`](https://github.com/timholy/ProfileView.jl))
 inside of Juno by calling `Juno.profiler`.
 There's also a `Juno.@profiler` macro which does the same as `Profile.@profile`
@@ -84,8 +84,11 @@ frontend.
 
 ## Interaction
 
-Juno.jl lets package developers interact with users via the Atom frontend. For example,
-you can allow the user to select from a list of options:
+Juno.jl lets package developers interact with users via the Atom frontend.
+
+### `Juno.selector`
+
+allows the user to select from a list of options:
 
 ```@docs
 Juno.selector
@@ -93,24 +96,45 @@ Juno.selector
 
 ![selector](../assets/selector.gif)
 
-or send an OS-level notification:
+### `Juno.notify`
+
+sends an OS-level notification:
 
 ```@docs
 Juno.notify
 ```
 
-You can also use
+### `Juno.notification`
+
+sends an notification via Atom's builtin notification API:
+
+```@docs
+Juno.notification
+```
+
+### `Juno.syntaxcolors`
+
+queries the currently used syntax colors in Atom (, which can be used to generate
+[a plot theme](https://github.com/JuliaPlots/PlotThemes.jl/blob/81ce6ef995aef2efe94ae2ef8e3a20d5f823d6cd/src/juno_smart.jl) or
+[an OhMyREPL syntax theme](https://github.com/JunoLab/Juno.jl/issues/15#issuecomment-357704377) from that, etc).
 
 ```@docs
 Juno.syntaxcolors
 ```
 
-for querying the currently used syntax colors in Atom (, which can be used to generate a plot theme or an OhMyREPL syntax theme from that, etc).
+!!! note "example usecases"
+    - plot theme: [`Plots.theme(:juno)`](https://github.com/JuliaPlots/PlotThemes.jl/blob/81ce6ef995aef2efe94ae2ef8e3a20d5f823d6cd/src/juno_smart.jl#L17) automatically create a plot theme based on your Atom syntax color, using this function internally
+    - [OhMyREPL.jl](https://github.com/KristofferC/OhMyREPL.jl) theme: the package doesn't not provide an integrated theme by default, but here are snippets you can create its theme based on your Atom syntax theme:
+      + https://github.com/JunoLab/Juno.jl/issues/15#issuecomment-357704377
+      + https://github.com/aviatesk/avi-atom/blob/f752e8efd8f3d68e5cd1e1f948562c5d237415e8/scripts/junostartup.jl
 
-The console can be cleared with
+### `Juno.clearconsole`
+
+clears the Juno REPL:
 
 ```@docs
 Juno.clearconsole
 ```
 
-or `Ctrl-J Ctrl-C` (i.e. `Julia Client: Clear REPL` command).
+!!! note
+    you can clear any Juno terminal via `Ctrl-J Ctrl-C` (i.e. `Julia Client: Clear REPL` command).
