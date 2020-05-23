@@ -12,7 +12,7 @@ In this step, you install the latest versions of
 [`ink`](https://github.com/JunoLab/atom-ink)
 packages.
 
-First, _**close all the Atom windows**_.
+First, _**close all instances of the Atom application**_.
 
 And then type the following command into your terminal
 (e.g. `cmd` on Windows or the Terminal App on MacOS):
