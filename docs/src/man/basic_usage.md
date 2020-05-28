@@ -14,7 +14,7 @@ Using the console is similar to using the REPL. For example, to enter multi-line
 
 ### Inline Evaluation
 
-You can evaluate your Julia code inline by navigating your cursor to the appropriate code and hitting `Ctrl+Enter`. This will run the code block that the cursor is contained in. For example, if you go to the top of a `for` loop, it will evaluate the whole for loop, or if it's inside of a function, it will evaluate the function (i.e. create the function). To specifically choose which code to evaluate, highlight the appropriate parts and use `Ctrl+Enter`. To evaluate the whole script, use `Ctrl+Shift+Enter`.
+You can evaluate your Julia code inline by navigating your cursor to the appropriate code and hitting `Ctrl+Enter`. This will run the code block that the cursor is contained in. For example, if you go to the top of a `for` loop, it will evaluate the whole for loop, or if it's inside of a function, it will evaluate the function (i.e. create the function).  It's indentation based, so if you unindent the function body you can use Ctrl-Enter to run the lines of the function one by one, if you want. To specifically choose which code to evaluate, highlight the appropriate parts and use `Ctrl+Enter`. To evaluate the whole script, use `Ctrl+Shift+Enter`.
 
 ### Cell Evaluation
 
