@@ -43,6 +43,20 @@ Atom will then set up Juno for you, installing the required Atom and Julia packa
     
 - If after following above steps you are not able to work in `juno` or you are facing any error when installing, then follow below steps: 
 
+First we will see that what error you can face. When you install `uber-juno` you can be prompted that you can't install the `uber-juno` package. 
+```
+Juno: Error installing package julia-client
+
+Please check your internet connection, or report this to
+    http://discuss.junolab.org
+and we'll try to help.
+    –––
+Error: Installing “julia-client@0.8.10” failed.
+```
+And try starting a terminal and type in `apm install julia-client`. 
+
+So, sometimes it seems to be a problem related to network connectivity. If you are not able to solve your probleem, then you can just try below steps. 
+
 To install `Juno`, open atom, click on `file` > `settings` > `install-packages` and type `uber-juno`: this is the package that you need to install. `uber-juno` will do everything by itself and install the IDE in a matter of minutes!
 
 Once the setup is done, we need to tell `Juno` where to find the `Julia` binary: go to `file` > `settings` > `packages` and type `julia-client`
