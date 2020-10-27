@@ -24,7 +24,7 @@ If it doesn't help, please do report them
 on [Juno.jl GitHub repository](https://github.com/JunoLab/Juno.jl/issues) or
 at [Julia Discourse under the `Tooling ▶ Juno` category](https://discourse.julialang.org/c/tools/juno/l/latest).
 We'll do our best to help you get going.
-You can also ping us on the `#juno-bridged` channel in [the Julia slack](https://slackinvite.julialang.org/)
+You can also ping us on the `#juno-bridged` channel in [the Julia slack](https://julialang.org/slack/)
 to ask some random questions or for a chat.
 
 ### User Manual
