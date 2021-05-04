@@ -1,5 +1,9 @@
 # The Juno IDE Documentation
 
+!!! warning "Attention!"
+    We have decided to join forces with the [Julia extension for VSCode](https://www.julia-vscode.org/).
+    As such, this Atom-based plugin is effectively in “maintenance-only mode” and we expect to only work on bug fixes in the future.
+
 Juno is an Integrated Development Environment (IDE) for the Julia language. It provides
 powerful tools to help you develop code. Juno is built on [Atom](https://atom.io), a text
 editor provided by GitHub. Juno consists of both Julia and Atom packages in order to
