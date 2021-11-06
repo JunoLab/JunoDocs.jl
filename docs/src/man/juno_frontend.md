@@ -30,7 +30,7 @@ Profiles collected by `Profile.@profile` can be displayed as a flame chart
 inside of Juno by calling `Juno.profiler`.
 There's also a `Juno.@profiler` macro which does the same as `Profile.@profile`
 but also displays the collected information as a flame chart after clearing all the collected backtraces beforehand.
-Just using the `Juno.@profiler` macro will be enough for most cases, and it's way much simpler.
+Just using the `Juno.@profiler` macro will be enough for most cases.
 
 ```@docs
 Juno.profiler
